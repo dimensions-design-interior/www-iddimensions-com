@@ -139,8 +139,7 @@
   background-color: var(--brass);
   color: var(--accent-foreground);
   transition: all 0.35s ease;
-}
-@utility btn-solid {
+
   &:hover {
     background-color: var(--ink);
     color: var(--ink-foreground);
@@ -160,8 +159,7 @@
   border: 1px solid color-mix(in oklab, var(--brass) 60%, transparent);
   color: currentColor;
   transition: all 0.35s ease;
-}
-@utility btn-outline {
+
   &:hover {
     background-color: var(--brass);
     color: var(--accent-foreground);

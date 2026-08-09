@@ -41,6 +41,14 @@ export function SiteFooter() {
               </li>
               <li>
                 <a
+                  href="mailto:info@iddimension.com"
+                  className="transition-colors hover:text-brass"
+                >
+                  info@iddimension.com
+                </a>
+              </li>
+              <li>
+                <a
                   href="https://iddimensions.com"
                   className="transition-colors hover:text-brass"
                   rel="noreferrer"

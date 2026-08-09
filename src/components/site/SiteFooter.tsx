@@ -57,8 +57,9 @@ export function SiteFooter() {
                   Instagram: @iddimensions
                 </a>
               </li>
-              <li className="pt-2 text-ink-foreground/50">
-                Lucknow, Uttar Pradesh | Across India
+              <li className="pt-2 leading-relaxed text-ink-foreground/50">
+                Skylark Plaza, Ground Floor Shop No. 09, near Lulu Mall Road, Golf City, Muzaffar
+                Nagar Ghusval, Lucknow, Uttar Pradesh 226030, India
               </li>
             </ul>
           </div>

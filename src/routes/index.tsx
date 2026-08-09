@@ -458,7 +458,10 @@ function Index() {
               Start Your Project
             </a>
           </div>
-          <p className="mt-10 text-sm tracking-[0.2em] text-brass uppercase">Call: 9670001155</p>
+          <p className="mt-10 text-sm tracking-[0.2em] text-brass uppercase">
+            <a href="mailto:info@iddimension.com">info@iddimension.com</a>
+          </p>
+          <p className="mt-2 text-sm tracking-[0.2em] text-brass uppercase">Call: 9670001155</p>
           <p className="mt-3 text-[0.7rem] tracking-[0.26em] text-ink-foreground/45 uppercase">
             Lucknow, Uttar Pradesh | Across India
           </p>

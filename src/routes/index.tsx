@@ -303,64 +303,19 @@ function Index() {
         </div>
       </section>
 
-      {/* FEATURED PROJECTS */}
+      {/* PROJECTS GALLERY */}
       <section id="projects" className="mx-auto max-w-7xl px-6 py-24 lg:px-12 lg:py-32">
-        <p className="eyebrow">Featured Projects</p>
+        <p className="eyebrow">Projects Gallery</p>
         <h2 className="display-xl mt-6 text-3xl sm:text-4xl lg:text-5xl">
           Spaces We Have Transformed
         </h2>
         <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
-          Explore a selection of our residential, commercial, retail and hospitality projects.
+          Explore a selection of our residential, commercial and hospitality projects.
         </p>
 
-        <div className="mt-12 flex flex-wrap gap-3">
-          {filters.map((f) => (
-            <button
-              key={f}
-              type="button"
-              onClick={() => setActiveFilter(f)}
-              className={
-                f === activeFilter
-                  ? "btn-solid"
-                  : "btn-outline border-border text-muted-foreground"
-              }
-            >
-              {f}
-            </button>
-          ))}
-        </div>
-
-        <div className="mt-12 grid gap-8 md:grid-cols-2">
-          {visible.map((p) => (
-            <article key={p.name} className="group">
-              <div className="relative overflow-hidden">
-                <img
-                  src={p.image}
-                  alt={`${p.name} — ${p.type.toLowerCase()} interior project in ${p.location}`}
-                  loading="lazy"
-                  width={1200}
-                  height={900}
-                  className="h-[26rem] w-full object-cover transition-transform duration-[1.2s] group-hover:scale-[1.04]"
-                />
-              </div>
-              <div className="flex flex-wrap items-end justify-between gap-4 border-b border-border py-6">
-                <div>
-                  <h3 className="text-xl tracking-[0.1em] uppercase">{p.name}</h3>
-                  <p className="mt-2 text-[0.7rem] tracking-[0.24em] text-muted-foreground uppercase">
-                    {p.location} | {p.type}
-                  </p>
-                </div>
-                <a
-                  href="#contact"
-                  className="text-[0.68rem] font-semibold tracking-[0.24em] text-brass uppercase"
-                >
-                  View Project
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
+        <ProjectsGallery />
       </section>
+
 
       {/* PROCESS */}
       <section className="bg-ink text-ink-foreground">

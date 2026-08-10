@@ -107,34 +107,6 @@ const services = [
   },
 ];
 
-const filters = ["Residential", "Commercial", "Retail", "Hospitality"] as const;
-
-const projects = [
-  {
-    name: "Gomti Nagar Residence",
-    location: "Lucknow",
-    type: "Residential",
-    image: projectResidential,
-  },
-  {
-    name: "Hazratganj Workspace",
-    location: "Lucknow",
-    type: "Commercial",
-    image: projectCommercial,
-  },
-  {
-    name: "Aurum Showroom",
-    location: "Lucknow",
-    type: "Retail",
-    image: projectRetail,
-  },
-  {
-    name: "The Verandah Lounge",
-    location: "Uttar Pradesh",
-    type: "Hospitality",
-    image: projectHospitality,
-  },
-];
 
 const process = [
   {

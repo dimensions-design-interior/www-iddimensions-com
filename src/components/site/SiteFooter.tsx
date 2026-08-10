@@ -35,6 +35,16 @@ export function SiteFooter() {
             <p className="eyebrow">Contact</p>
             <ul className="mt-6 space-y-3 text-sm text-ink-foreground/70">
               <li>
+                <a
+                  href="https://wa.me/919670001155?text=Hi%2C%20I%27m%20interested%20in%20a%20consultation%20for%20my%20interior%20project."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-colors hover:text-brass"
+                >
+                  WhatsApp: 9670001155
+                </a>
+              </li>
+              <li>
                 <a href="tel:9670001155" className="transition-colors hover:text-brass">
                   9670001155
                 </a>

@@ -233,7 +233,12 @@ function Index() {
             <a href="#projects" className="btn-solid">
               View Our Projects
             </a>
-            <a href="#contact" className="btn-outline text-ink-foreground">
+            <a
+              href="https://wa.me/919670001155?text=Hi%2C%20I%27m%20interested%20in%20a%20consultation%20for%20my%20interior%20project."
+              target="_blank"
+              rel="noreferrer"
+              className="btn-outline text-ink-foreground"
+            >
               Get A Consultation
             </a>
           </div>
@@ -494,9 +499,17 @@ function Index() {
             Whether it's a luxury home, modern office, retail showroom or hospitality project, our
             team is ready to bring your vision to life.
           </p>
-          <div className="mt-10 flex justify-center">
-            <a href="tel:9670001155" className="btn-solid">
-              Start Your Project
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a
+              href="https://wa.me/919670001155?text=Hi%2C%20I%27m%20interested%20in%20a%20consultation%20for%20my%20interior%20project."
+              target="_blank"
+              rel="noreferrer"
+              className="btn-solid"
+            >
+              Start Your Project on WhatsApp
+            </a>
+            <a href="tel:9670001155" className="btn-outline text-ink-foreground">
+              Call 9670001155
             </a>
           </div>
           <p className="mt-10 text-sm tracking-[0.2em] text-brass uppercase">

@@ -11,14 +11,16 @@ import projectHospitality from "@/assets/project-hospitality.jpg";
 import beforeRoom from "@/assets/before-room.jpg";
 import afterRoom from "@/assets/after-room.jpg";
 
+const SITE_URL = "https://interior-essence-editor.lovable.app";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dimensions Designs Interior | Interior Design in Lucknow" },
+      { title: "Interior Design & Turnkey Interiors in Lucknow | Dimensions" },
       {
         name: "description",
         content:
-          "Premium interior design and turnkey solutions for residential, commercial, retail and hospitality spaces. Lucknow, Uttar Pradesh and across India.",
+          "Dimensions Designs Interior delivers premium interior design and turnkey solutions for homes, villas, offices, showrooms and hospitality spaces in Lucknow.",
       },
       {
         property: "og:title",
@@ -27,12 +29,51 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Concept to completion interiors for homes, villas, offices, showrooms and hospitality projects.",
+          "Concept to completion interiors for homes, villas, offices, showrooms and hospitality projects in Lucknow and across India.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL + "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:title",
+        content: "Dimensions Designs Interior | Designing Spaces. Defining Experiences.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Premium interior design and turnkey interior solutions in Lucknow, Uttar Pradesh and across India.",
+      },
+    ],
+    links: [{ rel: "canonical", href: SITE_URL + "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "InteriorDesigner",
+          name: "Dimensions Designs Interior",
+          url: SITE_URL,
+          email: "info@iddimension.com",
+          telephone: "+91-9670001155",
+          description:
+            "Premium interior design and turnkey interior solutions for residential, commercial, retail and hospitality spaces.",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress:
+              "Skylark Plaza, Ground Floor, Shop No. 09, Skyline Plaza, near Lulu Mall Road, Golf City",
+            addressLocality: "Lucknow",
+            addressRegion: "Uttar Pradesh",
+            postalCode: "226030",
+            addressCountry: "IN",
+          },
+          areaServed: "India",
+        }),
       },
     ],
   }),
   component: Index,
 });
+
 
 const services = [
   {

@@ -366,35 +366,8 @@ function Index() {
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
             See how thoughtful design and professional execution can completely transform a space.
           </p>
-          <div className="mt-14 grid gap-8 md:grid-cols-2">
-            {[
-              { label: "Before", image: beforeRoom, alt: "Bare unfinished room before interior work" },
-              {
-                label: "After",
-                image: afterRoom,
-                alt: "Finished modular kitchen with island and brass fittings",
-              },
-            ].map((item) => (
-              <figure key={item.label} className="relative">
-                <img
-                  src={item.image}
-                  alt={item.alt}
-                  loading="lazy"
-                  width={1200}
-                  height={900}
-                  className="h-[24rem] w-full object-cover"
-                />
-                <figcaption className="absolute top-0 left-0 bg-ink px-5 py-3 text-[0.66rem] font-semibold tracking-[0.28em] text-brass uppercase">
-                  {item.label}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-          <div className="mt-12">
-            <a href="#projects" className="btn-solid">
-              Explore Transformations
-            </a>
-          </div>
+          <BeforeAfterViewer />
+
         </div>
       </section>
 

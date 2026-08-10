@@ -8,7 +8,8 @@ import { BeforeAfterViewer } from "@/components/site/BeforeAfterViewer";
 import heroInterior from "@/assets/hero-interior.jpg";
 
 
-const SITE_URL = "https://interior-essence-editor.lovable.app";
+const SITE_URL = "https://www.iddimensions.com";
+const OG_IMAGE = SITE_URL + "/og-image.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,6 +31,14 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL + "/" },
+      { property: "og:site_name", content: "Dimensions Designs Interior" },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:width", content: "1920" },
+      { property: "og:image:height", content: "1200" },
+      {
+        property: "og:image:alt",
+        content: "Luxury living room interior with oak paneling and brass accents",
+      },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
@@ -40,6 +49,7 @@ export const Route = createFileRoute("/")({
         content:
           "Premium interior design and turnkey interior solutions in Lucknow, Uttar Pradesh and across India.",
       },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [{ rel: "canonical", href: SITE_URL + "/" }],
     scripts: [

@@ -9,6 +9,7 @@ export default defineTool({
   inputSchema: {
     type: z.enum(projectTypes).optional().describe("Optional project type filter."),
   },
+  outputSchema: { projects: z.unknown() },
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: ({ type }) => {
     const items = type ? projects.filter((p) => p.type === type) : projects;

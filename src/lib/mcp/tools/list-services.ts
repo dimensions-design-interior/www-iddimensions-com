@@ -10,6 +10,7 @@ export default defineTool({
   inputSchema: {
     query: z.string().trim().optional().describe("Optional keyword to filter services by title or description."),
   },
+  outputSchema: { services: z.unknown() },
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: ({ query }) => {
     const q = query?.toLowerCase();

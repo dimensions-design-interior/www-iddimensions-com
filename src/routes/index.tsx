@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import { SiteNav } from "@/components/site/SiteNav";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { ConsultationForm } from "@/components/site/ConsultationForm";
 import heroInterior from "@/assets/hero-interior.jpg";
 import projectResidential from "@/assets/project-residential.jpg";
 import projectCommercial from "@/assets/project-commercial.jpg";

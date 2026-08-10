@@ -1,16 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
 
 import { SiteNav } from "@/components/site/SiteNav";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { ConsultationForm } from "@/components/site/ConsultationForm";
+import { ProjectsGallery } from "@/components/site/ProjectsGallery";
+import { BeforeAfterViewer } from "@/components/site/BeforeAfterViewer";
 import heroInterior from "@/assets/hero-interior.jpg";
-import projectResidential from "@/assets/project-residential.jpg";
-import projectCommercial from "@/assets/project-commercial.jpg";
-import projectRetail from "@/assets/project-retail.jpg";
-import projectHospitality from "@/assets/project-hospitality.jpg";
-import beforeRoom from "@/assets/before-room.jpg";
-import afterRoom from "@/assets/after-room.jpg";
+
 
 const SITE_URL = "https://interior-essence-editor.lovable.app";
 

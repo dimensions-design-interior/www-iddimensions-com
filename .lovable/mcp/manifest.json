@@ -86,7 +86,7 @@
       {
         "name": "list_projects",
         "title": "List featured projects",
-        "description": "List the studio's featured interior projects, optionally filtered by project type.",
+        "description": "List the studio's featured interior projects, optionally filtered by project type. Results are paginated — use limit and offset (or the returned nextOffset) to page through them.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
@@ -105,6 +105,18 @@
                 "Retail",
                 "Hospitality"
               ]
+            },
+            "limit": {
+              "description": "Maximum number of items to return (default 20, max 50).",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50
+            },
+            "offset": {
+              "description": "Number of items to skip before returning results (default 0).",
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
             }
           }
         },
@@ -112,10 +124,12 @@
           "$schema": "http://json-schema.org/draft-07/schema#",
           "type": "object",
           "properties": {
-            "projects": {}
+            "projects": {},
+            "pagination": {}
           },
           "required": [
-            "projects"
+            "projects",
+            "pagination"
           ]
         }
       },

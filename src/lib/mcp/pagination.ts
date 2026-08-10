@@ -19,7 +19,7 @@ export const paginationInputSchema = {
     .describe("Number of items to skip before returning results (default 0)."),
 };
 
-export type PaginationInput = { limit?: number; offset?: number };
+export type PaginationInput = { limit?: number | undefined; offset?: number | undefined };
 
 export type Page<T> = {
   items: T[];

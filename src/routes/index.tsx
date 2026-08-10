@@ -164,8 +164,7 @@ const reasons = [
 ];
 
 function Index() {
-  const [activeFilter, setActiveFilter] = useState<(typeof filters)[number]>("Residential");
-  const visible = projects.filter((p) => p.type === activeFilter);
+
 
   return (
     <div id="top">

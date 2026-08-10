@@ -8,7 +8,8 @@ import { BeforeAfterViewer } from "@/components/site/BeforeAfterViewer";
 import heroInterior from "@/assets/hero-interior.jpg";
 
 
-const SITE_URL = "https://interior-essence-editor.lovable.app";
+const SITE_URL = "https://www.iddimensions.com";
+const OG_IMAGE = SITE_URL + "/og-image.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({

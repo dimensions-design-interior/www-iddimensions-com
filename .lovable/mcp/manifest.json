@@ -1,0 +1,135 @@
+{
+  "version": 1,
+  "sdk_version": "0.26.1",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "dream-spaces",
+      "version": "0.1.0",
+      "title": "Dream Spaces"
+    },
+    "tools": [
+      {
+        "name": "get_studio_profile",
+        "title": "Get studio profile",
+        "description": "Get the studio's public profile: name, tagline, philosophy, service area, contact email, address, and reasons clients choose it.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "company": {},
+            "reasons": {}
+          },
+          "required": [
+            "company",
+            "reasons"
+          ]
+        }
+      },
+      {
+        "name": "list_services",
+        "title": "List services",
+        "description": "List the studio's interior design services with descriptions. Optionally filter by a keyword such as 'kitchen' or 'retail'.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "query": {
+              "description": "Optional keyword to filter services by title or description.",
+              "type": "string"
+            }
+          }
+        },
+        "outputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "services": {}
+          },
+          "required": [
+            "services"
+          ]
+        }
+      },
+      {
+        "name": "list_projects",
+        "title": "List featured projects",
+        "description": "List the studio's featured interior projects, optionally filtered by project type.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "type": {
+              "description": "Optional project type filter.",
+              "type": "string",
+              "enum": [
+                "Residential",
+                "Commercial",
+                "Retail",
+                "Hospitality"
+              ]
+            }
+          }
+        },
+        "outputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "projects": {}
+          },
+          "required": [
+            "projects"
+          ]
+        }
+      },
+      {
+        "name": "get_design_process",
+        "title": "Get design process",
+        "description": "Get the studio's five-step design and execution process, from consultation to final handover.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "process": {}
+          },
+          "required": [
+            "process"
+          ]
+        }
+      }
+    ]
+  }
+}

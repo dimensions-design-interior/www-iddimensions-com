@@ -42,7 +42,7 @@
       {
         "name": "list_services",
         "title": "List services",
-        "description": "List the studio's interior design services with descriptions. Optionally filter by a keyword such as 'kitchen' or 'retail'.",
+        "description": "List the studio's interior design services with descriptions. Optionally filter by a keyword such as 'kitchen' or 'retail'. Results are paginated — use limit and offset (or the returned nextOffset) to page through them.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
@@ -55,6 +55,18 @@
             "query": {
               "description": "Optional keyword to filter services by title or description.",
               "type": "string"
+            },
+            "limit": {
+              "description": "Maximum number of items to return (default 20, max 50).",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50
+            },
+            "offset": {
+              "description": "Number of items to skip before returning results (default 0).",
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
             }
           }
         },
@@ -62,17 +74,19 @@
           "$schema": "http://json-schema.org/draft-07/schema#",
           "type": "object",
           "properties": {
-            "services": {}
+            "services": {},
+            "pagination": {}
           },
           "required": [
-            "services"
+            "services",
+            "pagination"
           ]
         }
       },
       {
         "name": "list_projects",
         "title": "List featured projects",
-        "description": "List the studio's featured interior projects, optionally filtered by project type.",
+        "description": "List the studio's featured interior projects, optionally filtered by project type. Results are paginated — use limit and offset (or the returned nextOffset) to page through them.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
@@ -91,6 +105,18 @@
                 "Retail",
                 "Hospitality"
               ]
+            },
+            "limit": {
+              "description": "Maximum number of items to return (default 20, max 50).",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50
+            },
+            "offset": {
+              "description": "Number of items to skip before returning results (default 0).",
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
             }
           }
         },
@@ -98,17 +124,19 @@
           "$schema": "http://json-schema.org/draft-07/schema#",
           "type": "object",
           "properties": {
-            "projects": {}
+            "projects": {},
+            "pagination": {}
           },
           "required": [
-            "projects"
+            "projects",
+            "pagination"
           ]
         }
       },
       {
         "name": "get_design_process",
         "title": "Get design process",
-        "description": "Get the studio's five-step design and execution process, from consultation to final handover.",
+        "description": "Get the studio's five-step design and execution process, from consultation to final handover. Results are paginated — use limit and offset (or the returned nextOffset) to page through them.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
@@ -117,16 +145,31 @@
         "inputSchema": {
           "$schema": "http://json-schema.org/draft-07/schema#",
           "type": "object",
-          "properties": {}
+          "properties": {
+            "limit": {
+              "description": "Maximum number of items to return (default 20, max 50).",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50
+            },
+            "offset": {
+              "description": "Number of items to skip before returning results (default 0).",
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            }
+          }
         },
         "outputSchema": {
           "$schema": "http://json-schema.org/draft-07/schema#",
           "type": "object",
           "properties": {
-            "process": {}
+            "process": {},
+            "pagination": {}
           },
           "required": [
-            "process"
+            "process",
+            "pagination"
           ]
         }
       }

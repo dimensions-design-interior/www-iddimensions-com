@@ -1,0 +1,87 @@
+export const SITE_URL = "https://www.iddimensions.com";
+export const SITE_NAME = "Dimensions Designs Interior";
+export const BRAND_SHORT = "Dimensions";
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+
+export function absoluteUrl(path: string) {
+  return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+export function clamp(text: string, max = 158) {
+  const clean = text.replace(/\s+/g, " ").trim();
+  return clean.length <= max ? clean : `${clean.slice(0, max - 1).trimEnd()}…`;
+}
+
+type HeadMeta = { title?: string; name?: string; property?: string; content?: string };
+
+export type SeoTemplateInput = {
+  /** Page title without the brand suffix */
+  title: string;
+  description: string;
+  path: string;
+  image?: string;
+  imageAlt?: string;
+  type?: "website" | "article" | "product";
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+};
+
+/**
+ * Builds a complete, consistent head() payload (title, meta description,
+ * canonical, Open Graph and Twitter tags) for any page.
+ */
+export function buildSeo({
+  title,
+  description,
+  path,
+  image = DEFAULT_OG_IMAGE,
+  imageAlt,
+  type = "website",
+  jsonLd,
+}: SeoTemplateInput) {
+  const fullTitle = `${title} | ${BRAND_SHORT}`;
+  const desc = clamp(description);
+  const url = absoluteUrl(path);
+  const ogImage = image.startsWith("http") ? image : absoluteUrl(image);
+
+  const meta: HeadMeta[] = [
+    { title: fullTitle },
+    { name: "description", content: desc },
+    { property: "og:title", content: fullTitle },
+    { property: "og:description", content: desc },
+    { property: "og:type", content: type },
+    { property: "og:url", content: url },
+    { property: "og:site_name", content: SITE_NAME },
+    { property: "og:image", content: ogImage },
+    { property: "og:image:alt", content: imageAlt ?? title },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: fullTitle },
+    { name: "twitter:description", content: desc },
+    { name: "twitter:image", content: ogImage },
+  ];
+
+  const scripts = jsonLd
+    ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]).map((schema) => ({
+        type: "application/ld+json",
+        children: JSON.stringify(schema),
+      }))
+    : undefined;
+
+  return {
+    meta,
+    links: [{ rel: "canonical", href: url }],
+    ...(scripts ? { scripts } : {}),
+  };
+}
+
+export function breadcrumbSchema(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
+    })),
+  };
+}

@@ -233,7 +233,12 @@ function Index() {
             <a href="#projects" className="btn-solid">
               View Our Projects
             </a>
-            <a href="#contact" className="btn-outline text-ink-foreground">
+            <a
+              href="https://wa.me/919670001155?text=Hi%2C%20I%27m%20interested%20in%20a%20consultation%20for%20my%20interior%20project."
+              target="_blank"
+              rel="noreferrer"
+              className="btn-outline text-ink-foreground"
+            >
               Get A Consultation
             </a>
           </div>

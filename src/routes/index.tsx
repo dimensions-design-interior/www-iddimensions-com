@@ -512,6 +512,12 @@ function Index() {
               Call 9670001155
             </a>
           </div>
+
+          <div className="mx-auto mt-16 max-w-2xl border-t border-ink-foreground/15 pt-12">
+            <p className="eyebrow">Request A Consultation</p>
+            <ConsultationForm />
+          </div>
+
           <p className="mt-10 text-sm tracking-[0.2em] text-brass uppercase">
             <a href="mailto:info@iddimension.com">info@iddimension.com</a>
           </p>

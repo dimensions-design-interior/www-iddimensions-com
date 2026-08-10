@@ -139,18 +139,14 @@ export function BeforeAfterViewer() {
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
-                <div
-                  className="absolute inset-0 overflow-hidden"
-                  style={{ width: `${position}%` }}
-                >
-                  <img
-                    src={active.before}
-                    alt={active.beforeAlt}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                    style={{ width: "100%" }}
-                  />
-                </div>
+                <img
+                  src={active.before}
+                  alt={active.beforeAlt}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+                />
+
                 <div
                   className="pointer-events-none absolute top-0 bottom-0 w-px bg-brass"
                   style={{ left: `${position}%` }}

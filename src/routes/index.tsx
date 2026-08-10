@@ -1,16 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
 
 import { SiteNav } from "@/components/site/SiteNav";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { ConsultationForm } from "@/components/site/ConsultationForm";
+import { ProjectsGallery } from "@/components/site/ProjectsGallery";
+import { BeforeAfterViewer } from "@/components/site/BeforeAfterViewer";
 import heroInterior from "@/assets/hero-interior.jpg";
-import projectResidential from "@/assets/project-residential.jpg";
-import projectCommercial from "@/assets/project-commercial.jpg";
-import projectRetail from "@/assets/project-retail.jpg";
-import projectHospitality from "@/assets/project-hospitality.jpg";
-import beforeRoom from "@/assets/before-room.jpg";
-import afterRoom from "@/assets/after-room.jpg";
+
 
 const SITE_URL = "https://interior-essence-editor.lovable.app";
 
@@ -111,34 +107,6 @@ const services = [
   },
 ];
 
-const filters = ["Residential", "Commercial", "Retail", "Hospitality"] as const;
-
-const projects = [
-  {
-    name: "Gomti Nagar Residence",
-    location: "Lucknow",
-    type: "Residential",
-    image: projectResidential,
-  },
-  {
-    name: "Hazratganj Workspace",
-    location: "Lucknow",
-    type: "Commercial",
-    image: projectCommercial,
-  },
-  {
-    name: "Aurum Showroom",
-    location: "Lucknow",
-    type: "Retail",
-    image: projectRetail,
-  },
-  {
-    name: "The Verandah Lounge",
-    location: "Uttar Pradesh",
-    type: "Hospitality",
-    image: projectHospitality,
-  },
-];
 
 const process = [
   {
@@ -196,8 +164,7 @@ const reasons = [
 ];
 
 function Index() {
-  const [activeFilter, setActiveFilter] = useState<(typeof filters)[number]>("Residential");
-  const visible = projects.filter((p) => p.type === activeFilter);
+
 
   return (
     <div id="top">
@@ -303,64 +270,19 @@ function Index() {
         </div>
       </section>
 
-      {/* FEATURED PROJECTS */}
+      {/* PROJECTS GALLERY */}
       <section id="projects" className="mx-auto max-w-7xl px-6 py-24 lg:px-12 lg:py-32">
-        <p className="eyebrow">Featured Projects</p>
+        <p className="eyebrow">Projects Gallery</p>
         <h2 className="display-xl mt-6 text-3xl sm:text-4xl lg:text-5xl">
           Spaces We Have Transformed
         </h2>
         <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
-          Explore a selection of our residential, commercial, retail and hospitality projects.
+          Explore a selection of our residential, commercial and hospitality projects.
         </p>
 
-        <div className="mt-12 flex flex-wrap gap-3">
-          {filters.map((f) => (
-            <button
-              key={f}
-              type="button"
-              onClick={() => setActiveFilter(f)}
-              className={
-                f === activeFilter
-                  ? "btn-solid"
-                  : "btn-outline border-border text-muted-foreground"
-              }
-            >
-              {f}
-            </button>
-          ))}
-        </div>
-
-        <div className="mt-12 grid gap-8 md:grid-cols-2">
-          {visible.map((p) => (
-            <article key={p.name} className="group">
-              <div className="relative overflow-hidden">
-                <img
-                  src={p.image}
-                  alt={`${p.name} — ${p.type.toLowerCase()} interior project in ${p.location}`}
-                  loading="lazy"
-                  width={1200}
-                  height={900}
-                  className="h-[26rem] w-full object-cover transition-transform duration-[1.2s] group-hover:scale-[1.04]"
-                />
-              </div>
-              <div className="flex flex-wrap items-end justify-between gap-4 border-b border-border py-6">
-                <div>
-                  <h3 className="text-xl tracking-[0.1em] uppercase">{p.name}</h3>
-                  <p className="mt-2 text-[0.7rem] tracking-[0.24em] text-muted-foreground uppercase">
-                    {p.location} | {p.type}
-                  </p>
-                </div>
-                <a
-                  href="#contact"
-                  className="text-[0.68rem] font-semibold tracking-[0.24em] text-brass uppercase"
-                >
-                  View Project
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
+        <ProjectsGallery />
       </section>
+
 
       {/* PROCESS */}
       <section className="bg-ink text-ink-foreground">
@@ -411,35 +333,8 @@ function Index() {
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
             See how thoughtful design and professional execution can completely transform a space.
           </p>
-          <div className="mt-14 grid gap-8 md:grid-cols-2">
-            {[
-              { label: "Before", image: beforeRoom, alt: "Bare unfinished room before interior work" },
-              {
-                label: "After",
-                image: afterRoom,
-                alt: "Finished modular kitchen with island and brass fittings",
-              },
-            ].map((item) => (
-              <figure key={item.label} className="relative">
-                <img
-                  src={item.image}
-                  alt={item.alt}
-                  loading="lazy"
-                  width={1200}
-                  height={900}
-                  className="h-[24rem] w-full object-cover"
-                />
-                <figcaption className="absolute top-0 left-0 bg-ink px-5 py-3 text-[0.66rem] font-semibold tracking-[0.28em] text-brass uppercase">
-                  {item.label}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-          <div className="mt-12">
-            <a href="#projects" className="btn-solid">
-              Explore Transformations
-            </a>
-          </div>
+          <BeforeAfterViewer />
+
         </div>
       </section>
 

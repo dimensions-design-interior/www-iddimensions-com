@@ -13,14 +13,23 @@ export function SiteNav() {
 
   return (
     <header className="absolute inset-x-0 top-0 z-30">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-7 lg:px-12">
-        <a href="#top" className="text-ink-foreground">
-          <span className="font-display block text-lg leading-none tracking-[0.28em] uppercase">
-            Dimensions
-          </span>
-          <span className="mt-1 block text-[0.58rem] tracking-[0.42em] text-brass-soft uppercase">
-            Designs Interior
-          </span>
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-12">
+        <a href="#top" className="group flex items-center gap-3 text-ink-foreground">
+          <img
+            src="/logo-mark.png"
+            alt="Dimensions Designs Interior"
+            width={44}
+            height={44}
+            className="h-10 w-10 object-contain transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="flex flex-col">
+            <span className="font-display block text-lg leading-none tracking-[0.28em] uppercase">
+              Dimensions
+            </span>
+            <span className="mt-1 block text-[0.58rem] tracking-[0.42em] text-brass-soft uppercase">
+              Designs Interior
+            </span>
+          </div>
         </a>
 
         <nav className="hidden items-center gap-9 md:flex">

@@ -42,13 +42,20 @@ export function ReviewForm() {
     [form],
   );
 
+  const clearError = (key: keyof typeof emptyForm) =>
+    setErrors((prev) => {
+      const next = { ...prev };
+      delete next[key];
+      return next;
+    });
+
   const update =
     (key: keyof typeof emptyForm) =>
     (
       e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
     ) => {
       setForm((f) => ({ ...f, [key]: e.target.value }));
-      setErrors((prev) => ({ ...prev, [key]: undefined }));
+      clearError(key);
     };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -124,7 +131,7 @@ export function ReviewForm() {
                 value={form.rating}
                 onChange={(rating) => {
                   setForm((f) => ({ ...f, rating }));
-                  setErrors((p) => ({ ...p, rating: undefined }));
+                  clearError("rating");
                 }}
               />
             </div>

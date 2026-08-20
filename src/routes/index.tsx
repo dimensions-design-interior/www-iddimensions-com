@@ -5,6 +5,8 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { ConsultationForm } from "@/components/site/ConsultationForm";
 import { ProjectsGallery } from "@/components/site/ProjectsGallery";
 import { BeforeAfterViewer } from "@/components/site/BeforeAfterViewer";
+import { ReviewsSection } from "@/components/site/ReviewsSection";
+
 import heroInterior from "@/assets/hero-interior.jpg";
 
 
@@ -363,36 +365,9 @@ function Index() {
         </p>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="bg-secondary">
-        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-12 lg:py-32">
-          <p className="eyebrow">Client Testimonials</p>
-          <h2 className="display-xl mt-6 text-3xl sm:text-4xl lg:text-5xl">What Our Clients Say</h2>
-          <div className="mt-16 grid gap-px bg-border md:grid-cols-2">
-            {[
-              {
-                quote:
-                  "A professional approach from design to execution. The team understood our requirements and delivered a beautiful space.",
-                author: "Residential Client",
-              },
-              {
-                quote:
-                  "The attention to detail and quality of execution made the entire experience smooth and professional.",
-                author: "Commercial Client",
-              },
-            ].map((t) => (
-              <blockquote key={t.author} className="bg-background p-10">
-                <p className="font-display text-xl leading-relaxed text-foreground sm:text-2xl">
-                  “{t.quote}”
-                </p>
-                <footer className="mt-8 text-[0.68rem] tracking-[0.26em] text-brass uppercase">
-                  — {t.author}
-                </footer>
-              </blockquote>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* REVIEWS */}
+      <ReviewsSection />
+
 
       {/* FINAL CTA */}
       <section id="contact" className="bg-ink text-ink-foreground">

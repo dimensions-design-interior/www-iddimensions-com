@@ -94,16 +94,10 @@ export function ReviewsSection() {
           ))}
         </div>
 
-        <div className="mt-12">
-          <a
-            href="https://wa.me/919670001155?text=Hi%2C%20I%27d%20like%20to%20share%20a%20review%20of%20my%20project."
-            target="_blank"
-            rel="noreferrer"
-            className="btn-outline"
-          >
-            Share Your Review
-          </a>
+        <div className="mt-16" id="write-review">
+          <ReviewForm />
         </div>
+
       </div>
     </section>
   );

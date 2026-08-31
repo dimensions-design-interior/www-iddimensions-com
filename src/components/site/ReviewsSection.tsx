@@ -1,6 +1,10 @@
+import { useEffect, useState } from "react";
+
 import { Star } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 import { ReviewForm } from "@/components/site/ReviewForm";
+import { getGoogleReviews } from "@/lib/google-reviews.functions";
 
 
 type Review = {
@@ -60,8 +64,51 @@ function Stars({ rating }: { rating: number }) {
 }
 
 export function ReviewsSection() {
+  const [clientReviews, setClientReviews] = useState<Review[]>([]);
+  const [googleReviews, setGoogleReviews] = useState<Review[]>([]);
+
+  useEffect(() => {
+    let active = true;
+
+    supabase
+      .from("site_reviews")
+      .select("name, location, project_type, rating, review")
+      .eq("status", "approved")
+      .order("created_at", { ascending: false })
+      .limit(12)
+      .then(({ data }) => {
+        if (!active || !data) return;
+        setClientReviews(
+          data.map((r) => ({
+            quote: r.review,
+            author: r.name,
+            role: [r.project_type, r.location].filter(Boolean).join(", "),
+            rating: r.rating,
+          })),
+        );
+      });
+
+    const fetchGoogle = useServerFn(getGoogleReviews);
+    fetchGoogle().then((data) => {
+      if (!active || !data) return;
+      setGoogleReviews(
+        data.map((r) => ({
+          quote: r.quote,
+          author: r.author,
+          role: r.relativeTime ? `Google Review · ${r.relativeTime}` : r.role,
+          rating: r.rating,
+        })),
+      );
+    });
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const allReviews = [...googleReviews, ...clientReviews, ...reviews];
   const average =
-    Math.round((reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length) * 10) / 10;
+    Math.round((allReviews.reduce((sum, r) => sum + r.rating, 0) / allReviews.length) * 10) / 10;
 
   return (
     <section id="reviews" className="bg-secondary">

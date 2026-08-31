@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { SiteNav } from "@/components/site/SiteNav";
 import { SiteFooter } from "@/components/site/SiteFooter";
@@ -279,6 +279,16 @@ function Index() {
               </article>
             ))}
           </div>
+          <p className="mt-10 text-sm text-muted-foreground">
+            Planning a kitchen?{" "}
+            <Link
+              to="/modular-kitchen-lucknow"
+              className="text-foreground underline underline-offset-4"
+            >
+              Explore our modular kitchen designs in Lucknow
+            </Link>{" "}
+            — layouts, finishes, materials and pricing guidance.
+          </p>
         </div>
       </section>
 

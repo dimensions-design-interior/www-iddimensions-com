@@ -78,6 +78,18 @@ function ServiceDetail() {
         <div>
           <h2 className="text-xl tracking-[0.1em] uppercase">Start Your Project</h2>
           <p className="mt-6 text-sm text-muted-foreground">{service.seoIntro}</p>
+          {service.slug === "modular-kitchens" && (
+            <p className="mt-4 text-sm text-muted-foreground">
+              See layouts, shutter finishes and project pricing on our{" "}
+              <Link
+                to="/modular-kitchen-lucknow"
+                className="text-foreground underline underline-offset-4"
+              >
+                modular kitchen Lucknow page
+              </Link>
+              .
+            </p>
+          )}
           <a href="/#contact" className="btn-solid mt-7 inline-block">
             Get A Consultation
           </a>

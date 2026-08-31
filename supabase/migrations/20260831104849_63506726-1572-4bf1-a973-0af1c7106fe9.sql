@@ -1,0 +1,1 @@
+DELETE FROM public.site_reviews WHERE email = 'test.reviewer@example.com';

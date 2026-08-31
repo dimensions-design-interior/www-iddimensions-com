@@ -1,6 +1,10 @@
+import { useEffect, useState } from "react";
+
 import { Star } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 import { ReviewForm } from "@/components/site/ReviewForm";
+import { getGoogleReviews } from "@/lib/google-reviews.functions";
 
 
 type Review = {

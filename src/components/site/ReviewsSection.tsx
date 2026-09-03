@@ -105,7 +105,8 @@ export function ReviewsSection() {
     return () => {
       active = false;
     };
-  }, []);
+  }, [fetchGoogle]);
+
 
   const allReviews = [...googleReviews, ...clientReviews, ...reviews];
   const average =

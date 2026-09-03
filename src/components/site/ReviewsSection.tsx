@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import { useServerFn } from "@tanstack/react-start";
 import { Star } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -66,6 +67,7 @@ function Stars({ rating }: { rating: number }) {
 export function ReviewsSection() {
   const [clientReviews, setClientReviews] = useState<Review[]>([]);
   const [googleReviews, setGoogleReviews] = useState<Review[]>([]);
+  const fetchGoogle = useServerFn(getGoogleReviews);
 
   useEffect(() => {
     let active = true;
@@ -88,7 +90,6 @@ export function ReviewsSection() {
         );
       });
 
-    const fetchGoogle = useServerFn(getGoogleReviews);
     fetchGoogle().then((data) => {
       if (!active || !data) return;
       setGoogleReviews(
@@ -104,14 +105,44 @@ export function ReviewsSection() {
     return () => {
       active = false;
     };
-  }, []);
+  }, [fetchGoogle]);
+
 
   const allReviews = [...googleReviews, ...clientReviews, ...reviews];
   const average =
     Math.round((allReviews.reduce((sum, r) => sum + r.rating, 0) / allReviews.length) * 10) / 10;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "InteriorDesigner",
+    name: "Dimensions Designs Interior",
+    url: "https://www.iddimensions.com",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: average.toFixed(1),
+      bestRating: "5",
+      worstRating: "1",
+      reviewCount: allReviews.length,
+    },
+    review: allReviews.slice(0, 10).map((r) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: r.author },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: String(r.rating),
+        bestRating: "5",
+        worstRating: "1",
+      },
+      reviewBody: r.quote,
+    })),
+  };
+
   return (
     <section id="reviews" className="bg-secondary">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="mx-auto max-w-7xl px-6 py-24 lg:px-12 lg:py-32">
         <p className="eyebrow">Client Reviews</p>
         <h2 className="display-xl mt-6 text-3xl sm:text-4xl lg:text-5xl">
@@ -121,13 +152,13 @@ export function ReviewsSection() {
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <Stars rating={Math.round(average)} />
           <p className="text-[0.7rem] tracking-[0.26em] text-muted-foreground uppercase">
-            {average.toFixed(1)} average from {reviews.length} client reviews
+            {average.toFixed(1)} average from {allReviews.length} client reviews
           </p>
         </div>
 
         <div className="mt-14 grid gap-px bg-border md:grid-cols-2">
-          {reviews.map((r) => (
-            <blockquote key={r.author} className="flex flex-col bg-background p-10">
+          {allReviews.map((r, i) => (
+            <blockquote key={`${r.author}-${i}`} className="flex flex-col bg-background p-10">
               <Stars rating={r.rating} />
               <p className="font-display mt-6 text-xl leading-relaxed text-foreground sm:text-2xl">
                 “{r.quote}”

@@ -9,7 +9,7 @@ export type GoogleReview = {
   rating: number;
   quote: string;
   role: string;
-  relativeTime?: string;
+  relativeTime?: string | undefined;
 };
 
 let cache: { at: number; data: GoogleReview[] | null } | null = null;

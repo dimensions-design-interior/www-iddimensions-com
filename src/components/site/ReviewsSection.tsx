@@ -67,6 +67,7 @@ function Stars({ rating }: { rating: number }) {
 export function ReviewsSection() {
   const [clientReviews, setClientReviews] = useState<Review[]>([]);
   const [googleReviews, setGoogleReviews] = useState<Review[]>([]);
+  const fetchGoogle = useServerFn(getGoogleReviews);
 
   useEffect(() => {
     let active = true;

@@ -303,6 +303,14 @@ function Index() {
         </p>
 
         <ProjectsGallery />
+
+        <p className="mt-10 text-sm text-muted-foreground">
+          Want to see more finished work?{" "}
+          <Link to="/portfolio" className="text-foreground underline underline-offset-4">
+            View our full interior design portfolio
+          </Link>{" "}
+          — photos of completed homes, kitchens, offices and showrooms.
+        </p>
       </section>
 
 

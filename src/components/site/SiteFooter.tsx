@@ -1,3 +1,5 @@
+import { Instagram, Mail, MapPin, MessageCircle, Phone, Globe } from "lucide-react";
+
 export function SiteFooter() {
   return (
     <footer className="bg-ink text-ink-foreground">
@@ -39,43 +41,54 @@ export function SiteFooter() {
                   href="https://wa.me/919670001155?text=Hi%2C%20I%27m%20interested%20in%20a%20consultation%20for%20my%20interior%20project."
                   target="_blank"
                   rel="noreferrer"
-                  className="transition-colors hover:text-brass"
+                  className="flex items-center gap-3 transition-colors hover:text-brass"
                 >
+                  <MessageCircle aria-hidden="true" className="size-4 shrink-0 text-brass" />
                   WhatsApp: 9670001155
                 </a>
               </li>
               <li>
-                <a href="tel:9670001155" className="transition-colors hover:text-brass">
+                <a
+                  href="tel:9670001155"
+                  className="flex items-center gap-3 transition-colors hover:text-brass"
+                >
+                  <Phone aria-hidden="true" className="size-4 shrink-0 text-brass" />
                   9670001155
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:info@iddimension.com"
-                  className="transition-colors hover:text-brass"
+                  className="flex items-center gap-3 transition-colors hover:text-brass"
                 >
+                  <Mail aria-hidden="true" className="size-4 shrink-0 text-brass" />
                   info@iddimension.com
                 </a>
               </li>
               <li>
                 <a
                   href="https://iddimensions.com"
-                  className="transition-colors hover:text-brass"
+                  className="flex items-center gap-3 transition-colors hover:text-brass"
                   rel="noreferrer"
                 >
+                  <Globe aria-hidden="true" className="size-4 shrink-0 text-brass" />
                   iddimensions.com
                 </a>
               </li>
               <li>
                 <a
                   href="https://instagram.com/iddimensions"
-                  className="transition-colors hover:text-brass"
+                  target="_blank"
+                  className="flex items-center gap-3 transition-colors hover:text-brass"
                   rel="noreferrer"
+                  aria-label="Instagram @iddimensions"
                 >
+                  <Instagram aria-hidden="true" className="size-4 shrink-0 text-brass" />
                   Instagram: @iddimensions
                 </a>
               </li>
-              <li className="pt-2 leading-relaxed text-ink-foreground/50">
+              <li className="flex items-start gap-3 pt-2 leading-relaxed text-ink-foreground/50">
+                <MapPin aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-brass/70" />
                 Skylark Plaza, Ground Floor Shop No. 09, near Lulu Mall Road, Golf City, Muzaffar
                 Nagar Ghusval, Lucknow, Uttar Pradesh 226030, India
               </li>

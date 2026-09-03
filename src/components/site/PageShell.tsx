@@ -38,6 +38,12 @@ export function PageShell({
             >
               Projects
             </Link>
+            <Link
+              to="/portfolio"
+              className="text-[0.68rem] font-semibold tracking-[0.26em] text-ink-foreground/80 uppercase hover:text-brass"
+            >
+              Portfolio
+            </Link>
             <a href="tel:9670001155" className="btn-outline text-ink-foreground">
               9670001155
             </a>

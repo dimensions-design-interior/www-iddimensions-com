@@ -320,6 +320,9 @@ function ModularKitchenLucknow() {
         <Link to="/projects" className="btn-outline border-border text-muted-foreground">
           View Projects
         </Link>
+        <Link to="/portfolio" className="btn-outline border-border text-muted-foreground">
+          Portfolio Photos
+        </Link>
       </div>
     </PageShell>
   );

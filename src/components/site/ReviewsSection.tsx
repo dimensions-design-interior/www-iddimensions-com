@@ -90,7 +90,6 @@ export function ReviewsSection() {
         );
       });
 
-    const fetchGoogle = useServerFn(getGoogleReviews);
     fetchGoogle().then((data) => {
       if (!active || !data) return;
       setGoogleReviews(

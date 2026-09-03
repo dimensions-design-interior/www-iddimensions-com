@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import { useServerFn } from "@tanstack/react-start";
 import { Star } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
 import { SiteNav } from "@/components/site/SiteNav";
 import { SiteFooter } from "@/components/site/SiteFooter";
@@ -76,6 +77,85 @@ export const Route = createFileRoute("/")({
             addressCountry: "IN",
           },
           areaServed: "India",
+          sameAs: ["https://instagram.com/iddimensions"],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "HomeAndConstructionBusiness",
+          name: "Dimensions Designs Interior",
+          url: SITE_URL,
+          telephone: "+919670001155",
+          email: "info@iddimension.com",
+          priceRange: "$$$$",
+          image: OG_IMAGE,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress:
+              "Skylark Plaza, Ground Floor, Shop No. 09, Skyline Plaza, near Lulu Mall Road, Golf City",
+            addressLocality: "Lucknow",
+            addressRegion: "Uttar Pradesh",
+            postalCode: "226030",
+            addressCountry: "IN",
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: "26.8467",
+            longitude: "80.9462",
+          },
+          areaServed: [
+            { "@type": "AdministrativeArea", name: "Lucknow" },
+            { "@type": "AdministrativeArea", name: "Uttar Pradesh" },
+          ],
+          knowsAbout: [
+            "Turnkey Interior Execution",
+            "Luxury Villa Interiors",
+            "Modular Kitchens",
+            "Wardrobes",
+            "Commercial Interiors",
+            "Retail & Showroom Interiors",
+            "Hospitality Interiors",
+          ],
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Turnkey Design and Build Services",
+            itemListElement: [
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Turnkey Interior Design & Build",
+                  areaServed: "Lucknow",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Luxury Villa & Home Interiors",
+                  areaServed: "Lucknow",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Modular Kitchen Design & Installation",
+                  areaServed: "Lucknow",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Commercial & Retail Interiors",
+                  areaServed: "Lucknow",
+                },
+              },
+            ],
+          },
         }),
       },
     ],
@@ -403,11 +483,16 @@ function Index() {
               href="https://wa.me/919670001155?text=Hi%2C%20I%27m%20interested%20in%20a%20consultation%20for%20my%20interior%20project."
               target="_blank"
               rel="noreferrer"
-              className="btn-solid"
+              className="btn-solid inline-flex items-center gap-2"
             >
+              <MessageCircle aria-hidden="true" className="size-4 shrink-0" />
               Start Your Project on WhatsApp
             </a>
-            <a href="tel:9670001155" className="btn-outline text-ink-foreground">
+            <a
+              href="tel:9670001155"
+              className="btn-outline inline-flex items-center gap-2 text-ink-foreground"
+            >
+              <Phone aria-hidden="true" className="size-4 shrink-0" />
               Call 9670001155
             </a>
           </div>
@@ -417,11 +502,39 @@ function Index() {
             <ConsultationForm />
           </div>
 
-          <p className="mt-10 text-sm tracking-[0.2em] text-brass uppercase">
-            <a href="mailto:info@iddimension.com">info@iddimension.com</a>
-          </p>
-          <p className="mt-2 text-sm tracking-[0.2em] text-brass uppercase">Call: 9670001155</p>
-          <p className="mt-3 text-[0.7rem] tracking-[0.26em] text-ink-foreground/45 uppercase">
+          <ul className="mt-10 flex flex-col items-center gap-3 text-sm tracking-[0.2em] text-brass uppercase">
+            <li>
+              <a
+                href="mailto:info@iddimension.com"
+                className="inline-flex items-center gap-2 hover:text-brass-soft"
+              >
+                <Mail aria-hidden="true" className="size-4 shrink-0" />
+                info@iddimension.com
+              </a>
+            </li>
+            <li>
+              <a
+                href="tel:9670001155"
+                className="inline-flex items-center gap-2 hover:text-brass-soft"
+              >
+                <Phone aria-hidden="true" className="size-4 shrink-0" />
+                Call: 9670001155
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://instagram.com/iddimensions"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 hover:text-brass-soft"
+              >
+                <Instagram aria-hidden="true" className="size-4 shrink-0" />
+                @iddimensions
+              </a>
+            </li>
+          </ul>
+          <p className="mt-4 flex items-center justify-center gap-2 text-[0.7rem] tracking-[0.26em] text-ink-foreground/45 uppercase">
+            <MapPin aria-hidden="true" className="size-4 shrink-0 text-brass/70" />
             Lucknow, Uttar Pradesh | Across India
           </p>
         </div>

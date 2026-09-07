@@ -403,11 +403,16 @@ function Index() {
               href="https://wa.me/919670001155?text=Hi%2C%20I%27m%20interested%20in%20a%20consultation%20for%20my%20interior%20project."
               target="_blank"
               rel="noreferrer"
-              className="btn-solid"
+              className="btn-solid inline-flex items-center gap-2"
             >
+              <MessageCircle aria-hidden="true" className="size-4 shrink-0" />
               Start Your Project on WhatsApp
             </a>
-            <a href="tel:9670001155" className="btn-outline text-ink-foreground">
+            <a
+              href="tel:9670001155"
+              className="btn-outline inline-flex items-center gap-2 text-ink-foreground"
+            >
+              <Phone aria-hidden="true" className="size-4 shrink-0" />
               Call 9670001155
             </a>
           </div>
@@ -417,11 +422,39 @@ function Index() {
             <ConsultationForm />
           </div>
 
-          <p className="mt-10 text-sm tracking-[0.2em] text-brass uppercase">
-            <a href="mailto:info@iddimension.com">info@iddimension.com</a>
-          </p>
-          <p className="mt-2 text-sm tracking-[0.2em] text-brass uppercase">Call: 9670001155</p>
-          <p className="mt-3 text-[0.7rem] tracking-[0.26em] text-ink-foreground/45 uppercase">
+          <ul className="mt-10 flex flex-col items-center gap-3 text-sm tracking-[0.2em] text-brass uppercase">
+            <li>
+              <a
+                href="mailto:info@iddimension.com"
+                className="inline-flex items-center gap-2 hover:text-brass-soft"
+              >
+                <Mail aria-hidden="true" className="size-4 shrink-0" />
+                info@iddimension.com
+              </a>
+            </li>
+            <li>
+              <a
+                href="tel:9670001155"
+                className="inline-flex items-center gap-2 hover:text-brass-soft"
+              >
+                <Phone aria-hidden="true" className="size-4 shrink-0" />
+                Call: 9670001155
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://instagram.com/iddimensions"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 hover:text-brass-soft"
+              >
+                <Instagram aria-hidden="true" className="size-4 shrink-0" />
+                @iddimensions
+              </a>
+            </li>
+          </ul>
+          <p className="mt-4 flex items-center justify-center gap-2 text-[0.7rem] tracking-[0.26em] text-ink-foreground/45 uppercase">
+            <MapPin aria-hidden="true" className="size-4 shrink-0 text-brass/70" />
             Lucknow, Uttar Pradesh | Across India
           </p>
         </div>

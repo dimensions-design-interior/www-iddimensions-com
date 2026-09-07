@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Phone } from "lucide-react";
 
 import { SiteFooter } from "@/components/site/SiteFooter";
 

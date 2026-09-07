@@ -94,7 +94,7 @@ export const Route = createFileRoute("/")({
           address: {
             "@type": "PostalAddress",
             streetAddress:
-              "Skylark Plaza, Ground Floor, Shop No. 09, Skyline Plaza, near Lulu Mall Road, Golf City",
+              "Skylark Plaza, Ground Floor Shop No. 09, near Lulu Mall Road, Golf City",
             addressLocality: "Lucknow",
             addressRegion: "Uttar Pradesh",
             postalCode: "226030",
@@ -102,21 +102,19 @@ export const Route = createFileRoute("/")({
           },
           geo: {
             "@type": "GeoCoordinates",
-            latitude: "26.8467",
-            longitude: "80.9462",
+            latitude: "26.7816",
+            longitude: "80.9859",
           },
           areaServed: [
             { "@type": "AdministrativeArea", name: "Lucknow" },
             { "@type": "AdministrativeArea", name: "Uttar Pradesh" },
           ],
           knowsAbout: [
-            "Turnkey Interior Execution",
+            "Turnkey Interior Projects",
+            "Residential Interiors",
             "Luxury Villa Interiors",
             "Modular Kitchens",
-            "Wardrobes",
-            "Commercial Interiors",
-            "Retail & Showroom Interiors",
-            "Hospitality Interiors",
+            "Commercial and Office Fit-outs",
           ],
           hasOfferCatalog: {
             "@type": "OfferCatalog",

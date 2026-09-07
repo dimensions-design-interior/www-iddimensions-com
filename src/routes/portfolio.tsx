@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { MessageCircle } from "lucide-react";
 
 import { PageShell } from "@/components/site/PageShell";
 import { PortfolioGallery } from "@/components/site/PortfolioGallery";

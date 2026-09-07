@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { CalendarCheck, Phone } from "lucide-react";
 
 import { ConsultationForm } from "@/components/site/ConsultationForm";
 import { PageShell } from "@/components/site/PageShell";
@@ -187,10 +188,15 @@ function ModularKitchenLucknow() {
       intro="We design and build modular kitchens for homes across Lucknow — from compact apartment kitchens in Gomti Nagar to island kitchens in Golf City villas. Layout, materials, hardware, countertop and installation are handled by one team, end to end."
     >
       <div className="mt-8 flex flex-wrap gap-3">
-        <a href="#kitchen-consultation" className="btn-solid">
+        <a href="#kitchen-consultation" className="btn-solid inline-flex items-center gap-2">
+          <CalendarCheck aria-hidden="true" className="size-4 shrink-0" />
           Book A Kitchen Design Consultation
         </a>
-        <a href="tel:+919670001155" className="btn-outline border-border text-muted-foreground">
+        <a
+          href="tel:+919670001155"
+          className="btn-outline inline-flex items-center gap-2 border-border text-muted-foreground"
+        >
+          <Phone aria-hidden="true" className="size-4 shrink-0" />
           Call +91 96700 01155
         </a>
       </div>

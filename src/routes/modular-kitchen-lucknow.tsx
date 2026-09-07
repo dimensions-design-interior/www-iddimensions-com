@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { CalendarCheck, Phone } from "lucide-react";
 
 import { ConsultationForm } from "@/components/site/ConsultationForm";
 import { PageShell } from "@/components/site/PageShell";

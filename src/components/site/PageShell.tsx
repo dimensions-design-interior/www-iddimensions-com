@@ -44,7 +44,11 @@ export function PageShell({
             >
               Portfolio
             </Link>
-            <a href="tel:9670001155" className="btn-outline text-ink-foreground">
+            <a
+              href="tel:9670001155"
+              className="btn-outline inline-flex items-center gap-2 text-ink-foreground"
+            >
+              <Phone aria-hidden="true" className="size-4 shrink-0" />
               9670001155
             </a>
           </nav>

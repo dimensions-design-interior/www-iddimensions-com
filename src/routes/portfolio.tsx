@@ -54,8 +54,9 @@ function PortfolioPage() {
           href="https://wa.me/919670001155?text=Hi%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20a%20consultation."
           target="_blank"
           rel="noreferrer"
-          className="btn-solid"
+          className="btn-solid inline-flex items-center gap-2"
         >
+          <MessageCircle aria-hidden="true" className="size-4 shrink-0" />
           Get A Consultation
         </a>
       </div>

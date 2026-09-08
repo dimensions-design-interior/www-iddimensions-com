@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 
 import { PageShell } from "@/components/site/PageShell";
 import { getService, services } from "@/lib/seo/catalog";
-import { absoluteUrl, breadcrumbSchema, buildSeo } from "@/lib/seo/site";
+import { absoluteUrl, breadcrumbSchema, buildSeo, homeAndConstructionBusinessSchema } from "@/lib/seo/site";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
@@ -24,6 +24,7 @@ export const Route = createFileRoute("/services/$slug")({
       image: service.image,
       imageAlt: `${service.title} project by Dimensions Designs Interior`,
       jsonLd: [
+        homeAndConstructionBusinessSchema(),
         breadcrumbSchema([
           { name: "Home", path: "/" },
           { name: "Services", path: "/services" },

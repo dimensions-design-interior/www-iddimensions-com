@@ -85,3 +85,58 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
     })),
   };
 }
+
+export function homeAndConstructionBusinessSchema(
+  offers?: { name: string; areaServed?: string }[],
+) {
+  const schema: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    name: SITE_NAME,
+    url: SITE_URL,
+    telephone: "+919670001155",
+    email: "info@iddimension.com",
+    priceRange: "$$$$",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Skylark Plaza, Ground Floor Shop No. 09, near Lulu Mall Road, Golf City",
+      addressLocality: "Lucknow",
+      postalCode: "226030",
+      addressRegion: "Uttar Pradesh",
+      addressCountry: "IN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "26.7816",
+      longitude: "80.9859",
+    },
+    areaServed: [
+      { "@type": "AdministrativeArea", name: "Lucknow" },
+      { "@type": "AdministrativeArea", name: "Uttar Pradesh" },
+    ],
+    knowsAbout: [
+      "Turnkey Interior Projects",
+      "Residential Interiors",
+      "Luxury Villa Interiors",
+      "Modular Kitchens",
+      "Commercial and Office Fit-outs",
+    ],
+  };
+
+  if (offers?.length) {
+    schema.hasOfferCatalog = {
+      "@type": "OfferCatalog",
+      name: "Turnkey Design and Build Services",
+      itemListElement: offers.map((offer) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: offer.name,
+          areaServed: offer.areaServed ?? "Lucknow",
+        },
+      })),
+    };
+  }
+
+  return schema;
+}

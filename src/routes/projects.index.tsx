@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { PageShell } from "@/components/site/PageShell";
 import { projects } from "@/lib/seo/catalog";
-import { absoluteUrl, breadcrumbSchema, buildSeo } from "@/lib/seo/site";
+import { absoluteUrl, breadcrumbSchema, buildSeo, homeAndConstructionBusinessSchema } from "@/lib/seo/site";
 
 export const Route = createFileRoute("/projects/")({
   head: () =>
@@ -14,6 +14,7 @@ export const Route = createFileRoute("/projects/")({
       image: "/og/project-residential.jpg",
       imageAlt: "Completed residential interior project in Lucknow",
       jsonLd: [
+        homeAndConstructionBusinessSchema(),
         breadcrumbSchema([
           { name: "Home", path: "/" },
           { name: "Projects", path: "/projects" },

@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 import { PageShell } from "@/components/site/PageShell";
 import { PortfolioGallery } from "@/components/site/PortfolioGallery";
 import { portfolioPhotos } from "@/lib/portfolio";
-import { absoluteUrl, breadcrumbSchema, buildSeo } from "@/lib/seo/site";
+import { absoluteUrl, breadcrumbSchema, buildSeo, homeAndConstructionBusinessSchema } from "@/lib/seo/site";
 
 export const Route = createFileRoute("/portfolio")({
   head: () =>
@@ -16,6 +16,7 @@ export const Route = createFileRoute("/portfolio")({
       image: "/og/hero-interior.jpg",
       imageAlt: "Completed luxury living room interior by Dimensions Designs Interior",
       jsonLd: [
+        homeAndConstructionBusinessSchema(),
         breadcrumbSchema([
           { name: "Home", path: "/" },
           { name: "Portfolio", path: "/portfolio" },

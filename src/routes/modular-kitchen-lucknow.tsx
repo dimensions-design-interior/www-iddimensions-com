@@ -3,7 +3,7 @@ import { CalendarCheck, Phone } from "lucide-react";
 
 import { ConsultationForm } from "@/components/site/ConsultationForm";
 import { PageShell } from "@/components/site/PageShell";
-import { absoluteUrl, breadcrumbSchema, buildSeo } from "@/lib/seo/site";
+import { absoluteUrl, breadcrumbSchema, buildSeo, homeAndConstructionBusinessSchema } from "@/lib/seo/site";
 
 const PATH = "/modular-kitchen-lucknow";
 
@@ -137,6 +137,7 @@ export const Route = createFileRoute("/modular-kitchen-lucknow")({
       image: "/og/kitchen-l-shaped.jpg",
       imageAlt: "Charcoal L-shaped modular kitchen designed by Dimensions Designs Interior in Lucknow",
       jsonLd: [
+        homeAndConstructionBusinessSchema(),
         breadcrumbSchema([
           { name: "Home", path: "/" },
           { name: "Services", path: "/services" },

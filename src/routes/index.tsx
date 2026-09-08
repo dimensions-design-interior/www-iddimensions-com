@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
+import { homeAndConstructionBusinessSchema } from "@/lib/seo/site";
+
 import { SiteNav } from "@/components/site/SiteNav";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { ConsultationForm } from "@/components/site/ConsultationForm";

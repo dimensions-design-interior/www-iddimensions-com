@@ -124,7 +124,7 @@ export function homeAndConstructionBusinessSchema(
   };
 
   if (offers?.length) {
-    schema.hasOfferCatalog = {
+    schema["hasOfferCatalog"] = {
       "@type": "OfferCatalog",
       name: "Turnkey Design and Build Services",
       itemListElement: offers.map((offer) => ({

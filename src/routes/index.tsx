@@ -82,79 +82,14 @@ export const Route = createFileRoute("/")({
       },
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "HomeAndConstructionBusiness",
-          name: "Dimensions Designs Interior",
-          url: SITE_URL,
-          telephone: "+919670001155",
-          email: "info@iddimension.com",
-          priceRange: "$$$$",
-          image: OG_IMAGE,
-          address: {
-            "@type": "PostalAddress",
-            streetAddress:
-              "Skylark Plaza, Ground Floor Shop No. 09, near Lulu Mall Road, Golf City",
-            addressLocality: "Lucknow",
-            addressRegion: "Uttar Pradesh",
-            postalCode: "226030",
-            addressCountry: "IN",
-          },
-          geo: {
-            "@type": "GeoCoordinates",
-            latitude: "26.7816",
-            longitude: "80.9859",
-          },
-          areaServed: [
-            { "@type": "AdministrativeArea", name: "Lucknow" },
-            { "@type": "AdministrativeArea", name: "Uttar Pradesh" },
-          ],
-          knowsAbout: [
-            "Turnkey Interior Projects",
-            "Residential Interiors",
-            "Luxury Villa Interiors",
-            "Modular Kitchens",
-            "Commercial and Office Fit-outs",
-          ],
-          hasOfferCatalog: {
-            "@type": "OfferCatalog",
-            name: "Turnkey Design and Build Services",
-            itemListElement: [
-              {
-                "@type": "Offer",
-                itemOffered: {
-                  "@type": "Service",
-                  name: "Turnkey Interior Design & Build",
-                  areaServed: "Lucknow",
-                },
-              },
-              {
-                "@type": "Offer",
-                itemOffered: {
-                  "@type": "Service",
-                  name: "Luxury Villa & Home Interiors",
-                  areaServed: "Lucknow",
-                },
-              },
-              {
-                "@type": "Offer",
-                itemOffered: {
-                  "@type": "Service",
-                  name: "Modular Kitchen Design & Installation",
-                  areaServed: "Lucknow",
-                },
-              },
-              {
-                "@type": "Offer",
-                itemOffered: {
-                  "@type": "Service",
-                  name: "Commercial & Retail Interiors",
-                  areaServed: "Lucknow",
-                },
-              },
-            ],
-          },
-        }),
+        children: JSON.stringify(
+          homeAndConstructionBusinessSchema([
+            { name: "Turnkey Interior Design & Build" },
+            { name: "Luxury Villa & Home Interiors" },
+            { name: "Modular Kitchen Design & Installation" },
+            { name: "Commercial & Retail Interiors" },
+          ]),
+        ),
       },
     ],
   }),

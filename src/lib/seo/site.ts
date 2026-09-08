@@ -101,15 +101,23 @@ export function homeAndConstructionBusinessSchema(
       "@type": "PostalAddress",
       streetAddress: "Skylark Plaza, Ground Floor Shop No. 09, near Lulu Mall Road, Golf City",
       addressLocality: "Lucknow",
-      postalCode: "226030",
       addressRegion: "Uttar Pradesh",
+      postalCode: "226030",
       addressCountry: "IN",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "26.7816",
-      longitude: "80.9859",
+      latitude: "26.784701",
+      longitude: "80.9909038",
     },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "09:00",
+        closes: "17:00",
+      },
+    ],
     areaServed: [
       { "@type": "AdministrativeArea", name: "Lucknow" },
       { "@type": "AdministrativeArea", name: "Uttar Pradesh" },

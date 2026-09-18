@@ -88,7 +88,36 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      public_site_reviews: {
+        Row: {
+          created_at: string | null
+          id: string | null
+          location: string | null
+          name: string | null
+          project_type: string | null
+          rating: number | null
+          review: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string | null
+          location?: string | null
+          name?: string | null
+          project_type?: string | null
+          rating?: number | null
+          review?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string | null
+          location?: string | null
+          name?: string | null
+          project_type?: string | null
+          rating?: number | null
+          review?: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       [_ in never]: never

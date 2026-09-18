@@ -159,7 +159,7 @@ export const Route = createFileRoute("/modular-kitchen-lucknow")({
             telephone: "+91-9670001155",
             address: {
               "@type": "PostalAddress",
-              streetAddress: "Skylark Plaza, Ground Floor, Shop No. 09, Skyline Plaza, near Lulu Mall Road, Golf City",
+              streetAddress: "Ground Floor Shop No. 09, Skylark Plaza, near Lulu Mall Road, Golf City",
               addressLocality: "Lucknow",
               addressRegion: "Uttar Pradesh",
               postalCode: "226030",

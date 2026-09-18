@@ -5,6 +5,7 @@
 - [x] Add Review + aggregateRating JSON-LD to the homepage Reviews section
 - [x] Publish the site and resubmit the sitemap in Search Console (accepted, HTTP 204)
 - [x] Portfolio photo page at /portfolio, linked from the homepage, Modular Kitchens page, nav and sitemap
+- [x] Expand /portfolio with category filters, full-size photo browsing and live five-star Google testimonials
 - [x] Social/contact icons in the footer contact list (Instagram, WhatsApp, phone, email, site, address)
 - [ ] Facebook link — waiting on the exact page URL/handle
 - [x] Google Reviews auto-sync — connected and live reviews are available

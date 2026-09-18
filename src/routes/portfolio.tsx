@@ -3,6 +3,7 @@ import { MessageCircle } from "lucide-react";
 
 import { PageShell } from "@/components/site/PageShell";
 import { PortfolioGallery } from "@/components/site/PortfolioGallery";
+import { PortfolioTestimonials } from "@/components/site/PortfolioTestimonials";
 import { portfolioPhotos } from "@/lib/portfolio";
 import { absoluteUrl, breadcrumbSchema, buildSeo, homeAndConstructionBusinessSchema } from "@/lib/seo/site";
 
@@ -42,6 +43,8 @@ function PortfolioPage() {
     >
       <PortfolioGallery />
 
+      <PortfolioTestimonials />
+
       <div className="mt-16 flex flex-wrap gap-3">
         <Link to="/projects" className="btn-outline border-border text-muted-foreground">
           Project Case Studies
@@ -61,6 +64,9 @@ function PortfolioPage() {
           <MessageCircle aria-hidden="true" className="size-4 shrink-0" />
           Get A Consultation
         </a>
+        <Link to="/contact" className="btn-outline border-border text-muted-foreground">
+          Contact The Studio
+        </Link>
       </div>
     </PageShell>
   );

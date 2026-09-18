@@ -2,6 +2,9 @@ export const SITE_URL = "https://www.iddimensions.com";
 export const SITE_NAME = "Dimensions Designs Interior";
 export const BRAND_SHORT = "Dimensions";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+export const CONSULTATION_URL = `${SITE_URL}/#contact`;
+export const GOOGLE_BUSINESS_URL =
+  "https://www.google.com/maps/place/?q=place_id:ChIJfdLZH3blmzkRF9YmT7a3E14";
 
 export function absoluteUrl(path: string) {
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
@@ -92,8 +95,10 @@ export function homeAndConstructionBusinessSchema(
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
+    "@id": `${SITE_URL}/#business`,
     name: SITE_NAME,
     url: SITE_URL,
+    hasMap: GOOGLE_BUSINESS_URL,
     telephone: "+919670001155",
     email: "info@iddimension.com",
     priceRange: "$$$$",
@@ -123,12 +128,25 @@ export function homeAndConstructionBusinessSchema(
       { "@type": "AdministrativeArea", name: "Uttar Pradesh" },
     ],
     knowsAbout: [
-      "Turnkey Interior Projects",
-      "Residential Interiors",
-      "Luxury Villa Interiors",
-      "Modular Kitchens",
-      "Commercial and Office Fit-outs",
+      "Interior Design in Lucknow",
+      "Turnkey Interior Projects in Lucknow",
+      "Residential Interiors in Lucknow",
+      "Luxury Villa Interiors in Lucknow",
+      "Modular Kitchens in Lucknow",
+      "Commercial and Office Fit-outs in Lucknow",
     ],
+    potentialAction: {
+      "@type": "ReserveAction",
+      name: "Book an interior design consultation",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: CONSULTATION_URL,
+        actionPlatform: [
+          "https://schema.org/DesktopWebPlatform",
+          "https://schema.org/MobileWebPlatform",
+        ],
+      },
+    },
   };
 
   if (offers?.length) {

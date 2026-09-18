@@ -56,10 +56,10 @@ function ServiceDetail() {
   const { service } = Route.useLoaderData();
 
   return (
-    <PageShell eyebrow="Service" title={service.title} intro={service.body}>
+    <PageShell eyebrow="Interior Design Service · Lucknow" title={`${service.title} In Lucknow`} intro={service.seoIntro}>
       <img
         src={service.image}
-        alt={`${service.title} interior by Dimensions Designs Interior`}
+        alt={`${service.title} in Lucknow by Dimensions Designs Interior`}
         width={1600}
         height={1000}
         className="mt-12 h-[28rem] w-full object-cover"

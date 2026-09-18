@@ -9,7 +9,7 @@ export const Route = createFileRoute("/services/")({
     buildSeo({
       title: "Interior Design Services in Lucknow",
       description:
-        "Explore our interior design services — residential and villa interiors, modular kitchens, wardrobes, commercial, retail and hospitality interiors, and turnkey projects.",
+        "Interior design services in Lucknow for homes and businesses: residential and villa interiors, modular kitchens, wardrobes, commercial spaces and turnkey projects.",
       path: "/services",
       image: "/og/hero-interior.jpg",
       imageAlt: "Premium interior designed by Dimensions Designs Interior",
@@ -39,15 +39,15 @@ function ServicesIndex() {
   return (
     <PageShell
       eyebrow="Our Services"
-      title="Complete Interior Solutions. One Trusted Partner."
-      intro="From single-room upgrades to complete turnkey fit-outs, every service is delivered by one team — design, materials, execution and handover."
+      title="Interior Design Services In Lucknow"
+      intro="From modular kitchens and luxury villa interiors to complete residential and commercial fit-outs in Lucknow, every project is delivered by one team — design, materials, execution and handover."
     >
       <div className="mt-14 grid gap-8 md:grid-cols-2">
         {services.map((s) => (
           <article key={s.slug} className="border border-border">
             <img
               src={s.image}
-              alt={`${s.title} by Dimensions Designs Interior`}
+               alt={`${s.title} in Lucknow by Dimensions Designs Interior`}
               loading="lazy"
               width={1200}
               height={900}

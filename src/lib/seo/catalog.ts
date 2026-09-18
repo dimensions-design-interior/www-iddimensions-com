@@ -36,7 +36,7 @@ export const services: ServiceEntry[] = [
     title: "Luxury Villas & Homes",
     body: "Bespoke interior concepts that bring sophistication, comfort and individuality to every room.",
     seoIntro:
-      "Luxury villa and home interior design with bespoke detailing, premium materials and coordinated execution across every room.",
+      "Luxury villa interiors in Lucknow with bespoke detailing, premium materials and coordinated turnkey execution across every room.",
     image: `${OG}/after-room.jpg`,
     highlights: ["Bespoke design concepts", "Premium material palettes", "Statement lighting", "Site supervision"],
   },
@@ -45,7 +45,7 @@ export const services: ServiceEntry[] = [
     title: "Modular Kitchens",
     body: "Contemporary kitchens designed for efficient storage, seamless functionality and timeless aesthetics.",
     seoIntro:
-      "Modular kitchen design and installation with ergonomic layouts, durable hardware and finishes built for daily use.",
+      "Modular kitchen design and installation in Lucknow with ergonomic layouts, durable hardware and finishes built for daily use.",
     image: `${OG}/project-residential.jpg`,
     highlights: ["Ergonomic work triangle", "Soft-close hardware", "Moisture-resistant finishes", "Appliance integration"],
   },
@@ -54,7 +54,7 @@ export const services: ServiceEntry[] = [
     title: "Wardrobes",
     body: "Customized wardrobe solutions combining intelligent storage with refined finishes.",
     seoIntro:
-      "Custom wardrobe design with intelligent internal storage, refined shutters and finishes matched to your interiors.",
+      "Custom wardrobe design in Lucknow with intelligent internal storage, refined shutters and finishes matched to your interiors.",
     image: `${OG}/after-room.jpg`,
     highlights: ["Walk-in & sliding options", "Internal storage planning", "Mirror & lighting details", "Precision installation"],
   },
@@ -63,7 +63,7 @@ export const services: ServiceEntry[] = [
     title: "Commercial Interiors",
     body: "Professional, productive and visually compelling spaces designed for modern businesses.",
     seoIntro:
-      "Commercial interior design and office fit-outs that balance brand presence, productivity and practical service planning.",
+      "Commercial interior design and office fit-outs in Lucknow that balance brand presence, productivity and practical service planning.",
     image: `${OG}/project-commercial.jpg`,
     highlights: ["Workspace planning", "Brand-led design", "Acoustics & lighting", "Fit-out management"],
   },
@@ -72,7 +72,7 @@ export const services: ServiceEntry[] = [
     title: "Retail & Showrooms",
     body: "Strategic interior environments designed to enhance customer experience and strengthen your brand presence.",
     seoIntro:
-      "Retail and showroom interior design focused on customer flow, product display and a strong, consistent brand experience.",
+      "Retail and showroom interior design in Lucknow focused on customer flow, product display and a strong, consistent brand experience.",
     image: `${OG}/project-retail.jpg`,
     highlights: ["Customer journey planning", "Display & merchandising", "Accent lighting", "Fast-track execution"],
   },
@@ -81,7 +81,7 @@ export const services: ServiceEntry[] = [
     title: "Hospitality Interiors",
     body: "Distinctive hospitality spaces designed to create memorable guest experiences.",
     seoIntro:
-      "Hospitality interior design for lounges, restaurants and hotels — atmosphere, durability and guest experience in balance.",
+      "Hospitality interior design in Lucknow for lounges, restaurants and hotels — atmosphere, durability and guest experience in balance.",
     image: `${OG}/project-hospitality.jpg`,
     highlights: ["Concept & mood development", "Durable specifications", "Custom joinery", "Phased execution"],
   },
@@ -90,7 +90,7 @@ export const services: ServiceEntry[] = [
     title: "Turnkey Projects",
     body: "Complete design-to-execution solutions with professional project coordination from concept to handover.",
     seoIntro:
-      "Turnkey interior projects managed end to end — design, materials, vendors, execution and handover under one team.",
+      "Turnkey interior projects in Lucknow managed end to end — design, materials, vendors, execution and handover under one team.",
     image: `${OG}/hero-interior.jpg`,
     highlights: ["Single point of contact", "Transparent estimation", "Vendor coordination", "On-time handover"],
   },

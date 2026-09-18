@@ -9,3 +9,7 @@
 - [ ] Facebook link — waiting on the exact page URL/handle
 - [x] Google Reviews auto-sync — connected and live reviews are available
 - [x] Match the website address and coordinates to the current Google Business listing
+- [x] Strengthen local search signals for interior design, modular kitchens and villa interiors in Lucknow
+- [ ] Claim and verify the existing Google Business Profile — waiting on Google owner verification
+- [ ] Add the consultation appointment link to Google Business — waiting on profile access
+- [ ] Replace the managed Maps connection with a custom-domain key — waiting on the restricted Google API key

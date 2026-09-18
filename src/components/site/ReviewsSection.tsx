@@ -15,6 +15,15 @@ type Review = {
   rating: number;
 };
 
+function safeJsonLd(value: unknown) {
+  return JSON.stringify(value)
+    .replace(/</g, "\\u003c")
+    .replace(/>/g, "\\u003e")
+    .replace(/&/g, "\\u0026")
+    .replace(/\u2028/g, "\\u2028")
+    .replace(/\u2029/g, "\\u2029");
+}
+
 export const reviews: Review[] = [
   {
     quote:
@@ -136,7 +145,7 @@ export function ReviewsSection() {
     <section id="reviews" className="bg-secondary">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
       />
       <div className="mx-auto max-w-7xl px-6 py-24 lg:px-12 lg:py-32">
         <p className="eyebrow">Client Reviews</p>

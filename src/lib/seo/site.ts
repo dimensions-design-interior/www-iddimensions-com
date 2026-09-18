@@ -2,7 +2,7 @@ export const SITE_URL = "https://www.iddimensions.com";
 export const SITE_NAME = "Dimensions Designs Interior";
 export const BRAND_SHORT = "Dimensions";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
-export const CONSULTATION_URL = `${SITE_URL}/#contact`;
+export const CONSULTATION_URL = `${SITE_URL}/contact`;
 export const GOOGLE_BUSINESS_URL =
   "https://www.google.com/maps/place/?q=place_id:ChIJfdLZH3blmzkRF9YmT7a3E14";
 
@@ -101,6 +101,7 @@ export function homeAndConstructionBusinessSchema(
     hasMap: GOOGLE_BUSINESS_URL,
     telephone: "+919670001155",
     email: "info@iddimension.com",
+    sameAs: [GOOGLE_BUSINESS_URL, "https://instagram.com/iddimensions"],
     priceRange: "$$$$",
     address: {
       "@type": "PostalAddress",

@@ -18,11 +18,11 @@ export function SiteFooter() {
             <p className="eyebrow">Quick Links</p>
             <ul className="mt-6 space-y-3 text-sm text-ink-foreground/70">
               {[
-                { label: "Home", href: "#top" },
-                { label: "About", href: "#about" },
-                { label: "Services", href: "#services" },
-                { label: "Projects", href: "#projects" },
-                { label: "Contact", href: "#contact" },
+                { label: "Home", href: "/" },
+                { label: "About", href: "/#about" },
+                { label: "Services", href: "/services" },
+                { label: "Projects", href: "/projects" },
+                { label: "Contact", href: "/contact" },
               ].map((l) => (
                 <li key={l.label}>
                   <a href={l.href} className="transition-colors hover:text-brass">

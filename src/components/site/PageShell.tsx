@@ -26,7 +26,7 @@ export function PageShell({
               Designs Interior
             </span>
           </Link>
-          <nav className="flex items-center gap-7">
+          <nav className="flex w-full items-center justify-between gap-3 sm:w-auto sm:justify-start sm:gap-5 lg:gap-7">
             <Link
               to="/services"
               className="text-[0.68rem] font-semibold tracking-[0.26em] text-ink-foreground/80 uppercase hover:text-brass"
@@ -53,7 +53,7 @@ export function PageShell({
             </Link>
             <a
               href="tel:9670001155"
-              className="btn-outline inline-flex items-center gap-2 text-ink-foreground"
+              className="btn-outline hidden items-center gap-2 text-ink-foreground lg:inline-flex"
             >
               <Phone aria-hidden="true" className="size-4 shrink-0" />
               9670001155

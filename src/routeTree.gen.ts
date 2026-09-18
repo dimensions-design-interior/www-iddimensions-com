@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as ModularKitchenLucknowRouteImport } from './routes/modular-kitchen-lucknow'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
@@ -25,6 +26,11 @@ import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const McpRoute = McpRouteImport.update({
@@ -88,6 +94,7 @@ const Char91DotmcpChar93InvokeToolToolRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/mcp': typeof McpRoute
   '/modular-kitchen-lucknow': typeof ModularKitchenLucknowRoute
   '/portfolio': typeof PortfolioRoute
@@ -102,6 +109,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/mcp': typeof McpRoute
   '/modular-kitchen-lucknow': typeof ModularKitchenLucknowRoute
   '/portfolio': typeof PortfolioRoute
@@ -117,6 +125,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/mcp': typeof McpRoute
   '/modular-kitchen-lucknow': typeof ModularKitchenLucknowRoute
   '/portfolio': typeof PortfolioRoute
@@ -133,6 +142,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/contact'
     | '/mcp'
     | '/modular-kitchen-lucknow'
     | '/portfolio'
@@ -147,6 +157,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/contact'
     | '/mcp'
     | '/modular-kitchen-lucknow'
     | '/portfolio'
@@ -161,6 +172,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/contact'
     | '/mcp'
     | '/modular-kitchen-lucknow'
     | '/portfolio'
@@ -176,6 +188,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
   McpRoute: typeof McpRoute
   ModularKitchenLucknowRoute: typeof ModularKitchenLucknowRoute
   PortfolioRoute: typeof PortfolioRoute
@@ -196,6 +209,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mcp': {
@@ -280,6 +300,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
   McpRoute: McpRoute,
   ModularKitchenLucknowRoute: ModularKitchenLucknowRoute,
   PortfolioRoute: PortfolioRoute,

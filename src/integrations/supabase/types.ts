@@ -91,18 +91,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      get_public_site_reviews: {
-        Args: { _limit?: number }
-        Returns: {
-          created_at: string
-          id: string
-          location: string
-          name: string
-          project_type: string
-          rating: number
-          review: string
-        }[]
-      }
+      [_ in never]: never
     }
     Enums: {
       [_ in never]: never

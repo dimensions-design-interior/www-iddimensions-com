@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 
 import { useServerFn } from "@tanstack/react-start";
 import { Star } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 
 import { ReviewForm } from "@/components/site/ReviewForm";
 import { getGoogleReviews } from "@/lib/google-reviews.functions";
+import { getApprovedReviews } from "@/lib/reviews.functions";
 
 
 type Review = {
@@ -68,17 +68,12 @@ export function ReviewsSection() {
   const [clientReviews, setClientReviews] = useState<Review[]>([]);
   const [googleReviews, setGoogleReviews] = useState<Review[]>([]);
   const fetchGoogle = useServerFn(getGoogleReviews);
+  const fetchApproved = useServerFn(getApprovedReviews);
 
   useEffect(() => {
     let active = true;
 
-    supabase
-      .from("site_reviews")
-      .select("name, location, project_type, rating, review")
-      .eq("status", "approved")
-      .order("created_at", { ascending: false })
-      .limit(12)
-      .then(({ data }) => {
+    fetchApproved().then((data) => {
         if (!active || !data) return;
         setClientReviews(
           data.map((r) => ({
@@ -105,7 +100,7 @@ export function ReviewsSection() {
     return () => {
       active = false;
     };
-  }, [fetchGoogle]);
+  }, [fetchApproved, fetchGoogle]);
 
 
   const allReviews = [...googleReviews, ...clientReviews, ...reviews];

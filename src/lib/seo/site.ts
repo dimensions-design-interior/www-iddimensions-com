@@ -99,7 +99,7 @@ export function homeAndConstructionBusinessSchema(
     priceRange: "$$$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Skylark Plaza, Ground Floor Shop No. 09, near Lulu Mall Road, Golf City",
+      streetAddress: "Ground Floor Shop No. 09, Skylark Plaza, near Lulu Mall Road, Golf City, Hariharpur",
       addressLocality: "Lucknow",
       addressRegion: "Uttar Pradesh",
       postalCode: "226030",

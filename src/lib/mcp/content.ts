@@ -7,8 +7,8 @@ export const company = {
   serviceArea: "Lucknow, Uttar Pradesh | Across India",
   email: "info@iddimension.com",
   address:
-    "Skylark Plaza Ground floor shop no.09, QXMR+7F Skyline Plaza, near Lulu Mall Road, Golf City, Uttar Pradesh, India, 226030",
-  website: "https://interior-essence-editor.lovable.app",
+    "Ground Floor Shop No. 09, Skylark Plaza, near Lulu Mall Road, Golf City, Lucknow, Hariharpur, Uttar Pradesh 226030, India",
+  website: "https://www.iddimensions.com",
 };
 
 export const services = [

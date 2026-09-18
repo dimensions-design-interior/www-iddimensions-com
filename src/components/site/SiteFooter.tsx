@@ -89,8 +89,8 @@ export function SiteFooter() {
               </li>
               <li className="flex items-start gap-3 pt-2 leading-relaxed text-ink-foreground/50">
                 <MapPin aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-brass/70" />
-                Skylark Plaza, Ground Floor Shop No. 09, near Lulu Mall Road, Golf City, Muzaffar
-                Nagar Ghusval, Lucknow, Uttar Pradesh 226030, India
+                Ground Floor Shop No. 09, Skylark Plaza, near Lulu Mall Road, Golf City, Lucknow,
+                Hariharpur, Uttar Pradesh 226030, India
               </li>
             </ul>
           </div>

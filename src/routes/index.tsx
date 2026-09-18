@@ -72,7 +72,7 @@ export const Route = createFileRoute("/")({
           address: {
             "@type": "PostalAddress",
             streetAddress:
-              "Skylark Plaza, Ground Floor, Shop No. 09, Skyline Plaza, near Lulu Mall Road, Golf City",
+              "Ground Floor Shop No. 09, Skylark Plaza, near Lulu Mall Road, Golf City, Hariharpur",
             addressLocality: "Lucknow",
             addressRegion: "Uttar Pradesh",
             postalCode: "226030",

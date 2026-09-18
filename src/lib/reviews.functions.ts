@@ -2,6 +2,23 @@ import { createServerFn } from "@tanstack/react-start";
 
 import { reviewSchema } from "@/lib/reviews.schema";
 
+export const getApprovedReviews = createServerFn({ method: "GET" }).handler(async () => {
+  const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+  const { data, error } = await supabaseAdmin
+    .from("site_reviews")
+    .select("name, location, project_type, rating, review")
+    .eq("status", "approved")
+    .order("created_at", { ascending: false })
+    .limit(12);
+
+  if (error) {
+    console.error("Failed to load approved reviews", error.message);
+    return [];
+  }
+
+  return data;
+});
+
 export const submitReview = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => reviewSchema.parse(data))
   .handler(async ({ data }) => {

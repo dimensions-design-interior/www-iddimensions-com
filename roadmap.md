@@ -7,4 +7,5 @@
 - [x] Portfolio photo page at /portfolio, linked from the homepage, Modular Kitchens page, nav and sitemap
 - [x] Social/contact icons in the footer contact list (Instagram, WhatsApp, phone, email, site, address)
 - [ ] Facebook link — waiting on the exact page URL/handle
-- [ ] Google Reviews auto-sync — waiting on the Google Maps connection key so live reviews appear
+- [x] Google Reviews auto-sync — connected and live reviews are available
+- [x] Match the website address and coordinates to the current Google Business listing

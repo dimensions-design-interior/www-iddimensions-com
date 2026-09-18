@@ -88,39 +88,21 @@ export type Database = {
       }
     }
     Views: {
-      public_site_reviews: {
-        Row: {
-          created_at: string | null
-          id: string | null
-          location: string | null
-          name: string | null
-          project_type: string | null
-          rating: number | null
-          review: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          id?: string | null
-          location?: string | null
-          name?: string | null
-          project_type?: string | null
-          rating?: number | null
-          review?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          id?: string | null
-          location?: string | null
-          name?: string | null
-          project_type?: string | null
-          rating?: number | null
-          review?: string | null
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_public_site_reviews: {
+        Args: { _limit?: number }
+        Returns: {
+          created_at: string
+          id: string
+          location: string
+          name: string
+          project_type: string
+          rating: number
+          review: string
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never

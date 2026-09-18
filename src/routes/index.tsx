@@ -19,11 +19,11 @@ const OG_IMAGE = SITE_URL + "/og-image.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Interior Design & Turnkey Interiors in Lucknow | Dimensions" },
+      { title: "Interior Designers in Lucknow | Modular Kitchens & Villa Interiors" },
       {
         name: "description",
         content:
-          "Dimensions Designs Interior delivers premium interior design and turnkey solutions for homes, villas, offices, showrooms and hospitality spaces in Lucknow.",
+          "Interior designers in Lucknow for turnkey homes, luxury villa interiors, modular kitchens, offices and showrooms. Book a design consultation with Dimensions.",
       },
       {
         property: "og:title",
@@ -32,7 +32,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Concept to completion interiors for homes, villas, offices, showrooms and hospitality projects in Lucknow and across India.",
+          "Lucknow interior design for turnkey homes, luxury villas, modular kitchens, offices and showrooms—from concept through final handover.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL + "/" },
@@ -215,7 +215,7 @@ function Index() {
             Defining Experiences.
           </h1>
           <p className="mt-8 max-w-xl text-base tracking-wide text-brass-soft">
-            Premium Interior Design &amp; Turnkey Interior Solutions
+            Interior Designers In Lucknow · Turnkey Homes &amp; Modular Kitchens
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink-foreground/70">
             From concept to completion, we design and execute sophisticated residential, commercial
@@ -256,8 +256,8 @@ function Index() {
               thoughtful design meets precise execution.
             </p>
             <p>
-              We offer complete interior design and turnkey solutions for homes, villas, offices,
-              retail spaces and hospitality projects.
+              We offer complete interior design and turnkey solutions in Lucknow for homes, luxury
+              villas, modular kitchens, offices, retail spaces and hospitality projects.
             </p>
             <p>
               From the first concept to the final handover, our team manages every detail—design,
@@ -276,7 +276,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-12 lg:py-32">
           <p className="eyebrow">Our Services</p>
           <h2 className="display-xl mt-6 max-w-3xl text-3xl sm:text-4xl lg:text-5xl">
-            Complete Interior Solutions. One Trusted Partner.
+            Interior Design Services In Lucknow
           </h2>
           <div className="mt-16 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
             {services.map((s) => (

@@ -16,4 +16,5 @@
 - [x] Claim and verify the existing Google Business Profile
 - [ ] Rename the verified Google Business Profile to “Dimensions Designs Interior” so the name matches exactly
 - [ ] Add https://www.iddimensions.com/contact as the consultation appointment link in Google Business
+- [x] Email each Contact Us consultation enquiry to info@iddimension.com
 - [ ] Replace the managed Maps connection with a custom-domain key — waiting on the restricted Google API key

@@ -11,7 +11,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const configDirectory = path.dirname(fileURLToPath(import.meta.url));
-const mode = process.env.NODE_ENV === "production" ? "production" : "development";
+const mode = process.env["NODE_ENV"] === "production" ? "production" : "development";
 const serverEnv = loadEnv(mode, process.cwd(), "");
 Object.assign(process.env, serverEnv);
 

@@ -70,7 +70,7 @@ function ConsultationEnquiry({
 
 export const template = {
   component: ConsultationEnquiry,
-  subject: (data) => `New consultation enquiry — ${String(data.name || "Website visitor")}`,
+  subject: (data) => `New consultation enquiry — ${String(data["name"] || "Website visitor")}`,
   displayName: "Consultation enquiry",
   to: "info@iddimension.com",
   previewData: {

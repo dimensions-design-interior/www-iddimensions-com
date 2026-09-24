@@ -83,7 +83,9 @@ export function ConsultationForm() {
           <input
             id="lead-name"
             required
+            minLength={2}
             maxLength={100}
+            autoComplete="name"
             value={form.name}
             onChange={update("name")}
             placeholder="Your full name"
@@ -99,6 +101,7 @@ export function ConsultationForm() {
             type="email"
             required
             maxLength={255}
+            autoComplete="email"
             value={form.email}
             onChange={update("email")}
             placeholder="you@example.com"
@@ -111,7 +114,11 @@ export function ConsultationForm() {
           </label>
           <input
             id="lead-phone"
+            type="tel"
             maxLength={30}
+            minLength={7}
+            pattern="[0-9+()\-\s]{7,30}"
+            autoComplete="tel"
             value={form.phone}
             onChange={update("phone")}
             placeholder="+91 ..."

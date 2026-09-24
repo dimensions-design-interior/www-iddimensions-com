@@ -1,10 +1,9 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { toast } from "sonner";
 
 import { submitConsultationLead } from "@/lib/leads.functions";
-
-const WHATSAPP_NUMBER = "919670001155";
+import { Button } from "@/components/ui/button";
 
 const PROJECT_TYPES = [
   "Residential Interiors",
@@ -31,6 +30,7 @@ const fieldClass =
 
 export function ConsultationForm() {
   const submit = useServerFn(submitConsultationLead);
+  const openedAt = useRef(Date.now());
   const [sending, setSending] = useState(false);
   const [form, setForm] = useState({
     name: "",
@@ -40,6 +40,7 @@ export function ConsultationForm() {
     budget: "",
     timeline: "",
     message: "",
+    website: "",
   });
 
   const update = (key: keyof typeof form) => (
@@ -51,27 +52,9 @@ export function ConsultationForm() {
     if (sending) return;
     setSending(true);
     try {
-      await submit({ data: form });
+      await submit({ data: { ...form, elapsedMs: Date.now() - openedAt.current } });
 
-      const text = [
-        "New consultation request",
-        `Name: ${form.name}`,
-        `Email: ${form.email}`,
-        form.phone ? `Phone: ${form.phone}` : null,
-        `Project Type: ${form.projectType}`,
-        `Budget: ${form.budget}`,
-        `Preferred Timeline: ${form.timeline}`,
-        form.message ? `Details: ${form.message}` : null,
-      ]
-        .filter(Boolean)
-        .join("\n");
-
-      toast.success("Request received — opening WhatsApp to confirm.");
-      window.open(
-        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`,
-        "_blank",
-        "noreferrer",
-      );
+      toast.success("Your consultation request has been sent. We’ll contact you shortly.");
       setForm({
         name: "",
         email: "",
@@ -80,7 +63,9 @@ export function ConsultationForm() {
         budget: "",
         timeline: "",
         message: "",
+        website: "",
       });
+      openedAt.current = Date.now();
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {
@@ -207,9 +192,21 @@ export function ConsultationForm() {
         />
       </div>
 
-      <button type="submit" disabled={sending} className="btn-solid disabled:opacity-60">
-        {sending ? "Sending..." : "Send & Continue On WhatsApp"}
-      </button>
+      <div className="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
+        <label htmlFor="lead-website">Website</label>
+        <input
+          id="lead-website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={form.website}
+          onChange={update("website")}
+        />
+      </div>
+
+      <Button type="submit" disabled={sending} className="btn-solid h-auto rounded-none">
+        {sending ? "Sending..." : "Request Consultation"}
+      </Button>
     </form>
   );
 }

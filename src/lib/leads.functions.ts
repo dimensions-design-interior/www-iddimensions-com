@@ -1,13 +1,39 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
+const projectTypes = [
+  "Residential Interiors",
+  "Luxury Villa / Home",
+  "Modular Kitchen",
+  "Wardrobes",
+  "Commercial / Office",
+  "Retail / Showroom",
+  "Hospitality",
+] as const;
+
+const budgets = [
+  "Under ₹5 Lakhs",
+  "₹5 – 15 Lakhs",
+  "₹15 – 30 Lakhs",
+  "₹30 – 50 Lakhs",
+  "Above ₹50 Lakhs",
+] as const;
+
+const timelines = ["Immediately", "Within 1 month", "1 – 3 months", "3 – 6 months", "Just exploring"] as const;
+
 const leadSchema = z.object({
-  name: z.string().trim().min(2).max(100),
-  email: z.string().trim().email().max(255),
-  phone: z.string().trim().max(30).optional().or(z.literal("")),
-  projectType: z.string().trim().min(1).max(80),
-  budget: z.string().trim().min(1).max(80),
-  timeline: z.string().trim().min(1).max(80),
+  name: z.string().trim().min(2).max(100).regex(/^[\p{L}\p{M} .'-]+$/u, "Please enter a valid name."),
+  email: z.string().trim().toLowerCase().email().max(255),
+  phone: z
+    .string()
+    .trim()
+    .max(30)
+    .refine((value) => value === "" || /^[0-9+()\-\s]{7,30}$/.test(value), "Please enter a valid phone number.")
+    .optional()
+    .or(z.literal("")),
+  projectType: z.enum(projectTypes),
+  budget: z.enum(budgets),
+  timeline: z.enum(timelines),
   message: z.string().trim().max(1000).optional().or(z.literal("")),
   website: z.string().max(0).optional().or(z.literal("")),
   elapsedMs: z.number().int().min(0).max(86_400_000),

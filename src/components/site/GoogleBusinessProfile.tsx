@@ -47,7 +47,7 @@ export function StudioMap() {
     <div className="overflow-hidden border border-border bg-muted" aria-label="Studio location map">
       <iframe
         title="Dimensions Design Interior studio at Skylark Plaza, Lucknow"
-        src="https://www.google.com/maps?q=place_id%3AChIJfdLZH3blmzkRF9YmT7a3E14&output=embed"
+        src="https://www.google.com/maps?q=26.784701%2C80.9909038&z=17&output=embed"
         className="h-[320px] w-full border-0 sm:h-[420px]"
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"

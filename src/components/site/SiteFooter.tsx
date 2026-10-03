@@ -1,5 +1,7 @@
 import { Instagram, Mail, MapPin, MessageCircle, Phone, Globe } from "lucide-react";
 
+import { GoogleReviewLink, GoogleVerifiedBusinessBadge } from "@/components/site/GoogleBusinessProfile";
+
 export function SiteFooter() {
   return (
     <footer className="bg-ink text-ink-foreground">
@@ -31,6 +33,10 @@ export function SiteFooter() {
                 </li>
               ))}
             </ul>
+            <div className="mt-7 flex flex-col items-start gap-3">
+              <GoogleVerifiedBusinessBadge dark />
+              <GoogleReviewLink dark />
+            </div>
           </div>
 
           <div>

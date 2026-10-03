@@ -18,3 +18,4 @@
 - [ ] Add https://www.iddimensions.com/contact as the consultation appointment link in Google Business
 - [x] Email each Contact Us consultation enquiry to info@iddimension.com
 - [ ] Replace the managed Maps connection with a custom-domain key — waiting on the restricted Google API key
+- [x] Add the official Google Business badge, studio map, direct review link and matching LocalBusiness details

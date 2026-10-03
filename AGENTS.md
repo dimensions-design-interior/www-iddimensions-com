@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Use the canonical Google Business CID and Place ID constants for profile links, reviews, maps, and structured data so listing signals stay consistent.

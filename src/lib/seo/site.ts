@@ -4,7 +4,9 @@ export const BRAND_SHORT = "Dimensions";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 export const CONSULTATION_URL = `${SITE_URL}/contact`;
 export const GOOGLE_BUSINESS_URL =
-  "https://www.google.com/maps/place/?q=place_id:ChIJfdLZH3blmzkRF9YmT7a3E14";
+  "https://maps.google.com/maps?cid=6778963857762604567";
+export const GOOGLE_REVIEW_URL =
+  "https://search.google.com/local/writereview?placeid=ChIJfdLZH3blmzkRF9YmT7a3E14";
 
 export function absoluteUrl(path: string) {
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
@@ -96,7 +98,7 @@ export function homeAndConstructionBusinessSchema(
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     "@id": `${SITE_URL}/#business`,
-    name: SITE_NAME,
+    name: "Dimensions Design Interior",
     url: SITE_URL,
     hasMap: GOOGLE_BUSINESS_URL,
     telephone: "+919670001155",
@@ -136,6 +138,19 @@ export function homeAndConstructionBusinessSchema(
       "Modular Kitchens in Lucknow",
       "Commercial and Office Fit-outs in Lucknow",
     ],
+    makesOffer: [
+      "Interior Design",
+      "Turnkey Interior Projects",
+      "Residential Interiors",
+      "Luxury Villa Interiors",
+      "Modular Kitchens",
+      "Commercial Interiors",
+      "Retail and Showroom Interiors",
+      "Hospitality Interiors",
+    ].map((name) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name },
+    })),
     potentialAction: {
       "@type": "ReserveAction",
       name: "Book an interior design consultation",

@@ -9,6 +9,10 @@ import { ConsultationForm } from "@/components/site/ConsultationForm";
 import { ProjectsGallery } from "@/components/site/ProjectsGallery";
 import { BeforeAfterViewer } from "@/components/site/BeforeAfterViewer";
 import { ReviewsSection } from "@/components/site/ReviewsSection";
+import {
+  GoogleReviewLink,
+  GoogleVerifiedBusinessBadge,
+} from "@/components/site/GoogleBusinessProfile";
 
 import heroInterior from "@/assets/hero-interior.jpg";
 
@@ -63,7 +67,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "InteriorDesigner",
-          name: "Dimensions Designs Interior",
+          name: "Dimensions Design Interior",
           url: SITE_URL,
           email: "info@iddimension.com",
           telephone: "+91-9670001155",
@@ -79,7 +83,14 @@ export const Route = createFileRoute("/")({
             addressCountry: "IN",
           },
           areaServed: "India",
-          sameAs: ["https://instagram.com/iddimensions"],
+          sameAs: [
+            "https://maps.google.com/maps?cid=6778963857762604567",
+            "https://instagram.com/iddimensions",
+          ],
+          makesOffer: services.map((service) => ({
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: service.title },
+          })),
         }),
       },
       {
@@ -435,6 +446,11 @@ function Index() {
           <div className="mx-auto mt-16 max-w-2xl border-t border-ink-foreground/15 pt-12">
             <p className="eyebrow">Request A Consultation</p>
             <ConsultationForm />
+          </div>
+
+          <div className="mx-auto mt-10 flex max-w-2xl flex-col items-center justify-center gap-4 sm:flex-row">
+            <GoogleVerifiedBusinessBadge dark />
+            <GoogleReviewLink dark />
           </div>
 
           <ul className="mt-10 flex flex-col items-center gap-3 text-sm tracking-[0.2em] text-brass uppercase">

@@ -2,6 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Clock3, Mail, MapPin, MessageCircle, Navigation, Phone } from "lucide-react";
 
 import { ConsultationForm } from "@/components/site/ConsultationForm";
+import {
+  GoogleReviewLink,
+  GoogleVerifiedBusinessBadge,
+  StudioMap,
+} from "@/components/site/GoogleBusinessProfile";
 import { PageShell } from "@/components/site/PageShell";
 import {
   GOOGLE_BUSINESS_URL,
@@ -97,6 +102,11 @@ function ContactPage() {
               <MessageCircle aria-hidden="true" className="size-4 shrink-0" />
               WhatsApp
             </a>
+            <GoogleReviewLink />
+          </div>
+
+          <div className="mt-8">
+            <GoogleVerifiedBusinessBadge />
           </div>
 
           <div className="mt-10 border-l-2 border-brass pl-5">
@@ -120,6 +130,16 @@ function ContactPage() {
           <ConsultationForm />
         </section>
       </div>
+
+      <section className="mt-16" aria-labelledby="studio-map-title">
+        <p className="eyebrow">Find Our Studio</p>
+        <h2 id="studio-map-title" className="font-display mt-4 text-2xl tracking-[0.06em] uppercase sm:text-3xl">
+          Skylark Plaza, Lucknow
+        </h2>
+        <div className="mt-7">
+          <StudioMap />
+        </div>
+      </section>
     </PageShell>
   );
 }

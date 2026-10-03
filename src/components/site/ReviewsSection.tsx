@@ -6,6 +6,7 @@ import { Star } from "lucide-react";
 import { ReviewForm } from "@/components/site/ReviewForm";
 import { getGoogleReviews } from "@/lib/google-reviews.functions";
 import { getApprovedReviews } from "@/lib/reviews.functions";
+import { GoogleReviewLink } from "@/components/site/GoogleBusinessProfile";
 
 
 type Review = {
@@ -158,6 +159,7 @@ export function ReviewsSection() {
           <p className="text-[0.7rem] tracking-[0.26em] text-muted-foreground uppercase">
             {average.toFixed(1)} average from {allReviews.length} client reviews
           </p>
+          <GoogleReviewLink />
         </div>
 
         <div className="mt-14 grid gap-px bg-border md:grid-cols-2">

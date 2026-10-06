@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Instagram, Mail, MapPin, MessageCircle, Navigation, Phone } from "lucide-react";
 
-import { homeAndConstructionBusinessSchema } from "@/lib/seo/site";
+import { GOOGLE_DIRECTIONS_URL, homeAndConstructionBusinessSchema } from "@/lib/seo/site";
 
 import { SiteNav } from "@/components/site/SiteNav";
 import { SiteFooter } from "@/components/site/SiteFooter";
@@ -12,6 +12,7 @@ import { ReviewsSection } from "@/components/site/ReviewsSection";
 import {
   GoogleReviewLink,
   GoogleVerifiedBusinessBadge,
+  StudioMap,
 } from "@/components/site/GoogleBusinessProfile";
 
 import heroInterior from "@/assets/hero-interior.jpg";
@@ -451,6 +452,22 @@ function Index() {
           <div className="mx-auto mt-10 flex max-w-2xl flex-col items-center justify-center gap-4 sm:flex-row">
             <GoogleVerifiedBusinessBadge dark />
             <GoogleReviewLink dark />
+          </div>
+
+          <div className="mt-12 text-left">
+            <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+              <h3 className="font-display text-xl uppercase">Find Our Golf City Studio</h3>
+              <a
+                href={GOOGLE_DIRECTIONS_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-outline inline-flex items-center gap-2 text-ink-foreground"
+              >
+                <Navigation aria-hidden="true" className="size-4 shrink-0" />
+                Get Directions
+              </a>
+            </div>
+            <StudioMap />
           </div>
 
           <ul className="mt-10 flex flex-col items-center gap-3 text-sm tracking-[0.2em] text-brass uppercase">

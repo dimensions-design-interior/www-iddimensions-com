@@ -3,10 +3,14 @@ export const SITE_NAME = "Dimensions Designs Interior";
 export const BRAND_SHORT = "Dimensions";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 export const CONSULTATION_URL = `${SITE_URL}/contact`;
+export const GOOGLE_PLACE_ID = "ChIJfdLZH3blmzkRF9YmT7a3E14";
+export const STUDIO_COORDINATES = "26.784701,80.9909038";
+export const GOOGLE_DIRECTIONS_URL =
+  `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(STUDIO_COORDINATES)}&destination_place_id=${GOOGLE_PLACE_ID}`;
 export const GOOGLE_BUSINESS_URL =
   "https://maps.google.com/maps?cid=6778963857762604567";
 export const GOOGLE_REVIEW_URL =
-  "https://search.google.com/local/writereview?placeid=ChIJfdLZH3blmzkRF9YmT7a3E14";
+  `https://search.google.com/local/writereview?placeid=${GOOGLE_PLACE_ID}`;
 
 export function absoluteUrl(path: string) {
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;

@@ -1,6 +1,6 @@
 import { BadgeCheck, MapPin, Star } from "lucide-react";
 
-import { GOOGLE_BUSINESS_URL, GOOGLE_REVIEW_URL } from "@/lib/seo/site";
+import { GOOGLE_BUSINESS_URL, GOOGLE_REVIEW_URL, STUDIO_COORDINATES } from "@/lib/seo/site";
 
 export function GoogleVerifiedBusinessBadge({ dark = false }: { dark?: boolean }) {
   return (
@@ -47,7 +47,7 @@ export function StudioMap() {
     <div className="overflow-hidden border border-border bg-muted" aria-label="Studio location map">
       <iframe
         title="Dimensions Design Interior studio at Skylark Plaza, Lucknow"
-        src="https://www.google.com/maps?q=26.784701%2C80.9909038&z=17&output=embed"
+        src={`https://www.google.com/maps?q=${encodeURIComponent(STUDIO_COORDINATES)}&z=17&output=embed`}
         className="h-[320px] w-full border-0 sm:h-[420px]"
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"

@@ -19,3 +19,4 @@
 - [x] Email each Contact Us consultation enquiry to info@iddimension.com
 - [ ] Replace the managed Maps connection with a custom-domain key — waiting on the restricted Google API key
 - [x] Add the official Google Business badge, studio map, direct review link and matching LocalBusiness details
+- [x] Embed the studio map in homepage Contact, share exact-pin directions on both pages, and verify Google links open new tabs

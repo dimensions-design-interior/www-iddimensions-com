@@ -10,6 +10,7 @@ import {
 import { PageShell } from "@/components/site/PageShell";
 import {
   GOOGLE_BUSINESS_URL,
+  GOOGLE_DIRECTIONS_URL,
   breadcrumbSchema,
   buildSeo,
   homeAndConstructionBusinessSchema,
@@ -17,9 +18,6 @@ import {
 
 const ADDRESS =
   "Ground Floor Shop No. 09, Skylark Plaza, near Lulu Mall Road, Golf City, Lucknow, Hariharpur, Uttar Pradesh 226030, India";
-
-const directionsUrl =
-  "https://www.google.com/maps/dir/?api=1&destination=26.784701%2C80.9909038&destination_place_id=ChIJfdLZH3blmzkRF9YmT7a3E14";
 
 export const Route = createFileRoute("/contact")({
   head: () =>
@@ -76,7 +74,7 @@ function ContactPage() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href={directionsUrl}
+              href={GOOGLE_DIRECTIONS_URL}
               target="_blank"
               rel="noreferrer"
               className="btn-solid inline-flex items-center gap-2"

@@ -11,3 +11,4 @@
 
 - Use the canonical Google Business CID and Place ID constants for profile links, reviews, maps, and structured data so listing signals stay consistent.
 - Keep studio coordinates and directions URL in the shared site constants; homepage and Contact maps and directions must use the same pin.
+- Render studio maps with the shared standard Google Maps embed iframe; keep the separate server-side Google reviews integration intact.

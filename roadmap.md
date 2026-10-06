@@ -17,6 +17,6 @@
 - [ ] Rename the verified Google Business Profile to “Dimensions Designs Interior” so the name matches exactly
 - [ ] Add https://www.iddimensions.com/contact as the consultation appointment link in Google Business
 - [x] Email each Contact Us consultation enquiry to info@iddimension.com
-- [ ] Replace the managed Maps connection with a custom-domain key — waiting on the restricted Google API key
+- [x] Use standard key-free Google Maps embed iframes on the homepage and Contact page; custom map key setup is no longer needed
 - [x] Add the official Google Business badge, studio map, direct review link and matching LocalBusiness details
 - [x] Embed the studio map in homepage Contact, share exact-pin directions on both pages, and verify Google links open new tabs

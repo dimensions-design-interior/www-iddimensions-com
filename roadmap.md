@@ -20,3 +20,6 @@
 - [x] Use standard key-free Google Maps embed iframes on the homepage and Contact page; custom map key setup is no longer needed
 - [x] Add the official Google Business badge, studio map, direct review link and matching LocalBusiness details
 - [x] Embed the studio map in homepage Contact, share exact-pin directions on both pages, and verify Google links open new tabs
+
+- [x] AI consultation brief tool on Contact page
+- [x] Maps on custom domain (key-free embeds, no action needed)

@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Clock3, Mail, MapPin, MessageCircle, Navigation, Phone } from "lucide-react";
 
 import { ConsultationForm } from "@/components/site/ConsultationForm";
+import { DesignBriefTool } from "@/components/site/DesignBriefTool";
 import {
   GoogleReviewLink,
   GoogleVerifiedBusinessBadge,
@@ -128,6 +129,15 @@ function ContactPage() {
           <ConsultationForm />
         </section>
       </div>
+
+      <section className="mt-16" aria-labelledby="design-brief-title">
+        <p className="eyebrow">AI Design Brief</p>
+        <h2 id="design-brief-title" className="font-display mt-4 mb-6 text-2xl tracking-[0.06em] uppercase sm:text-3xl">
+          Get Your Tailored Consultation Brief
+        </h2>
+        <DesignBriefTool />
+      </section>
+
 
       <section className="mt-16" aria-labelledby="studio-map-title">
         <p className="eyebrow">Find Our Studio</p>

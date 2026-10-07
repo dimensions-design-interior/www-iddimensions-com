@@ -31,11 +31,11 @@ NEXT STEPS
 Use short "- " bullet lines. Budget guidance must be realistic for Lucknow, framed as indicative and confirmed after a site visit. Never invent prices as guarantees.`;
 
 export const generateDesignBrief = createServerFn({ method: "POST" })
-  .inputValidator((d) => briefInput.parse(d))
+  .validator((d) => briefInput.parse(d))
   .handler(async ({ data }) => {
     const ip = getRequestHeader("cf-connecting-ip") ?? getRequestHeader("x-forwarded-for") ?? "anon";
     if (!allow(ip)) return { ok: false as const, error: "You've reached the hourly limit. Please try again later." };
-    const apiKey = process.env.LOVABLE_API_KEY;
+    const apiKey = process.env['LOVABLE_API_KEY'];
     if (!apiKey) return { ok: false as const, error: "The brief tool is not configured yet." };
 
     const { createOpenAI } = await import("@ai-sdk/openai");

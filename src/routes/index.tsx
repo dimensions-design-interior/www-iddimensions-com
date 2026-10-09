@@ -177,28 +177,16 @@ const process = [
 
 const reasons = [
   {
-    title: "Design That Is Personal",
-    body: "Every project is developed around the client's requirements—not a one-size-fits-all template.",
+    title: "Dedicated Project Supervision",
+    body: "Every stage is monitored by experienced design and execution managers.",
   },
   {
-    title: "End-To-End Execution",
-    body: "From design to installation and finishing, we provide a complete turnkey experience.",
+    title: "Material Transparency",
+    body: "Premium-grade boards, durable laminates, and genuine branded hardware with warranty.",
   },
   {
-    title: "Attention To Detail",
-    body: "From lighting and materials to furniture, finishes and spatial planning, every detail matters.",
-  },
-  {
-    title: "Quality-Focused",
-    body: "We carefully select materials, finishes and execution methods to achieve lasting results.",
-  },
-  {
-    title: "Professional Project Management",
-    body: "A coordinated approach keeps design, vendors, execution and timelines aligned.",
-  },
-  {
-    title: "Function Meets Aesthetics",
-    body: "Our spaces are designed to look exceptional while remaining practical for everyday use.",
+    title: "Zero Hidden Surprises",
+    body: "Detailed, line-item estimates so you know exactly where every rupee goes.",
   },
 ];
 
@@ -367,8 +355,8 @@ function Index() {
 
       {/* WHY */}
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-12 lg:py-32">
-        <p className="eyebrow">Why Dimensions Designs</p>
-        <h2 className="display-xl mt-6 text-3xl sm:text-4xl lg:text-5xl">Built Around Your Vision</h2>
+        <p className="eyebrow">Why Choose Us</p>
+        <h2 className="display-xl mt-6 text-3xl sm:text-4xl lg:text-5xl">Crafted with Precision. Built to Last.</h2>
         <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
           {reasons.map((r) => (
             <div key={r.title}>

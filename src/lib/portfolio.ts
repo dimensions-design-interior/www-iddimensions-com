@@ -18,30 +18,30 @@ export type PortfolioPhoto = {
   alt: string;
 };
 
-/** Photographs of completed interior projects shown on /portfolio. */
+/** Illustrative interior design concepts shown on /portfolio; not completed client work. */
 export const portfolioPhotos: PortfolioPhoto[] = [
   {
     id: "gomti-nagar-residence",
-    title: "Gomti Nagar Residence",
-    location: "Lucknow",
+    title: "Apartment Interior Concept",
+    location: "Illustrative concept",
     category: "Residential",
     scope: "4 BHK turnkey interiors",
     image: "/og/project-residential.jpg",
-    alt: "Completed 4 BHK residential interior in Gomti Nagar, Lucknow with warm neutral finishes",
+    alt: "Illustrative apartment interior with warm neutral finishes",
   },
   {
     id: "golf-city-villa",
-    title: "Golf City Villa",
-    location: "Lucknow",
+    title: "Villa Living Concept",
+    location: "Illustrative concept",
     category: "Residential",
     scope: "Living, dining & wardrobes",
     image: "/og/after-room.jpg",
-    alt: "Villa living and dining interior in Golf City, Lucknow with custom joinery and layered lighting",
+    alt: "Illustrative villa living and dining interior with custom joinery and layered lighting",
   },
   {
     id: "hero-living-room",
     title: "Oak & Brass Living Room",
-    location: "Lucknow",
+    location: "Illustrative concept",
     category: "Residential",
     scope: "Living room design & execution",
     image: "/og/hero-interior.jpg",
@@ -50,16 +50,16 @@ export const portfolioPhotos: PortfolioPhoto[] = [
   {
     id: "kitchen-island",
     title: "Island Modular Kitchen",
-    location: "Lucknow",
+    location: "Illustrative concept",
     category: "Modular Kitchens",
     scope: "Island layout, quartz counters",
     image: "/og/kitchen-island.jpg",
-    alt: "Island modular kitchen in Lucknow with quartz countertops and integrated appliances",
+    alt: "Illustrative island modular kitchen with quartz countertops and integrated appliances",
   },
   {
     id: "kitchen-l-shaped",
     title: "L-Shaped Modular Kitchen",
-    location: "Lucknow",
+    location: "Illustrative concept",
     category: "Modular Kitchens",
     scope: "L-shaped layout, tall storage",
     image: "/og/kitchen-l-shaped.jpg",
@@ -68,7 +68,7 @@ export const portfolioPhotos: PortfolioPhoto[] = [
   {
     id: "kitchen-parallel",
     title: "Parallel Modular Kitchen",
-    location: "Lucknow",
+    location: "Illustrative concept",
     category: "Modular Kitchens",
     scope: "Parallel layout, acrylic finish",
     image: "/og/kitchen-parallel.jpg",
@@ -76,17 +76,17 @@ export const portfolioPhotos: PortfolioPhoto[] = [
   },
   {
     id: "hazratganj-workspace",
-    title: "Hazratganj Workspace",
-    location: "Lucknow",
+    title: "Office Interior Concept",
+    location: "Illustrative concept",
     category: "Commercial",
     scope: "Office fit-out",
     image: "/og/project-commercial.jpg",
-    alt: "Completed office interior fit-out in Hazratganj, Lucknow",
+    alt: "Illustrative office interior with workstations and meeting spaces",
   },
   {
     id: "aurum-showroom",
-    title: "Aurum Showroom",
-    location: "Lucknow",
+    title: "Showroom Interior Concept",
+    location: "Illustrative concept",
     category: "Commercial",
     scope: "Retail & display design",
     image: "/og/project-retail.jpg",
@@ -94,8 +94,8 @@ export const portfolioPhotos: PortfolioPhoto[] = [
   },
   {
     id: "the-verandah-lounge",
-    title: "The Verandah Lounge",
-    location: "Uttar Pradesh",
+    title: "Lounge Interior Concept",
+    location: "Illustrative concept",
     category: "Hospitality",
     scope: "Lounge & bar interiors",
     image: "/og/project-hospitality.jpg",

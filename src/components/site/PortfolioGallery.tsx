@@ -65,7 +65,7 @@ export function PortfolioGallery() {
       </div>
 
       <p className="mt-6 text-[0.68rem] tracking-[0.24em] text-muted-foreground uppercase">
-        {visible.length} {visible.length === 1 ? "Photo" : "Photos"}
+        {visible.length} {visible.length === 1 ? "Design example" : "Design examples"}
       </p>
 
       <div className="mt-8 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">

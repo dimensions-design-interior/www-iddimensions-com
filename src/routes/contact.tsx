@@ -112,7 +112,7 @@ function ContactPage() {
             <p className="text-[0.68rem] tracking-[0.24em] text-brass uppercase">Service Area</p>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               Lucknow and surrounding areas, including Golf City, Gomti Nagar, Shaheed Path,
-              Sushant Golf City and across Uttar Pradesh for selected projects.
+              Sushant Golf City and across Uttar Pradesh.
             </p>
           </div>
         </section>
@@ -123,8 +123,7 @@ function ContactPage() {
             Book A Design Consultation
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-ink-foreground/65">
-            Share your project type, budget and preferred timeline. Your request is saved and
-            WhatsApp opens so you can confirm directly with our team.
+            Share your property type, city, area, budget and timeline to request a consultation or project quote.
           </p>
           <ConsultationForm />
         </section>

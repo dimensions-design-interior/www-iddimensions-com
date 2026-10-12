@@ -21,7 +21,9 @@ export type Database = {
           ai_priority: string | null
           ai_rationale: string | null
           ai_summary: string | null
+          approximate_area_sqft: number | null
           budget: string
+          city: string | null
           created_at: string
           email: string
           id: string
@@ -30,6 +32,7 @@ export type Database = {
           name: string
           phone: string | null
           project_type: string
+          property_type: string | null
           spam_check_passed: boolean
           status: string
           submission_elapsed_ms: number | null
@@ -42,7 +45,9 @@ export type Database = {
           ai_priority?: string | null
           ai_rationale?: string | null
           ai_summary?: string | null
+          approximate_area_sqft?: number | null
           budget: string
+          city?: string | null
           created_at?: string
           email: string
           id?: string
@@ -51,6 +56,7 @@ export type Database = {
           name: string
           phone?: string | null
           project_type: string
+          property_type?: string | null
           spam_check_passed?: boolean
           status?: string
           submission_elapsed_ms?: number | null
@@ -63,7 +69,9 @@ export type Database = {
           ai_priority?: string | null
           ai_rationale?: string | null
           ai_summary?: string | null
+          approximate_area_sqft?: number | null
           budget?: string
+          city?: string | null
           created_at?: string
           email?: string
           id?: string
@@ -72,6 +80,7 @@ export type Database = {
           name?: string
           phone?: string | null
           project_type?: string
+          property_type?: string | null
           spam_check_passed?: boolean
           status?: string
           submission_elapsed_ms?: number | null

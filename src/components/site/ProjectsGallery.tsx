@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Button } from "@/components/ui/button";
 
 import projectResidential from "@/assets/project-residential.jpg";
 import projectCommercial from "@/assets/project-commercial.jpg";
@@ -18,35 +19,35 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    name: "Gomti Nagar Residence",
+    name: "Apartment Interior Concept",
     location: "Lucknow",
     category: "Residential",
     scope: "4 BHK turnkey interiors",
     image: projectResidential,
   },
   {
-    name: "Golf City Villa",
+    name: "Villa Living Concept",
     location: "Lucknow",
     category: "Residential",
     scope: "Living, dining & wardrobes",
     image: afterRoom,
   },
   {
-    name: "Hazratganj Workspace",
+    name: "Office Interior Concept",
     location: "Lucknow",
     category: "Commercial",
     scope: "Office fit-out",
     image: projectCommercial,
   },
   {
-    name: "Aurum Showroom",
+    name: "Showroom Interior Concept",
     location: "Lucknow",
     category: "Commercial",
     scope: "Retail & display design",
     image: projectRetail,
   },
   {
-    name: "The Verandah Lounge",
+    name: "Lounge Interior Concept",
     location: "Uttar Pradesh",
     category: "Hospitality",
     scope: "Lounge & bar interiors",
@@ -72,22 +73,22 @@ export function ProjectsGallery() {
         aria-label="Filter projects by category"
       >
         {categories.map((c) => (
-          <button
+          <Button
             key={c}
             type="button"
             aria-pressed={c === active}
             onClick={() => setActive(c)}
             className={
-              c === active ? "btn-solid" : "btn-outline border-border text-muted-foreground"
+              c === active ? "btn-solid h-auto rounded-none" : "btn-outline h-auto rounded-none border-border text-muted-foreground"
             }
           >
             {c}
-          </button>
+          </Button>
         ))}
       </div>
 
       <p className="mt-6 text-[0.68rem] tracking-[0.24em] text-muted-foreground uppercase">
-        {visible.length} {visible.length === 1 ? "Project" : "Projects"}
+        {visible.length} {visible.length === 1 ? "Concept" : "Concepts"}
       </p>
 
       <div className="mt-8 grid gap-8 md:grid-cols-2">
@@ -96,7 +97,7 @@ export function ProjectsGallery() {
             <div className="relative overflow-hidden">
               <img
                 src={p.image}
-                alt={`${p.name} — ${p.category.toLowerCase()} interior project in ${p.location}`}
+                alt={`Illustrative ${p.category.toLowerCase()} concept: ${p.name}`}
                 loading="lazy"
                 width={1200}
                 height={900}
@@ -110,11 +111,11 @@ export function ProjectsGallery() {
               <div>
                 <h3 className="text-xl tracking-[0.1em] uppercase">{p.name}</h3>
                 <p className="mt-2 text-[0.7rem] tracking-[0.24em] text-muted-foreground uppercase">
-                  {p.location} | {p.scope}
+                  Illustrative concept | {p.scope}
                 </p>
               </div>
               <a
-                href="#contact"
+                href="/contact"
                 className="text-[0.68rem] font-semibold tracking-[0.24em] text-brass uppercase"
               >
                 Enquire

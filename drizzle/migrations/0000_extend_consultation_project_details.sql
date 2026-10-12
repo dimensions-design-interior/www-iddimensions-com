@@ -1,0 +1,2 @@
+ALTER TABLE public.consultation_leads ADD COLUMN IF NOT EXISTS city text, ADD COLUMN IF NOT EXISTS property_type text, ADD COLUMN IF NOT EXISTS approximate_area_sqft numeric;
+COMMENT ON COLUMN public.consultation_leads.approximate_area_sqft IS 'Visitor-provided approximate interior area in square feet; nullable for legacy enquiries.';

@@ -112,7 +112,7 @@ const faqs = [
   },
   {
     q: "How long does installation take?",
-    a: "After design sign-off and material selection, most modular kitchens are produced and installed within about four to six weeks. Installation on site usually takes two to four days.",
+    a: "After design sign-off and material selection, production and installation depend on kitchen size, material availability and site readiness. We agree a project-specific timeline before work begins.",
   },
   {
     q: "Which layout suits a 2BHK kitchen?",
@@ -124,7 +124,7 @@ const faqs = [
   },
   {
     q: "Which areas of Lucknow do you serve?",
-    a: "We work across Lucknow including Gomti Nagar, Golf City, Sushant Golf City, Hazratganj, Aliganj, Indira Nagar and Jankipuram, and take projects across India.",
+    a: "We work across Lucknow including Gomti Nagar, Golf City, Sushant Golf City, Hazratganj, Aliganj, Indira Nagar and Jankipuram, and take projects across Uttar Pradesh.",
   },
 ];
 
@@ -135,7 +135,7 @@ export const Route = createFileRoute("/modular-kitchen-lucknow")({
       description: DESCRIPTION,
       path: PATH,
       image: "/og/kitchen-l-shaped.jpg",
-      imageAlt: "Charcoal L-shaped modular kitchen designed by Dimensions Designs Interior in Lucknow",
+      imageAlt: "Illustrative charcoal L-shaped modular kitchen with brass handles",
       jsonLd: [
         homeAndConstructionBusinessSchema(),
         breadcrumbSchema([
@@ -204,7 +204,7 @@ function ModularKitchenLucknow() {
 
       <img
         src="/og/kitchen-l-shaped.jpg"
-        alt="Charcoal L-shaped modular kitchen with brass handles and quartz countertop in Lucknow"
+        alt="Illustrative charcoal L-shaped modular kitchen with brass handles and quartz countertop"
         width={1600}
         height={1000}
         className="mt-12 h-[28rem] w-full object-cover"
@@ -249,13 +249,14 @@ function ModularKitchenLucknow() {
 
       {/* Gallery */}
       <section className="mt-20">
-        <h2 className="text-xl tracking-[0.1em] uppercase">Modular Kitchens We Have Built</h2>
+        <h2 className="text-xl tracking-[0.1em] uppercase">Modular Kitchen Design Inspiration</h2>
+        <p className="mt-4 text-sm text-muted-foreground">Illustrative kitchen concepts, not completed client projects.</p>
         <div className="mt-8 grid gap-10 md:grid-cols-3">
           {gallery.map((g) => (
             <figure key={g.src}>
               <img
                 src={g.src}
-                alt={`${g.title} — modular kitchen in ${g.location} by Dimensions Designs Interior`}
+                alt={`Illustrative ${g.title.toLowerCase()} with ${g.detail.toLowerCase()}`}
                 width={1600}
                 height={1000}
                 loading="lazy"
@@ -263,7 +264,7 @@ function ModularKitchenLucknow() {
               />
               <figcaption className="mt-4">
                 <h3 className="text-sm tracking-[0.16em] uppercase">{g.title}</h3>
-                <p className="mt-1 text-[0.68rem] tracking-[0.24em] text-brass uppercase">{g.location}</p>
+                <p className="mt-1 text-[0.68rem] tracking-[0.24em] text-brass uppercase">Illustrative concept</p>
                 <p className="mt-2 text-sm text-muted-foreground">{g.detail}</p>
               </figcaption>
             </figure>
@@ -309,7 +310,7 @@ function ModularKitchenLucknow() {
           options, materials and a line-item quote for your kitchen.
         </p>
         <div className="mt-10 max-w-2xl">
-          <ConsultationForm />
+          <ConsultationForm dark={false} />
         </div>
       </section>
 

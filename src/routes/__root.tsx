@@ -82,12 +82,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Dimensions Designs Interior | Lucknow Interior Design" },
-      {
-        name: "description",
-        content:
-          "Premium interior design and turnkey interior solutions for homes, offices, retail and hospitality spaces in Lucknow and across India.",
-      },
       { name: "author", content: "Dimensions Designs Interior" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

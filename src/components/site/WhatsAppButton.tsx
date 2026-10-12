@@ -13,8 +13,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noreferrer"
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] px-5 py-3.5 text-white shadow-lg transition-transform hover:scale-105"
-      style={{ boxShadow: "0 10px 30px -10px rgba(37,211,102,0.45)" }}
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-3 bg-whatsapp px-5 py-3.5 text-whatsapp-foreground shadow-whatsapp transition-transform motion-safe:hover:scale-105"
     >
       <MessageCircle className="h-5 w-5 fill-current" />
       <span className="text-[0.7rem] font-semibold tracking-[0.18em] uppercase">

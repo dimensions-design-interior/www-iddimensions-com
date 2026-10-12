@@ -16,46 +16,6 @@ type Review = {
   rating: number;
 };
 
-function safeJsonLd(value: unknown) {
-  return JSON.stringify(value)
-    .replace(/</g, "\\u003c")
-    .replace(/>/g, "\\u003e")
-    .replace(/&/g, "\\u0026")
-    .replace(/\u2028/g, "\\u2028")
-    .replace(/\u2029/g, "\\u2029");
-}
-
-export const reviews: Review[] = [
-  {
-    quote:
-      "A professional approach from design to execution. The team understood our requirements and delivered a beautiful space that works perfectly for our family.",
-    author: "Ankit Srivastava",
-    role: "Residence, Gomti Nagar",
-    rating: 5,
-  },
-  {
-    quote:
-      "The attention to detail and quality of execution made the entire experience smooth. Our office now reflects exactly the brand we wanted to present.",
-    author: "Neha Kapoor",
-    role: "Office, Hazratganj",
-    rating: 5,
-  },
-  {
-    quote:
-      "Our modular kitchen was delivered on time with excellent finishes. Storage planning was thoughtful and every inch is used well.",
-    author: "Rohit Mehra",
-    role: "Modular Kitchen, Golf City",
-    rating: 5,
-  },
-  {
-    quote:
-      "From concept drawings to the final handover, communication was clear and timelines were respected. Highly recommended for turnkey work.",
-    author: "Sana Qureshi",
-    role: "Showroom, Lucknow",
-    rating: 4,
-  },
-];
-
 function Stars({ rating }: { rating: number }) {
   return (
     <div className="flex items-center gap-1" aria-label={`${rating} out of 5 stars`}>
@@ -93,7 +53,7 @@ export function ReviewsSection() {
             rating: r.rating,
           })),
         );
-      });
+      }).catch(() => { /* Unavailable reviews are not replaced with invented testimonials. */ });
 
     fetchGoogle().then((data) => {
       if (!active || !data) return;
@@ -105,7 +65,7 @@ export function ReviewsSection() {
           rating: r.rating,
         })),
       );
-    });
+    }).catch(() => { /* Keep the review link available when Google cannot be reached. */ });
 
     return () => {
       active = false;
@@ -113,41 +73,11 @@ export function ReviewsSection() {
   }, [fetchApproved, fetchGoogle]);
 
 
-  const allReviews = [...googleReviews, ...clientReviews, ...reviews];
-  const average =
-    Math.round((allReviews.reduce((sum, r) => sum + r.rating, 0) / allReviews.length) * 10) / 10;
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "InteriorDesigner",
-    name: "Dimensions Designs Interior",
-    url: "https://www.iddimensions.com",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: average.toFixed(1),
-      bestRating: "5",
-      worstRating: "1",
-      reviewCount: allReviews.length,
-    },
-    review: allReviews.slice(0, 10).map((r) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: r.author },
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: String(r.rating),
-        bestRating: "5",
-        worstRating: "1",
-      },
-      reviewBody: r.quote,
-    })),
-  };
+  const allReviews = [...googleReviews, ...clientReviews];
+  const average = allReviews.length ? Math.round((allReviews.reduce((sum, r) => sum + r.rating, 0) / allReviews.length) * 10) / 10 : null;
 
   return (
     <section id="reviews" className="bg-secondary">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
-      />
       <div className="mx-auto max-w-7xl px-6 py-24 lg:px-12 lg:py-32">
         <p className="eyebrow">Client Reviews</p>
         <h2 className="display-xl mt-6 text-3xl sm:text-4xl lg:text-5xl">
@@ -155,9 +85,9 @@ export function ReviewsSection() {
         </h2>
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
-          <Stars rating={Math.round(average)} />
+          {average !== null && <Stars rating={Math.round(average)} />}
           <p className="text-[0.7rem] tracking-[0.26em] text-muted-foreground uppercase">
-            {average.toFixed(1)} average from {allReviews.length} client reviews
+            {average !== null ? `${average.toFixed(1)} average from ${allReviews.length} displayed reviews` : "Read our reviews on Google"}
           </p>
           <GoogleReviewLink />
         </div>

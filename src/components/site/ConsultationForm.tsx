@@ -1,219 +1,90 @@
-import { useRef, useState } from "react";
+import { useId, useRef, useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { toast } from "sonner";
-
 import { submitConsultationLead } from "@/lib/leads.functions";
+import { BUDGETS, PROJECT_TYPES, PROPERTY_TYPES, TIMELINES, leadSchema } from "@/lib/leads.schema";
 import { Button } from "@/components/ui/button";
+import { WhatsAppLink } from "@/components/site/WhatsAppButton";
 
-const PROJECT_TYPES = [
-  "Residential Interiors",
-  "Luxury Villa / Home",
-  "Modular Kitchen",
-  "Wardrobes",
-  "Commercial / Office",
-  "Retail / Showroom",
-  "Hospitality",
-];
+const emptyForm = { name: "", email: "", phone: "", city: "", propertyType: "", approximateArea: "", projectType: "", budget: "", timeline: "", message: "", website: "" };
+const fieldClass = "mt-3 w-full min-w-0 border border-current/25 bg-transparent px-4 py-3 text-sm placeholder:opacity-50 focus:border-brass focus:outline-none";
 
-const BUDGETS = [
-  "Under ₹5 Lakhs",
-  "₹5 – 15 Lakhs",
-  "₹15 – 30 Lakhs",
-  "₹30 – 50 Lakhs",
-  "Above ₹50 Lakhs",
-];
-
-const TIMELINES = ["Immediately", "Within 1 month", "1 – 3 months", "3 – 6 months", "Just exploring"];
-
-const fieldClass =
-  "w-full border border-ink-foreground/20 bg-transparent px-4 py-3 text-sm text-ink-foreground placeholder:text-ink-foreground/40 focus:border-brass focus:outline-none";
-
-export function ConsultationForm() {
+export function ConsultationForm({ dark = true }: { dark?: boolean }) {
+  const id = useId();
   const submit = useServerFn(submitConsultationLead);
   const openedAt = useRef(Date.now());
   const [sending, setSending] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    projectType: "",
-    budget: "",
-    timeline: "",
-    message: "",
-    website: "",
-  });
+  const [form, setForm] = useState(emptyForm);
+  const [notice, setNotice] = useState<{ text: string; emailed: boolean } | null>(null);
+  const [error, setError] = useState("");
+  const update = (key: keyof typeof form) => (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => setForm((current) => ({ ...current, [key]: event.target.value }));
 
-  const update = (key: keyof typeof form) => (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
-  ) => setForm((f) => ({ ...f, [key]: e.target.value }));
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
     if (sending) return;
+    setError("");
+    setNotice(null);
+    const parsed = leadSchema.safeParse({ ...form, elapsedMs: Date.now() - openedAt.current });
+    if (!parsed.success) { setError(parsed.error.issues[0]?.message ?? "Please check your project details."); return; }
     setSending(true);
     try {
-      await submit({ data: { ...form, elapsedMs: Date.now() - openedAt.current } });
-
-      toast.success("Your consultation request has been sent. We’ll contact you shortly.");
-      setForm({
-        name: "",
-        email: "",
-        phone: "",
-        projectType: "",
-        budget: "",
-        timeline: "",
-        message: "",
-        website: "",
-      });
+      const result = await submit({ data: parsed.data });
+      const text = result.emailed
+        ? "Your enquiry has been saved and sent to our team. Thank you for sharing your project."
+        : "Your enquiry has been saved, but email notification was not sent. Please call +91 96700 01155 or WhatsApp us to confirm.";
+      setNotice({ text, emailed: result.emailed });
+      if (result.emailed) toast.success(text); else toast.warning(text);
+      setForm(emptyForm);
       openedAt.current = Date.now();
-    } catch (err) {
-      toast.error(err instanceof Error ? err.message : "Something went wrong. Please try again.");
-    } finally {
-      setSending(false);
-    }
+    } catch {
+      setError("Your enquiry could not be submitted. Please try again, call +91 96700 01155 or WhatsApp us.");
+    } finally { setSending(false); }
   };
 
+  const inputs = [
+    { key: "name", label: "Name", type: "text", placeholder: "Your full name", autoComplete: "name", maxLength: 100 },
+    { key: "phone", label: "Phone", type: "tel", placeholder: "+91 …", autoComplete: "tel", maxLength: 30 },
+    { key: "email", label: "Email", type: "email", placeholder: "you@example.com", autoComplete: "email", maxLength: 255 },
+    { key: "city", label: "Project city", type: "text", placeholder: "Lucknow", autoComplete: "address-level2", maxLength: 100 },
+  ] as const;
+  const selects = [
+    { key: "propertyType", label: "Property type", options: PROPERTY_TYPES },
+    { key: "projectType", label: "Service required", options: PROJECT_TYPES },
+    { key: "budget", label: "Budget", options: BUDGETS },
+    { key: "timeline", label: "Project timeline", options: TIMELINES },
+  ] as const;
+
   return (
-    <form onSubmit={handleSubmit} className="mt-12 space-y-5 text-left">
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div>
-          <label htmlFor="lead-name" className="eyebrow block text-[0.62rem]">
-            Name
-          </label>
-          <input
-            id="lead-name"
-            required
-            minLength={2}
-            maxLength={100}
-            autoComplete="name"
-            value={form.name}
-            onChange={update("name")}
-            placeholder="Your full name"
-            className={`${fieldClass} mt-3`}
-          />
-        </div>
-        <div>
-          <label htmlFor="lead-email" className="eyebrow block text-[0.62rem]">
-            Email
-          </label>
-          <input
-            id="lead-email"
-            type="email"
-            required
-            maxLength={255}
-            autoComplete="email"
-            value={form.email}
-            onChange={update("email")}
-            placeholder="you@example.com"
-            className={`${fieldClass} mt-3`}
-          />
-        </div>
-        <div>
-          <label htmlFor="lead-phone" className="eyebrow block text-[0.62rem]">
-            Phone (optional)
-          </label>
-          <input
-            id="lead-phone"
-            type="tel"
-            maxLength={30}
-            minLength={7}
-            pattern="[0-9+()\-\s]{7,30}"
-            autoComplete="tel"
-            value={form.phone}
-            onChange={update("phone")}
-            placeholder="+91 ..."
-            className={`${fieldClass} mt-3`}
-          />
-        </div>
-        <div>
-          <label htmlFor="lead-type" className="eyebrow block text-[0.62rem]">
-            Project Type
-          </label>
-          <select
-            id="lead-type"
-            required
-            value={form.projectType}
-            onChange={update("projectType")}
-            className={`${fieldClass} mt-3`}
-          >
-            <option value="">Select project type</option>
-            {PROJECT_TYPES.map((o) => (
-              <option key={o} value={o} className="text-foreground">
-                {o}
-              </option>
-            ))}
+    <form onSubmit={handleSubmit} className={`mt-10 space-y-5 text-left ${dark ? "text-ink-foreground" : "text-foreground"}`}>
+      <fieldset disabled={sending} className="grid min-w-0 gap-5 sm:grid-cols-2">
+        {inputs.map((field) => <div key={field.key}>
+          <label htmlFor={`${id}-${field.key}`} className="eyebrow block text-[0.62rem]">{field.label}</label>
+          <input id={`${id}-${field.key}`} name={field.key} required type={field.type} maxLength={field.maxLength} autoComplete={field.autoComplete} value={form[field.key]} onChange={update(field.key)} placeholder={field.placeholder} className={fieldClass} />
+        </div>)}
+        {selects.map((field) => <div key={field.key}>
+          <label htmlFor={`${id}-${field.key}`} className="eyebrow block text-[0.62rem]">{field.label}</label>
+          <select id={`${id}-${field.key}`} name={field.key} required value={form[field.key]} onChange={update(field.key)} className={fieldClass}>
+            <option value="" className="bg-background text-foreground">Select {field.label.toLowerCase()}</option>
+            {field.options.map((option) => <option key={option} value={option} className="bg-background text-foreground">{option}</option>)}
           </select>
-        </div>
+        </div>)}
         <div>
-          <label htmlFor="lead-budget" className="eyebrow block text-[0.62rem]">
-            Budget
-          </label>
-          <select
-            id="lead-budget"
-            required
-            value={form.budget}
-            onChange={update("budget")}
-            className={`${fieldClass} mt-3`}
-          >
-            <option value="">Select budget range</option>
-            {BUDGETS.map((o) => (
-              <option key={o} value={o} className="text-foreground">
-                {o}
-              </option>
-            ))}
-          </select>
+          <label htmlFor={`${id}-area`} className="eyebrow block text-[0.62rem]">Approximate area (sq ft)</label>
+          <input id={`${id}-area`} name="approximateArea" type="number" required min={1} max={1000000} step="any" value={form.approximateArea} onChange={update("approximateArea")} placeholder="e.g. 1500" className={fieldClass} />
         </div>
-        <div>
-          <label htmlFor="lead-timeline" className="eyebrow block text-[0.62rem]">
-            Preferred Timeline
-          </label>
-          <select
-            id="lead-timeline"
-            required
-            value={form.timeline}
-            onChange={update("timeline")}
-            className={`${fieldClass} mt-3`}
-          >
-            <option value="">Select timeline</option>
-            {TIMELINES.map((o) => (
-              <option key={o} value={o} className="text-foreground">
-                {o}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-
+      </fieldset>
       <div>
-        <label htmlFor="lead-message" className="eyebrow block text-[0.62rem]">
-          Tell us about your space (optional)
-        </label>
-        <textarea
-          id="lead-message"
-          rows={4}
-          maxLength={1000}
-          value={form.message}
-          onChange={update("message")}
-          placeholder="Location, carpet area, scope of work..."
-          className={`${fieldClass} mt-3 resize-none`}
-        />
+        <label htmlFor={`${id}-message`} className="eyebrow block text-[0.62rem]">Project details (optional)</label>
+        <textarea id={`${id}-message`} name="message" rows={4} maxLength={1000} disabled={sending} value={form.message} onChange={update("message")} placeholder="Your space, preferred style and scope of work…" className={`${fieldClass} resize-none`} />
       </div>
-
       <div className="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
-        <label htmlFor="lead-website">Website</label>
-        <input
-          id="lead-website"
-          name="website"
-          tabIndex={-1}
-          autoComplete="off"
-          value={form.website}
-          onChange={update("website")}
-        />
+        <label htmlFor={`${id}-website`}>Website</label>
+        <input id={`${id}-website`} name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={update("website")} />
       </div>
-
-      <Button type="submit" disabled={sending} className="btn-solid h-auto rounded-none">
-        {sending ? "Sending..." : "Request Consultation"}
-      </Button>
+      <p className="text-xs leading-relaxed opacity-70">We use these details to respond to your project enquiry. Serving Lucknow and Uttar Pradesh.</p>
+      {error && <p role="alert" className="text-sm leading-relaxed">{error}</p>}
+      {notice && <div role="status" className="border-l-2 border-brass pl-4 text-sm leading-relaxed"><p>{notice.text}</p>{!notice.emailed && <WhatsAppLink className="mt-3 inline-block underline underline-offset-4">Confirm on WhatsApp</WhatsAppLink>}</div>}
+      <Button type="submit" disabled={sending} className="btn-solid h-auto max-w-full whitespace-normal rounded-none">{sending ? "Sending…" : "Request a Consultation"}</Button>
     </form>
   );
 }

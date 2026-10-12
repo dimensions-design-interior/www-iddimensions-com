@@ -9,7 +9,7 @@ export const Route = createFileRoute("/projects/")({
     buildSeo({
       title: "Interior Design Concepts & Inspiration",
       description:
-        "Explore illustrative residential, commercial and hospitality interior concepts. Discuss a tailored project for your property in Lucknow or Uttar Pradesh.",
+        "Explore illustrative residential, commercial and hospitality interior concepts. Discuss your project with our Lucknow studio, serving cities across India.",
       path: "/projects",
       image: "/og/project-residential.jpg",
       imageAlt: "Illustrative residential interior with warm finishes",

@@ -30,7 +30,7 @@ export function ConsultationForm({ dark = true }: { dark?: boolean }) {
     try {
       const result = await submit({ data: parsed.data });
       const text = result.emailed
-        ? "Your enquiry has been saved and sent to our team. Thank you for sharing your project."
+        ? "Your enquiry has been saved and email notification requested. To confirm receipt with our team, please call +91 96700 01155 or WhatsApp us."
         : "Your enquiry has been saved, but email notification was not sent. Please call +91 96700 01155 or WhatsApp us to confirm.";
       setNotice({ text, emailed: result.emailed });
       if (result.emailed) toast.success(text); else toast.warning(text);

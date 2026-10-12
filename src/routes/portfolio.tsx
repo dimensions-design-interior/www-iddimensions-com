@@ -12,7 +12,7 @@ export const Route = createFileRoute("/portfolio")({
     buildSeo({
       title: "Interior Design Inspiration — Homes, Kitchens & Offices",
       description:
-        "Explore illustrative interior design ideas for homes, villas, modular kitchens, offices and commercial spaces. Plan your project in Lucknow or Uttar Pradesh.",
+        "Explore illustrative home, villa, kitchen, office and commercial design ideas. Plan your project with our Lucknow studio, serving cities across India.",
       path: "/portfolio",
       image: "/og/hero-interior.jpg",
       imageAlt: "Illustrative oak-and-brass living room interior",

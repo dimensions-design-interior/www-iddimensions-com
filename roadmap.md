@@ -1,15 +1,18 @@
 # Roadmap
 
-- [ ] Correct service coverage to Lucknow and cities across India without claiming other offices; do not publish automatically
+- [x] Correct service coverage to Lucknow and cities across India without claiming other offices; changes remain unpublished
 
-- [ ] Audit existing technical SEO, internal links, mobile layouts and page speed
-- [ ] Improve homepage and existing service content; label illustrative projects honestly
-- [ ] Extend enquiry form and verify saved/email outcomes without false success
-- [ ] Verify metadata, sitemap and Search Console readiness; document remaining actions before publishing
+- [x] Audit existing technical SEO, internal links and mobile layouts: 20 public pages return 200, unique titles/descriptions, self canonicals and no broken internal links
+- [x] Improve homepage and existing service content; label illustrative projects honestly; keep Lucknow as primary local target
+- [x] Extend enquiry form and verify saved/email outcomes without false success: synthetic lead saved; email dispatched then bounced; validation tested on both forms and screen sizes
+- [x] Verify metadata, sitemap, robots and indexing readiness: SEO foundations pass; Google indexing remains unknown
+- [ ] Confirm a working enquiry recipient: info@iddimension.com has no working MX records and is temporarily suppressed after bounce
+- [ ] Verify Google Search Console ownership: no verified property currently covers https://www.iddimensions.com
+- [ ] Final publication — waiting on the user's explicit approval after remaining issues are reviewed
 
 - [x] SEO finding `http:robots` — robots.txt references the sitemap
-- [x] Show approved DB reviews + Google reviews in the Reviews section (static fallback kept)
-- [x] Add Review + aggregateRating JSON-LD to the homepage Reviews section
+- [x] Show approved DB reviews + Google reviews in the Reviews section; remove invented static fallback testimonials
+- [x] Remove unsupported self-serving LocalBusiness aggregateRating output
 - [x] Publish the site and resubmit the sitemap in Search Console (accepted, HTTP 204)
 - [x] Portfolio photo page at /portfolio, linked from the homepage, Modular Kitchens page, nav and sitemap
 - [x] Expand /portfolio with category filters, full-size photo browsing and live five-star Google testimonials
@@ -23,7 +26,7 @@
 - [x] Claim and verify the existing Google Business Profile
 - [ ] Rename the verified Google Business Profile to “Dimensions Designs Interior” so the name matches exactly
 - [ ] Add https://www.iddimensions.com/contact as the consultation appointment link in Google Business
-- [x] Email each Contact Us consultation enquiry to info@iddimension.com
+- [ ] Deliver Contact Us enquiry emails — blocked by the recipient domain's missing working MX records; sender notify.iddimensions.com is verified
 - [x] Use standard key-free Google Maps embed iframes on the homepage and Contact page; custom map key setup is no longer needed
 - [x] Add the official Google Business badge, studio map, direct review link and matching LocalBusiness details
 - [x] Embed the studio map in homepage Contact, share exact-pin directions on both pages, and verify Google links open new tabs

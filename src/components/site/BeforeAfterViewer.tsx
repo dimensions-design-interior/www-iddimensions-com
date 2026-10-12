@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Button } from "@/components/ui/button";
 
 import beforeRoom from "@/assets/before-room.jpg";
 import afterRoom from "@/assets/after-room.jpg";
@@ -20,17 +21,17 @@ type Transformation = {
 
 const transformations: Transformation[] = [
   {
-    name: "Golf City Modular Kitchen",
+    name: "Villa Living Concept",
     category: "Residential",
     location: "Lucknow",
     keywords: "kitchen modular island storage",
     before: beforeRoom,
     after: afterRoom,
     beforeAlt: "Bare unfinished room before interior work",
-    afterAlt: "Finished modular kitchen with island and brass fittings",
+    afterAlt: "Illustrative villa living interior with warm finishes",
   },
   {
-    name: "Gomti Nagar Living Room",
+    name: "Apartment Living Concept",
     category: "Residential",
     location: "Lucknow",
     keywords: "living room sofa panelling lighting",
@@ -40,7 +41,7 @@ const transformations: Transformation[] = [
     afterAlt: "Completed living room with oak panelling and warm lighting",
   },
   {
-    name: "Hazratganj Workspace",
+    name: "Office Concept",
     category: "Commercial",
     location: "Lucknow",
     keywords: "office workstation cabin meeting",
@@ -50,7 +51,7 @@ const transformations: Transformation[] = [
     afterAlt: "Finished office interior with workstations and glass cabins",
   },
   {
-    name: "Aurum Showroom",
+    name: "Showroom Concept",
     category: "Commercial",
     location: "Lucknow",
     keywords: "retail showroom display shopfront",
@@ -60,7 +61,7 @@ const transformations: Transformation[] = [
     afterAlt: "Completed showroom with backlit display units",
   },
   {
-    name: "The Verandah Lounge",
+    name: "Lounge Concept",
     category: "Hospitality",
     location: "Uttar Pradesh",
     keywords: "lounge bar restaurant hospitality seating",
@@ -111,7 +112,7 @@ export function BeforeAfterViewer() {
         <>
           <div className="mt-8 flex flex-wrap gap-3">
             {results.map((t, i) => (
-              <button
+              <Button
                 key={t.name}
                 type="button"
                 aria-pressed={t.name === active?.name}
@@ -121,12 +122,12 @@ export function BeforeAfterViewer() {
                 }}
                 className={
                   t.name === active?.name
-                    ? "btn-solid"
-                    : "btn-outline border-border text-muted-foreground"
+                    ? "btn-solid h-auto max-w-full whitespace-normal rounded-none"
+                    : "btn-outline h-auto max-w-full whitespace-normal rounded-none border-border text-muted-foreground"
                 }
               >
                 {t.name}
-              </button>
+              </Button>
             ))}
           </div>
 
@@ -173,7 +174,7 @@ export function BeforeAfterViewer() {
               />
 
               <figcaption className="mt-4 text-[0.7rem] tracking-[0.24em] text-muted-foreground uppercase">
-                {active.name} | {active.location} | {active.category}
+                 {active.name} | Illustrative comparison | {active.category}
               </figcaption>
             </figure>
           )}

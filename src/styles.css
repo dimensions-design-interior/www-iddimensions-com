@@ -35,9 +35,14 @@
   --color-ink-foreground: var(--ink-foreground);
   --color-brass: var(--brass);
   --color-brass-soft: var(--brass-soft);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+  --shadow-whatsapp: 0 10px 30px -10px color-mix(in oklab, var(--whatsapp) 45%, transparent);
 }
 
 :root {
+  --whatsapp: #25d366;
+  --whatsapp-foreground: #ffffff;
   --radius: 0px;
   --background: oklch(0.975 0.008 85);
   --foreground: oklch(0.22 0.008 60);
@@ -122,7 +127,7 @@
   font-family: var(--font-display);
   font-weight: 300;
   line-height: 0.98;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -175,4 +180,8 @@
 
 @utility veil {
   background-image: var(--gradient-veil);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }

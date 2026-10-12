@@ -42,7 +42,7 @@ export function buildSeo({
   title,
   description,
   path,
-  image = DEFAULT_OG_IMAGE,
+  image,
   imageAlt,
   type = "website",
   jsonLd,
@@ -50,7 +50,7 @@ export function buildSeo({
   const fullTitle = `${title} | ${BRAND_SHORT}`;
   const desc = clamp(description);
   const url = absoluteUrl(path);
-  const ogImage = image.startsWith("http") ? image : absoluteUrl(image);
+  const ogImage = image ? (image.startsWith("https://") ? image : absoluteUrl(image)) : undefined;
 
   const meta: HeadMeta[] = [
     { title: fullTitle },
@@ -60,12 +60,12 @@ export function buildSeo({
     { property: "og:type", content: type },
     { property: "og:url", content: url },
     { property: "og:site_name", content: SITE_NAME },
-    { property: "og:image", content: ogImage },
-    { property: "og:image:alt", content: imageAlt ?? title },
+    { property: "og:locale", content: "en_IN" },
+    ...(ogImage ? [{ property: "og:image", content: ogImage }, { property: "og:image:alt", content: imageAlt ?? title }] : []),
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: fullTitle },
     { name: "twitter:description", content: desc },
-    { name: "twitter:image", content: ogImage },
+    ...(ogImage ? [{ name: "twitter:image", content: ogImage }] : []),
   ];
 
   const scripts = jsonLd
@@ -108,7 +108,6 @@ export function homeAndConstructionBusinessSchema(
     telephone: "+919670001155",
     email: "info@iddimension.com",
     sameAs: [GOOGLE_BUSINESS_URL, "https://instagram.com/iddimensions"],
-    priceRange: "$$$$",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Ground Floor Shop No. 09, Skylark Plaza, near Lulu Mall Road, Golf City, Hariharpur",

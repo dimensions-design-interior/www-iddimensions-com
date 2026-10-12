@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, MessageCircle, Navigation, Phone } from "lucide-react";
 
-import { GOOGLE_DIRECTIONS_URL, homeAndConstructionBusinessSchema } from "@/lib/seo/site";
+import { GOOGLE_DIRECTIONS_URL, buildSeo, homeAndConstructionBusinessSchema } from "@/lib/seo/site";
 
 import { SiteNav } from "@/components/site/SiteNav";
 import { SiteFooter } from "@/components/site/SiteFooter";
@@ -16,97 +16,21 @@ import {
 } from "@/components/site/GoogleBusinessProfile";
 
 import heroInterior from "@/assets/hero-interior.jpg";
+import { services as serviceCatalog } from "@/lib/seo/catalog";
+import { WhatsAppLink } from "@/components/site/WhatsAppButton";
 
-
-const SITE_URL = "https://www.iddimensions.com";
-const OG_IMAGE = SITE_URL + "/og-image.jpg";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Interior Designers in Lucknow | Modular Kitchens & Villa Interiors" },
-      {
-        name: "description",
-        content:
-          "Interior designers in Lucknow for turnkey homes, luxury villa interiors, modular kitchens, offices and showrooms. Book a design consultation with Dimensions.",
-      },
-      {
-        property: "og:title",
-        content: "Dimensions Designs Interior | Designing Spaces. Defining Experiences.",
-      },
-      {
-        property: "og:description",
-        content:
-          "Lucknow interior design for turnkey homes, luxury villas, modular kitchens, offices and showrooms—from concept through final handover.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: SITE_URL + "/" },
-      { property: "og:site_name", content: "Dimensions Designs Interior" },
-      { property: "og:image", content: OG_IMAGE },
-      { property: "og:image:width", content: "1920" },
-      { property: "og:image:height", content: "1200" },
-      {
-        property: "og:image:alt",
-        content: "Luxury living room interior with oak paneling and brass accents",
-      },
-      { name: "twitter:card", content: "summary_large_image" },
-      {
-        name: "twitter:title",
-        content: "Dimensions Designs Interior | Designing Spaces. Defining Experiences.",
-      },
-      {
-        name: "twitter:description",
-        content:
-          "Premium interior design and turnkey interior solutions in Lucknow, Uttar Pradesh and across India.",
-      },
-      { name: "twitter:image", content: OG_IMAGE },
-    ],
-    links: [{ rel: "canonical", href: SITE_URL + "/" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "InteriorDesigner",
-          name: "Dimensions Design Interior",
-          url: SITE_URL,
-          email: "info@iddimension.com",
-          telephone: "+91-9670001155",
-          description:
-            "Premium interior design and turnkey interior solutions for residential, commercial, retail and hospitality spaces.",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress:
-              "Ground Floor Shop No. 09, Skylark Plaza, near Lulu Mall Road, Golf City, Hariharpur",
-            addressLocality: "Lucknow",
-            addressRegion: "Uttar Pradesh",
-            postalCode: "226030",
-            addressCountry: "IN",
-          },
-          areaServed: "India",
-          sameAs: [
-            "https://maps.google.com/maps?cid=6778963857762604567",
-            "https://instagram.com/iddimensions",
-          ],
-          makesOffer: services.map((service) => ({
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: service.title },
-          })),
-        }),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(
-          homeAndConstructionBusinessSchema([
-            { name: "Turnkey Interior Design & Build" },
-            { name: "Luxury Villa & Home Interiors" },
-            { name: "Modular Kitchen Design & Installation" },
-            { name: "Commercial & Retail Interiors" },
-          ]),
-        ),
-      },
-    ],
-  }),
+  head: () => {
+    const seo = buildSeo({
+      title: "Turnkey Interior Solutions in Lucknow & India | ID Dimensions",
+      description: "Interior design, material selection and complete turnkey execution for apartments, villas, offices and commercial spaces in Lucknow and Uttar Pradesh.",
+      path: "/",
+      jsonLd: homeAndConstructionBusinessSchema(),
+    });
+    const title = "Turnkey Interior Solutions in Lucknow & India | ID Dimensions";
+    return { ...seo, meta: seo.meta.map((tag) => tag.title ? { title } : tag.property === "og:title" || tag.name === "twitter:title" ? { ...tag, content: title } : tag) };
+  },
   component: Index,
 });
 
@@ -210,32 +134,22 @@ function Index() {
         <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-end px-6 pt-40 pb-20 lg:px-12 lg:pb-28">
           <p className="eyebrow">Dimensions Designs Interior</p>
           <h1 className="display-xl mt-6 max-w-4xl text-4xl text-ink-foreground sm:text-6xl lg:text-7xl">
-            Designing Spaces.
-            <br />
-            Defining Experiences.
+            Complete Turnkey Interior Solutions — From Design to Execution
           </h1>
           <p className="mt-8 max-w-xl text-base tracking-wide text-brass-soft">
             Interior Designers In Lucknow · Turnkey Homes &amp; Modular Kitchens
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink-foreground/70">
-            From concept to completion, we design and execute sophisticated residential, commercial
-            and hospitality interiors with a focus on aesthetics, functionality and quality.
+            Interior design, material selection and complete turnkey execution for apartments, homes,
+            villas, offices and commercial interiors in Lucknow and Uttar Pradesh.
           </p>
           <p className="mt-8 text-[0.7rem] tracking-[0.28em] text-ink-foreground/50 uppercase">
-            Lucknow, Uttar Pradesh | Across India
+            Lucknow & Uttar Pradesh
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <a href="#projects" className="btn-solid">
-              View Our Projects
-            </a>
-            <a
-              href="https://wa.me/919670001155?text=Hi%2C%20I%27m%20interested%20in%20a%20consultation%20for%20my%20interior%20project."
-              target="_blank"
-              rel="noreferrer"
-              className="btn-outline text-ink-foreground"
-            >
-              Get A Consultation
-            </a>
+            <Link to="/contact" className="btn-solid">Request a Consultation</Link>
+            <a href="#contact" className="btn-outline text-ink-foreground">Get a Project Quote</a>
+            <WhatsAppLink className="btn-outline text-ink-foreground"><MessageCircle className="size-4 shrink-0" aria-hidden="true" />WhatsApp Us</WhatsAppLink>
           </div>
         </div>
       </section>
@@ -279,14 +193,14 @@ function Index() {
             Interior Design Services In Lucknow
           </h2>
           <div className="mt-16 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((s) => (
+            {services.map((s, index) => (
               <article
                 key={s.title}
                 className="group bg-background p-9 transition-colors duration-500 hover:bg-ink"
               >
                 <div className="rule-thin" />
                 <h3 className="mt-7 text-lg tracking-[0.12em] uppercase transition-colors group-hover:text-ink-foreground">
-                  {s.title}
+                  <Link to="/services/$slug" params={{ slug: serviceCatalog[index]?.slug ?? "turnkey-projects" }}>{s.title}</Link>
                 </h3>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground transition-colors group-hover:text-ink-foreground/65">
                   {s.body}
@@ -311,20 +225,20 @@ function Index() {
       <section id="projects" className="mx-auto max-w-7xl px-6 py-24 lg:px-12 lg:py-32">
         <p className="eyebrow">Projects Gallery</p>
         <h2 className="display-xl mt-6 text-3xl sm:text-4xl lg:text-5xl">
-          Spaces We Have Transformed
+          Interior Design Inspiration
         </h2>
         <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
-          Explore a selection of our residential, commercial and hospitality projects.
+          Illustrative residential, commercial and hospitality concepts — not photographs of completed client projects.
         </p>
 
         <ProjectsGallery />
 
         <p className="mt-10 text-sm text-muted-foreground">
-          Want to see more finished work?{" "}
+          Explore more design ideas?{" "}
           <Link to="/portfolio" className="text-foreground underline underline-offset-4">
             View our full interior design portfolio
           </Link>{" "}
-          — photos of completed homes, kitchens, offices and showrooms.
+          — illustrative homes, kitchens, offices and showrooms.
         </p>
       </section>
 
@@ -376,7 +290,7 @@ function Index() {
             From Ordinary To Extraordinary
           </h2>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            See how thoughtful design and professional execution can completely transform a space.
+            An illustrative before-and-after comparison showing how layout, lighting and finishes can change a space.
           </p>
           <BeforeAfterViewer />
 
@@ -491,7 +405,7 @@ function Index() {
           </ul>
           <p className="mt-4 flex items-center justify-center gap-2 text-[0.7rem] tracking-[0.26em] text-ink-foreground/45 uppercase">
             <MapPin aria-hidden="true" className="size-4 shrink-0 text-brass/70" />
-            Lucknow, Uttar Pradesh | Across India
+            Lucknow & Uttar Pradesh
           </p>
         </div>
       </section>

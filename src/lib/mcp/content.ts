@@ -4,7 +4,7 @@ export const company = {
   summary:
     "Premium interior design and turnkey interior solutions for residential, commercial and hospitality spaces, delivered from concept to completion.",
   philosophy: "Design. Detail. Execution.",
-  serviceArea: "Lucknow, Uttar Pradesh | Across India",
+  serviceArea: "Lucknow and Uttar Pradesh",
   email: "info@iddimension.com",
   address:
     "Ground Floor Shop No. 09, Skylark Plaza, near Lulu Mall Road, Golf City, Lucknow, Hariharpur, Uttar Pradesh 226030, India",
@@ -24,11 +24,12 @@ export const services = [
 
 export const projectTypes = ["Residential", "Commercial", "Retail", "Hospitality"] as const;
 
+// Illustrative design concepts, not completed client work.
 export const projects = [
-  { name: "Gomti Nagar Residence", location: "Lucknow", type: "Residential" },
-  { name: "Hazratganj Workspace", location: "Lucknow", type: "Commercial" },
-  { name: "Aurum Showroom", location: "Lucknow", type: "Retail" },
-  { name: "The Verandah Lounge", location: "Uttar Pradesh", type: "Hospitality" },
+  { name: "Illustrative Apartment Concept", location: "Lucknow", type: "Residential" },
+  { name: "Illustrative Office Concept", location: "Lucknow", type: "Commercial" },
+  { name: "Illustrative Showroom Concept", location: "Lucknow", type: "Retail" },
+  { name: "Illustrative Lounge Concept", location: "Uttar Pradesh", type: "Hospitality" },
 ];
 
 export const process = [

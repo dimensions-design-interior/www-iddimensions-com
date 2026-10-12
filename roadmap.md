@@ -8,7 +8,7 @@
 - [x] Verify metadata, sitemap, robots and indexing readiness: SEO foundations pass; Google indexing remains unknown
 - [x] Correct public contact and fixed enquiry recipient to owner-confirmed info@iddimensions.com; test notification accepted after changes loaded
 - [ ] Confirm test email receipt in info@iddimensions.com — delivery/open events are not available; owner inbox confirmation needed
-- [ ] Verify Google Search Console ownership: no verified property currently covers https://www.iddimensions.com
+- [ ] Verify Google Search Console ownership: connected account checked; META tag added for https://www.iddimensions.com/; awaiting approved publication, live-tag verification and sitemap submission
 - [ ] Final publication — waiting on the user's explicit approval after remaining issues are reviewed
 
 - [x] SEO finding `http:robots` — robots.txt references the sitemap

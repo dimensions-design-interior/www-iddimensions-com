@@ -10,14 +10,13 @@ import { absoluteUrl, breadcrumbSchema, buildSeo, homeAndConstructionBusinessSch
 export const Route = createFileRoute("/portfolio")({
   head: () =>
     buildSeo({
-      title: "Interior Design Portfolio — Completed Project Photos",
+      title: "Interior Design Inspiration — Homes, Kitchens & Offices",
       description:
-        "Photo portfolio of completed interior projects in Lucknow — turnkey homes, villa interiors, modular kitchens, offices, showrooms and hospitality spaces.",
+        "Explore illustrative interior design ideas for homes, villas, modular kitchens, offices and commercial spaces. Plan your project in Lucknow or Uttar Pradesh.",
       path: "/portfolio",
       image: "/og/hero-interior.jpg",
-      imageAlt: "Completed luxury living room interior by Dimensions Designs Interior",
+      imageAlt: "Illustrative oak-and-brass living room interior",
       jsonLd: [
-        homeAndConstructionBusinessSchema(),
         breadcrumbSchema([
           { name: "Home", path: "/" },
           { name: "Portfolio", path: "/portfolio" },
@@ -38,8 +37,8 @@ function PortfolioPage() {
   return (
     <PageShell
       eyebrow="Portfolio"
-      title="Photographs Of Completed Interiors"
-      intro="A photo gallery of interiors we have designed and executed across Lucknow and Uttar Pradesh — homes, modular kitchens, offices, showrooms and hospitality spaces."
+      title="Interior Design Inspiration"
+      intro="Illustrative design examples for homes, kitchens, offices and hospitality spaces — not photographs of completed client projects."
     >
       <PortfolioGallery />
 
@@ -47,7 +46,7 @@ function PortfolioPage() {
 
       <div className="mt-16 flex flex-wrap gap-3">
         <Link to="/projects" className="btn-outline border-border text-muted-foreground">
-          Project Case Studies
+          Design Concepts
         </Link>
         <Link
           to="/modular-kitchen-lucknow"

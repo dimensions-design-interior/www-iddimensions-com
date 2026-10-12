@@ -7,12 +7,12 @@ import { absoluteUrl, breadcrumbSchema, buildSeo, homeAndConstructionBusinessSch
 export const Route = createFileRoute("/projects/")({
   head: () =>
     buildSeo({
-      title: "Interior Design Projects & Portfolio",
+      title: "Interior Design Concepts & Inspiration",
       description:
-        "Browse our completed residential, commercial and hospitality interior projects across Lucknow and Uttar Pradesh, from turnkey homes to showrooms and lounges.",
+        "Explore illustrative residential, commercial and hospitality interior concepts. Discuss a tailored project for your property in Lucknow or Uttar Pradesh.",
       path: "/projects",
       image: "/og/project-residential.jpg",
-      imageAlt: "Completed residential interior project in Lucknow",
+      imageAlt: "Illustrative residential interior with warm finishes",
       jsonLd: [
         homeAndConstructionBusinessSchema(),
         breadcrumbSchema([
@@ -38,16 +38,16 @@ export const Route = createFileRoute("/projects/")({
 function ProjectsIndex() {
   return (
     <PageShell
-      eyebrow="Featured Projects"
-      title="Spaces We Have Designed & Delivered"
-      intro="A selection of residential, commercial and hospitality interiors delivered from concept to completion."
+      eyebrow="Design Inspiration"
+      title="Interior Design Concepts"
+      intro="Illustrative design examples for homes, offices and hospitality spaces. These are not completed client projects."
     >
       <div className="mt-14 grid gap-8 md:grid-cols-2">
         {projects.map((p) => (
           <article key={p.slug}>
             <img
               src={p.image}
-              alt={`${p.name} — ${p.category.toLowerCase()} interior project in ${p.location}`}
+              alt={`Illustrative ${p.category.toLowerCase()} concept: ${p.name}`}
               loading="lazy"
               width={1200}
               height={900}
@@ -63,7 +63,7 @@ function ProjectsIndex() {
                 params={{ slug: p.slug }}
                 className="mt-4 inline-block text-[0.68rem] font-semibold tracking-[0.24em] text-brass uppercase"
               >
-                View Project
+                View Concept
               </Link>
             </div>
           </article>

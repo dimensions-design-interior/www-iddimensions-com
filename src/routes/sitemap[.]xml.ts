@@ -2,8 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
 import { projects, services } from "@/lib/seo/catalog";
+import { SITE_URL } from "@/lib/seo/site";
 
-const BASE_URL = "https://www.iddimensions.com";
+const BASE_URL = SITE_URL;
 
 interface SitemapEntry {
   path: string;

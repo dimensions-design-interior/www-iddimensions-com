@@ -12,7 +12,7 @@ export const Route = createFileRoute("/services/")({
         "Interior design services in Lucknow for homes and businesses: residential and villa interiors, modular kitchens, wardrobes, commercial spaces and turnkey projects.",
       path: "/services",
       image: "/og/hero-interior.jpg",
-      imageAlt: "Premium interior designed by Dimensions Designs Interior",
+      imageAlt: "Illustrative luxury living room with oak paneling",
       jsonLd: [
         homeAndConstructionBusinessSchema(),
         breadcrumbSchema([
@@ -47,7 +47,7 @@ function ServicesIndex() {
           <article key={s.slug} className="border border-border">
             <img
               src={s.image}
-               alt={`${s.title} in Lucknow by Dimensions Designs Interior`}
+               alt={`Illustrative ${s.title.toLowerCase()} concept`}
               loading="lazy"
               width={1200}
               height={900}

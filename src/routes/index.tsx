@@ -200,7 +200,7 @@ function Index() {
               >
                 <div className="rule-thin" />
                 <h3 className="mt-7 text-lg tracking-[0.12em] uppercase transition-colors group-hover:text-ink-foreground">
-                  <Link to="/services/$slug" params={{ slug: serviceCatalog[index]?.slug ?? "turnkey-projects" }}>{s.title}</Link>
+                  <Link to="/services/$slug" params={{ slug: serviceCatalog[index + 1]?.slug ?? "turnkey-projects" }}>{s.title}</Link>
                 </h3>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground transition-colors group-hover:text-ink-foreground/65">
                   {s.body}
@@ -208,6 +208,7 @@ function Index() {
               </article>
             ))}
           </div>
+          <div className="mt-10 flex flex-wrap gap-5 text-sm"><Link to="/services" className="underline underline-offset-4">All interior design services</Link><Link to="/services/$slug" params={{ slug: "interior-designer-lucknow" }} className="underline underline-offset-4">Interior Designer in Lucknow</Link></div>
           <p className="mt-10 text-sm text-muted-foreground">
             Planning a kitchen?{" "}
             <Link

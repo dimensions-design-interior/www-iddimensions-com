@@ -18,34 +18,19 @@ export const Route = createFileRoute("/projects/$slug")({
       };
     }
     return buildSeo({
-      title: `${project.name} — ${project.category} Interiors, ${project.location}`,
+      title: `${project.name} — Illustrative ${project.category} Design`,
       description: project.summary,
       path: `/projects/${params.slug}`,
       image: project.image,
-      imageAlt: `${project.name} ${project.category.toLowerCase()} interior in ${project.location}`,
+      imageAlt: `Illustrative ${project.category.toLowerCase()} concept: ${project.name}`,
       type: "article",
       jsonLd: [
-        homeAndConstructionBusinessSchema(),
         breadcrumbSchema([
           { name: "Home", path: "/" },
           { name: "Projects", path: "/projects" },
           { name: project.name, path: `/projects/${project.slug}` },
         ]),
-        {
-          "@context": "https://schema.org",
-          "@type": "CreativeWork",
-          name: project.name,
-          description: project.summary,
-          url: absoluteUrl(`/projects/${project.slug}`),
-          image: absoluteUrl(project.image),
-          genre: `${project.category} Interior Design`,
-          locationCreated: { "@type": "Place", name: project.location },
-          creator: {
-            "@type": "InteriorDesigner",
-            name: "Dimensions Designs Interior",
-            url: absoluteUrl("/"),
-          },
-        },
+
       ],
     });
   },
@@ -56,15 +41,16 @@ function ProjectDetail() {
   const { project } = Route.useLoaderData();
 
   return (
-    <PageShell eyebrow={`${project.category} Project`} title={project.name} intro={project.summary}>
+    <PageShell eyebrow={`${project.category} Design Concept`} title={project.name} intro={project.summary}>
       <img
         src={project.image}
-        alt={`${project.name} ${project.category.toLowerCase()} interior in ${project.location}`}
+        alt={`Illustrative ${project.category.toLowerCase()} concept: ${project.name}`}
         width={1600}
         height={1000}
         className="mt-12 h-[28rem] w-full object-cover"
       />
 
+      <p className="mt-4 text-sm text-muted-foreground">Illustrative example only. The name, location and scope describe a concept, not a completed client commission.</p>
       <dl className="mt-12 grid gap-8 border-y border-border py-8 sm:grid-cols-3">
         {[
           ["Category", project.category],
@@ -78,11 +64,11 @@ function ProjectDetail() {
         ))}
       </dl>
 
-      <a href="/#contact" className="btn-solid mt-10 inline-block">
+      <a href="/contact" className="btn-solid mt-10 inline-block">
         Plan A Similar Project
       </a>
 
-      <h2 className="mt-20 text-xl tracking-[0.1em] uppercase">More Projects</h2>
+      <h2 className="mt-20 text-xl tracking-[0.1em] uppercase">More Design Concepts</h2>
       <div className="mt-6 flex flex-wrap gap-3">
         {projects
           .filter((p) => p.slug !== project.slug)

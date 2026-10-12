@@ -24,6 +24,7 @@ export function SiteFooter() {
                 { label: "About", href: "/#about" },
                 { label: "Services", href: "/services" },
                 { label: "Projects", href: "/projects" },
+                { label: "Portfolio", href: "/portfolio" },
                 { label: "Contact", href: "/contact" },
               ].map((l) => (
                 <li key={l.label}>

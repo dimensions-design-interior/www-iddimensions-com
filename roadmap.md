@@ -1,5 +1,10 @@
 # Roadmap
 
+- [ ] Audit existing technical SEO, internal links, mobile layouts and page speed
+- [ ] Improve homepage and existing service content; label illustrative projects honestly
+- [ ] Extend enquiry form and verify saved/email outcomes without false success
+- [ ] Verify metadata, sitemap and Search Console readiness; document remaining actions before publishing
+
 - [x] SEO finding `http:robots` — robots.txt references the sitemap
 - [x] Show approved DB reviews + Google reviews in the Reviews section (static fallback kept)
 - [x] Add Review + aggregateRating JSON-LD to the homepage Reviews section

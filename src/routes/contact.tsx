@@ -112,7 +112,7 @@ function ContactPage() {
             <p className="text-[0.68rem] tracking-[0.24em] text-brass uppercase">Service Area</p>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               Lucknow and surrounding areas, including Golf City, Gomti Nagar, Shaheed Path,
-              Sushant Golf City and across Uttar Pradesh.
+              Sushant Golf City, with project availability in other cities across India. Our physical studio is in Lucknow.
             </p>
           </div>
         </section>

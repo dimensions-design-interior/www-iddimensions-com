@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Correct service coverage to Lucknow and cities across India without claiming other offices; do not publish automatically
+
 - [ ] Audit existing technical SEO, internal links, mobile layouts and page speed
 - [ ] Improve homepage and existing service content; label illustrative projects honestly
 - [ ] Extend enquiry form and verify saved/email outcomes without false success

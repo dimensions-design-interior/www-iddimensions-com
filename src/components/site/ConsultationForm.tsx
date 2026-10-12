@@ -81,7 +81,7 @@ export function ConsultationForm({ dark = true }: { dark?: boolean }) {
         <label htmlFor={`${id}-website`}>Website</label>
         <input id={`${id}-website`} name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={update("website")} />
       </div>
-      <p className="text-xs leading-relaxed opacity-70">We use these details to respond to your project enquiry. Serving Lucknow and Uttar Pradesh.</p>
+      <p className="text-xs leading-relaxed opacity-70">We use these details to respond to your project enquiry. Based in Lucknow; accepting projects across India.</p>
       {error && <p role="alert" className="text-sm leading-relaxed">{error}</p>}
       {notice && <div role="status" className="border-l-2 border-brass pl-4 text-sm leading-relaxed"><p>{notice.text}</p>{!notice.emailed && <WhatsAppLink className="mt-3 inline-block underline underline-offset-4">Confirm on WhatsApp</WhatsAppLink>}</div>}
       <Button type="submit" disabled={sending} className="btn-solid h-auto max-w-full whitespace-normal rounded-none">{sending ? "Sending…" : "Request a Consultation"}</Button>

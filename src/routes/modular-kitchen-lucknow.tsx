@@ -124,7 +124,7 @@ const faqs = [
   },
   {
     q: "Which areas of Lucknow do you serve?",
-    a: "We work across Lucknow including Gomti Nagar, Golf City, Sushant Golf City, Hazratganj, Aliganj, Indira Nagar and Jankipuram, and take projects across Uttar Pradesh.",
+    a: "We work across Lucknow including Gomti Nagar, Golf City, Sushant Golf City, Hazratganj, Aliganj, Indira Nagar and Jankipuram, and accept project enquiries from other cities across India. Our studio is in Lucknow; the scope and site arrangements are agreed for each project.",
   },
 ];
 

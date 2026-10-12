@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")({
   head: () => {
     const seo = buildSeo({
       title: "Turnkey Interior Solutions in Lucknow & India | ID Dimensions",
-      description: "Interior design, material selection and complete turnkey execution for apartments, villas, offices and commercial spaces in Lucknow and Uttar Pradesh.",
+      description: "Interior design, material selection and complete turnkey execution for apartments, villas, offices and commercial spaces in Lucknow and cities across India.",
       path: "/",
       jsonLd: homeAndConstructionBusinessSchema(),
     });
@@ -122,16 +122,16 @@ function Index() {
       <SiteNav />
 
       {/* HERO */}
-      <section className="relative min-h-screen">
+      <section className="relative min-h-[min(90svh,60rem)]">
         <img
           src={heroInterior}
-          alt="Warmly lit luxury living room interior with oak paneling and brass accents"
+          alt="Illustrative luxury living room with oak paneling and brass accents"
           width={1920}
           height={1200}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="veil absolute inset-0" />
-        <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-end px-6 pt-40 pb-20 lg:px-12 lg:pb-28">
+        <div className="relative mx-auto flex min-h-[min(90svh,60rem)] max-w-7xl flex-col justify-end px-6 pt-40 pb-20 lg:px-12 lg:pb-28">
           <p className="eyebrow">Dimensions Designs Interior</p>
           <h1 className="display-xl mt-6 max-w-4xl text-4xl text-ink-foreground sm:text-6xl lg:text-7xl">
             Complete Turnkey Interior Solutions — From Design to Execution
@@ -141,10 +141,10 @@ function Index() {
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink-foreground/70">
             Interior design, material selection and complete turnkey execution for apartments, homes,
-            villas, offices and commercial interiors in Lucknow and Uttar Pradesh.
+            villas, offices and commercial interiors in Lucknow and cities across India.
           </p>
           <p className="mt-8 text-[0.7rem] tracking-[0.28em] text-ink-foreground/50 uppercase">
-            Lucknow & Uttar Pradesh
+            Lucknow Studio · Projects Across India
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link to="/contact" className="btn-solid">Request a Consultation</Link>
@@ -176,7 +176,7 @@ function Index() {
             <p>
               From the first concept to the final handover, our team manages every detail—design,
               materials, coordination and execution—to create spaces that are distinctive,
-              functional and built to last.
+              functional and built to last. Project enquiries are welcome from Lucknow and other cities across India.
             </p>
             <p className="font-display text-2xl tracking-[0.12em] text-foreground uppercase">
               Design. Detail. Execution.
@@ -406,7 +406,7 @@ function Index() {
           </ul>
           <p className="mt-4 flex items-center justify-center gap-2 text-[0.7rem] tracking-[0.26em] text-ink-foreground/45 uppercase">
             <MapPin aria-hidden="true" className="size-4 shrink-0 text-brass/70" />
-            Lucknow & Uttar Pradesh
+            Lucknow Studio · Projects Across India
           </p>
         </div>
       </section>

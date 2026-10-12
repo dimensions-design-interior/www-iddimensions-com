@@ -130,8 +130,8 @@ export function homeAndConstructionBusinessSchema(
       },
     ],
     areaServed: [
-      { "@type": "AdministrativeArea", name: "Lucknow" },
-      { "@type": "AdministrativeArea", name: "Uttar Pradesh" },
+      { "@type": "City", name: "Lucknow" },
+      { "@type": "Country", name: "India" },
     ],
     knowsAbout: [
       "Interior Design in Lucknow",

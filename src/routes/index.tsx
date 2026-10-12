@@ -377,11 +377,11 @@ function Index() {
           <ul className="mt-10 flex flex-col items-center gap-3 text-sm tracking-[0.2em] text-brass uppercase">
             <li>
               <a
-                href="mailto:info@iddimension.com"
+                href="mailto:info@iddimensions.com"
                 className="inline-flex items-center gap-2 hover:text-brass-soft"
               >
                 <Mail aria-hidden="true" className="size-4 shrink-0" />
-                info@iddimension.com
+                info@iddimensions.com
               </a>
             </li>
             <li>

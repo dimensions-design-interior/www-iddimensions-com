@@ -5,7 +5,7 @@ export const company = {
     "Premium interior design and turnkey interior solutions for residential, commercial and hospitality spaces, delivered from concept to completion.",
   philosophy: "Design. Detail. Execution.",
   serviceArea: "Lucknow and cities across India; physical studio in Lucknow",
-  email: "info@iddimension.com",
+  email: "info@iddimensions.com",
   address:
     "Ground Floor Shop No. 09, Skylark Plaza, near Lulu Mall Road, Golf City, Lucknow, Hariharpur, Uttar Pradesh 226030, India",
   website: "https://www.iddimensions.com",

@@ -106,7 +106,7 @@ export function homeAndConstructionBusinessSchema(
     url: SITE_URL,
     hasMap: GOOGLE_BUSINESS_URL,
     telephone: "+919670001155",
-    email: "info@iddimension.com",
+    email: "info@iddimensions.com",
     sameAs: [GOOGLE_BUSINESS_URL, "https://instagram.com/iddimensions"],
     address: {
       "@type": "PostalAddress",

@@ -61,11 +61,11 @@ function ContactPage() {
               +91 96700 01155
             </a>
             <a
-              href="mailto:info@iddimension.com"
+              href="mailto:info@iddimensions.com"
               className="flex items-center gap-4 hover:text-foreground"
             >
               <Mail aria-hidden="true" className="size-5 shrink-0 text-brass" />
-              info@iddimension.com
+              info@iddimensions.com
             </a>
             <div className="flex items-start gap-4">
               <Clock3 aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-brass" />

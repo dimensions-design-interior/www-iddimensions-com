@@ -36,7 +36,7 @@ export const Route = createFileRoute("/services/$slug")({
           serviceType: service.title,
           description: service.seoIntro,
           url: absoluteUrl(`/services/${service.slug}`),
-          areaServed: { "@type": "Place", name: "Lucknow, Uttar Pradesh, India" },
+          areaServed: [{ "@type": "City", name: "Lucknow" }, { "@type": "Country", name: "India" }],
           provider: {
             "@id": `${absoluteUrl("/")}#business`,
           },
@@ -74,7 +74,7 @@ function ServiceDetail() {
         </div>
         <div>
           <h2 className="text-xl tracking-[0.1em] uppercase">Start Your Project</h2>
-          <p className="mt-6 text-sm text-muted-foreground">Share your city, property type, approximate area, budget and timeline. Our team will discuss the scope with you before providing a project-specific quote.</p>
+          <p className="mt-6 text-sm text-muted-foreground">Our Lucknow studio accepts projects in cities across India. Share your city, property type, approximate area, budget and timeline. Our team will discuss the materials, execution scope and site arrangements before providing a project-specific quote.</p>
           {service.slug === "modular-kitchens" && (
             <p className="mt-4 text-sm text-muted-foreground">
               See layouts, shutter finishes and project pricing on our{" "}

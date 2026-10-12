@@ -155,7 +155,7 @@ export const Route = createFileRoute("/modular-kitchen-lucknow")({
             "@type": "InteriorDesigner",
             name: "Dimensions Designs Interior",
             url: absoluteUrl("/"),
-            email: "info@iddimension.com",
+            email: "info@iddimensions.com",
             telephone: "+91-9670001155",
             address: {
               "@type": "PostalAddress",

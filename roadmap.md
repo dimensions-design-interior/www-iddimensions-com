@@ -6,7 +6,8 @@
 - [x] Improve homepage and existing service content; label illustrative projects honestly; keep Lucknow as primary local target
 - [x] Extend enquiry form and verify saved/email outcomes without false success: synthetic lead saved; email dispatched then bounced; validation tested on both forms and screen sizes
 - [x] Verify metadata, sitemap, robots and indexing readiness: SEO foundations pass; Google indexing remains unknown
-- [ ] Confirm a working enquiry recipient: info@iddimension.com has no working MX records and is temporarily suppressed after bounce
+- [x] Correct public contact and fixed enquiry recipient to owner-confirmed info@iddimensions.com; test notification accepted after changes loaded
+- [ ] Confirm test email receipt in info@iddimensions.com — delivery/open events are not available; owner inbox confirmation needed
 - [ ] Verify Google Search Console ownership: no verified property currently covers https://www.iddimensions.com
 - [ ] Final publication — waiting on the user's explicit approval after remaining issues are reviewed
 
@@ -26,7 +27,7 @@
 - [x] Claim and verify the existing Google Business Profile
 - [ ] Rename the verified Google Business Profile to “Dimensions Designs Interior” so the name matches exactly
 - [ ] Add https://www.iddimensions.com/contact as the consultation appointment link in Google Business
-- [ ] Deliver Contact Us enquiry emails — blocked by the recipient domain's missing working MX records; sender notify.iddimensions.com is verified
+- [x] Configure Contact Us enquiry emails for info@iddimensions.com; sender notify.iddimensions.com is verified; retain honest saved-versus-email messaging
 - [x] Use standard key-free Google Maps embed iframes on the homepage and Contact page; custom map key setup is no longer needed
 - [x] Add the official Google Business badge, studio map, direct review link and matching LocalBusiness details
 - [x] Embed the studio map in homepage Contact, share exact-pin directions on both pages, and verify Google links open new tabs

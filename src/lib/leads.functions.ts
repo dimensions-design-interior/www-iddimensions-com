@@ -53,7 +53,7 @@ export const submitConsultationLead = createServerFn({ method: "POST" })
 
     try {
       const { sendTemplateEmail } = await import("@/lib/email-templates/send-email");
-      const result = await sendTemplateEmail("consultation-enquiry", "info@iddimension.com", {
+      const result = await sendTemplateEmail("consultation-enquiry", "info@iddimensions.com", {
         templateData: {
           name: data.name,
           email: data.email,

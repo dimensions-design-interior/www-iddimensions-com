@@ -81,7 +81,7 @@ export const template = {
   component: ConsultationEnquiry,
   subject: (data) => `New consultation enquiry — ${String(data["name"] || "Website visitor")}`,
   displayName: "Consultation enquiry",
-  to: "info@iddimension.com",
+  to: "info@iddimensions.com",
   previewData: {
     name: "Aarav Sharma",
     email: "aarav@example.com",

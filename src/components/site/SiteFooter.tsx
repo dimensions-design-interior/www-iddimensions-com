@@ -65,11 +65,11 @@ export function SiteFooter() {
               </li>
               <li>
                 <a
-                  href="mailto:info@iddimension.com"
+                  href="mailto:info@iddimensions.com"
                   className="flex items-center gap-3 transition-colors hover:text-brass"
                 >
                   <Mail aria-hidden="true" className="size-4 shrink-0 text-brass" />
-                  info@iddimension.com
+                  info@iddimensions.com
                 </a>
               </li>
               <li>

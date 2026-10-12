@@ -17,6 +17,9 @@ interface ConsultationEnquiryProps {
   name?: string;
   email?: string;
   phone?: string;
+  city?: string;
+  propertyType?: string;
+  approximateArea?: number;
   projectType?: string;
   budget?: string;
   timeline?: string;
@@ -27,6 +30,9 @@ function ConsultationEnquiry({
   name = "Website visitor",
   email = "Not provided",
   phone = "Not provided",
+  city = "Not provided",
+  propertyType = "Not provided",
+  approximateArea,
   projectType = "Not provided",
   budget = "Not provided",
   timeline = "Not provided",
@@ -36,6 +42,9 @@ function ConsultationEnquiry({
     ["Name", name],
     ["Email", email],
     ["Phone", phone || "Not provided"],
+    ["City", city],
+    ["Property type", propertyType],
+    ["Approximate area", approximateArea ? `${approximateArea} sq ft` : "Not provided"],
     ["Project type", projectType],
     ["Budget", budget],
     ["Preferred timeline", timeline],

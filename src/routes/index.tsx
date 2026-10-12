@@ -143,6 +143,7 @@ function Index() {
             Interior design, material selection and complete turnkey execution for apartments, homes,
             villas, offices and commercial interiors in Lucknow and cities across India.
           </p>
+          <p className="mt-3 text-xs text-ink-foreground/70">Illustrative interior concept; not a completed client project.</p>
           <p className="mt-8 text-[0.7rem] tracking-[0.28em] text-ink-foreground/50 uppercase">
             Lucknow Studio · Projects Across India
           </p>

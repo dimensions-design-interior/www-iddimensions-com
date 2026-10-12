@@ -111,12 +111,12 @@ export const services: ServiceEntry[] = [
   {
     slug: "turnkey-projects",
     title: "Turnkey Interior Solutions",
-    body: "Complete design-to-execution solutions with professional project coordination from concept to handover.",
+    body: "Complete interior design, material selection and supply, and supervised execution from concept to handover, within the agreed project scope.",
     seoIntro:
       "Turnkey interior projects in Lucknow managed end to end — design, materials, vendors, execution and handover under one team.",
     image: `${OG}/hero-interior.jpg`,
     highlights: ["Single point of contact", "Transparent estimation", "Vendor coordination", "Agreed handover schedule"],
-    details: [{"title": "One coordinated design-to-execution scope", "text": "Turnkey interior solutions bring space planning, material selection, estimation and execution coordination into one agreed project scope. This can cover apartments, homes, villas, offices and commercial premises."}, {"title": "Know what the estimate covers", "text": "Review a line-item estimate with the proposed boards, finishes, hardware and work packages. Record inclusions, exclusions and approval steps so changes can be discussed before they affect cost."}, {"title": "Execution and handover", "text": "Agree a site-specific schedule and who will supervise each stage. At handover, review the completed scope and any outstanding items together. Based at our Lucknow studio, we accept projects in other cities across India. Materials and execution are included according to the agreed project scope."}],
+    details: [{"title": "One coordinated design-to-execution scope", "text": "Our turnkey interior service brings space planning and design, material selection and supply, installation, finishing and supervised execution into one agreed project scope. This can cover apartments, homes, villas, offices and commercial premises."}, {"title": "Know what the estimate covers", "text": "Review a line-item estimate with the proposed boards, finishes, hardware and work packages. Record material specifications, inclusions, exclusions and approval steps; civil, plumbing, electrical and appliance work must be confirmed in the quotation rather than assumed."}, {"title": "Execution and handover", "text": "Agree a site-specific schedule and who will supervise each stage. At handover, review the completed scope and any outstanding items together. Based at our Lucknow studio, we accept projects in other cities across India. Materials and execution are included according to the agreed project scope."}],
   },
 ];
 

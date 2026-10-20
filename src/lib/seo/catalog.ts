@@ -171,6 +171,16 @@ export const projects: ProjectEntry[] = [
       "An illustrative hospitality interior with an intimate, atmospheric character — custom bar joinery, textured surfaces and dramatic lighting.",
     image: `${OG}/project-hospitality.jpg`,
   },
+  {
+    slug: "wine-spirits-boutique",
+    name: "Wine & Spirits Boutique Concept",
+    location: "Lucknow",
+    category: "Commercial",
+    scope: "Retail fit-out & display joinery",
+    summary:
+      "An illustrative premium wine and spirits boutique with floor-to-ceiling illuminated display shelving, brass rolling ladders, central display islands and a mezzanine tasting lounge.",
+    image: "/__l5e/assets-v1/d97c992a-673a-4452-b806-d97ae6df1aaf/IMG-20261017-WA0011.jpg",
+  },
 ];
 
 export const projectCategories = ["Residential", "Commercial", "Hospitality"] as const;

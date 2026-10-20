@@ -33,7 +33,7 @@ export const services: ServiceEntry[] = [
     image: `${OG}/after-room.jpg`,
     highlights: ["Space planning", "Design and finish selection", "Budget-led specifications", "Execution coordination"],
     details: [
-      { title: "Design around your space", text: "A consultation starts with the property layout, how each room is used and your priorities. Discuss circulation, storage, lighting and furniture requirements before choosing finishes." },
+      { title: "Design around your space", text: "A consultation starts with the property layout, how each room is used and your priorities. Discuss circulation, storage, lighting and furniture requirements before choosing finishes. We work across Lucknow — Gomti Nagar, Hazratganj, Aliganj, Indira Nagar, Golf City, Sushant Golf City and Vrindavan Yojna — and accept projects in other cities across India." },
       { title: "Materials with a practical purpose", text: "Compare boards, laminates, hardware and surface finishes for daily use, maintenance and budget. Material selection should follow the agreed design and the conditions at your site." },
       { title: "From drawings to execution", text: "Choose design assistance or a complete turnkey scope. Agree what is included, who coordinates the work and how decisions will be approved before execution starts." },
     ],
@@ -46,7 +46,7 @@ export const services: ServiceEntry[] = [
       "Residential interior design in Lucknow — layouts, finishes and furniture designed around how you live, executed end to end.",
     image: `${OG}/project-residential.jpg`,
     highlights: ["Space planning & layouts", "Custom furniture design", "Lighting & finishes", "Turnkey execution"],
-    details: [{"title": "Layouts for everyday living", "text": "Plan apartments and independent homes around family routines, storage needs and usable circulation. Discuss room dimensions, existing services and any changes to the layout before finalising furniture."}, {"title": "A coordinated home interior", "text": "Bring kitchen cabinetry, wardrobes, lighting and finishes into one material palette. Prioritise high-use areas and agree a room-by-room scope that fits your budget."}, {"title": "Planning your home enquiry", "text": "Share your city, property type, approximate area, floor plan and handover date. A project quote follows the agreed scope and site requirements, not a generic per-square-foot promise."}],
+    details: [{"title": "Layouts for everyday living", "text": "Plan apartments and independent homes around family routines, storage needs and usable circulation — from Gomti Nagar apartments to independent homes in Aliganj and Indira Nagar. Discuss room dimensions, existing services and any changes to the layout before finalising furniture."}, {"title": "A coordinated home interior", "text": "Bring kitchen cabinetry, wardrobes, lighting and finishes into one material palette. Prioritise high-use areas and agree a room-by-room scope that fits your budget."}, {"title": "Planning your home enquiry", "text": "Share your city, property type, approximate area, floor plan and handover date. A project quote follows the agreed scope and site requirements, not a generic per-square-foot promise."}],
   },
   {
     slug: "luxury-villas-and-homes",
@@ -66,7 +66,7 @@ export const services: ServiceEntry[] = [
       "Modular kitchen design and installation in Lucknow with ergonomic layouts, durable hardware and finishes built for daily use.",
     image: `${OG}/project-residential.jpg`,
     highlights: ["Ergonomic work triangle", "Soft-close hardware", "Moisture-resistant finishes", "Appliance integration"],
-    details: [{"title": "Cabinetry and storage selection", "text": "Choose base units, wall units, tall storage and corner solutions around the available kitchen dimensions and cooking habits. Appliance dimensions and service points affect the cabinet plan."}, {"title": "Installation scope", "text": "Review the selected core, shutter finish, countertop and hardware before production. Confirm which plumbing, electrical and appliance tasks are included in the quotation."}],
+    details: [{"title": "Cabinetry and storage selection", "text": "Choose base units, wall units, tall storage and corner solutions around the available kitchen dimensions and cooking habits — whether a compact apartment kitchen in Gomti Nagar or a larger villa kitchen in Golf City. Appliance dimensions and service points affect the cabinet plan."}, {"title": "Installation scope", "text": "Review the selected core, shutter finish, countertop and hardware before production. Confirm which plumbing, electrical and appliance tasks are included in the quotation."}],
   },
   {
     slug: "wardrobes",
@@ -174,6 +174,22 @@ export const projects: ProjectEntry[] = [
 ];
 
 export const projectCategories = ["Residential", "Commercial", "Hospitality"] as const;
+
+/** Lucknow neighbourhoods the studio serves — shared by the homepage and service pages. */
+export const lucknowAreas = [
+  "Gomti Nagar",
+  "Gomti Nagar Extension",
+  "Hazratganj",
+  "Aliganj",
+  "Indira Nagar",
+  "Golf City",
+  "Sushant Golf City",
+  "Vrindavan Yojna",
+  "Jankipuram",
+  "Mahanagar",
+  "Shaheed Path",
+  "Faizabad Road",
+] as const;
 
 export function getService(slug: string) {
   return services.find((s) => s.slug === slug);

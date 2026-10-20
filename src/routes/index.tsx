@@ -16,7 +16,7 @@ import {
 } from "@/components/site/GoogleBusinessProfile";
 
 import heroInterior from "@/assets/hero-interior.jpg";
-import { services as serviceCatalog } from "@/lib/seo/catalog";
+import { services as serviceCatalog, lucknowAreas } from "@/lib/seo/catalog";
 import { WhatsAppLink } from "@/components/site/WhatsAppButton";
 
 
@@ -172,7 +172,8 @@ function Index() {
             </p>
             <p>
               We offer complete interior design and turnkey solutions in Lucknow for homes, luxury
-              villas, modular kitchens, offices, retail spaces and hospitality projects.
+              villas, modular kitchens, offices, retail spaces and hospitality projects — from
+              apartments in Gomti Nagar to villas in Golf City and workspaces in Hazratganj.
             </p>
             <p>
               From the first concept to the final handover, our team manages every detail—design,
@@ -281,6 +282,42 @@ function Index() {
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{r.body}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* LUCKNOW COVERAGE */}
+      <section className="bg-ink text-ink-foreground">
+        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-12 lg:py-32">
+          <p className="eyebrow">Serving Lucknow</p>
+          <h2 className="display-xl mt-6 max-w-3xl text-3xl sm:text-4xl lg:text-5xl">
+            Interior Designers In Lucknow, Working Across The City
+          </h2>
+          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-ink-foreground/65">
+            From our studio in Golf City, we design and execute turnkey home interiors, modular
+            kitchens, wardrobes, office fit-outs and commercial spaces across Lucknow — and accept
+            projects in other cities across India.
+          </p>
+          <ul className="mt-12 grid gap-px border border-ink-foreground/15 bg-ink-foreground/15 sm:grid-cols-2 lg:grid-cols-4">
+            {lucknowAreas.map((area) => (
+              <li
+                key={area}
+                className="bg-ink px-6 py-5 text-sm tracking-[0.14em] text-ink-foreground/75 uppercase"
+              >
+                {area}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-10 text-sm text-ink-foreground/65">
+            Based near Lulu Mall Road, Golf City?{" "}
+            <a href="#contact" className="text-brass-soft underline underline-offset-4">
+              Find our studio on the map
+            </a>{" "}
+            or{" "}
+            <Link to="/contact" className="text-brass-soft underline underline-offset-4">
+              request a consultation
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

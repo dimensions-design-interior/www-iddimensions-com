@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 
 import { PageShell } from "@/components/site/PageShell";
-import { getService, services } from "@/lib/seo/catalog";
+import { getService, lucknowAreas, services } from "@/lib/seo/catalog";
 import { absoluteUrl, breadcrumbSchema, buildSeo, homeAndConstructionBusinessSchema } from "@/lib/seo/site";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -95,6 +95,9 @@ function ServiceDetail() {
       <section className="mt-16 grid gap-10 md:grid-cols-3">
         {service.details?.map((section) => <div key={section.title} className="border-t border-border pt-6"><h2 className="text-xl">{section.title}</h2><p className="mt-4 text-sm leading-relaxed text-muted-foreground">{section.text}</p></div>)}
       </section>
+      <p className="mt-12 text-sm text-muted-foreground">
+        Serving {lucknowAreas.slice(0, 8).join(", ")} and neighbourhoods across Lucknow, with projects accepted in other cities across India.
+      </p>
       <div className="mt-12 flex flex-wrap gap-4"><Link to="/portfolio" className="text-sm underline underline-offset-4">Explore interior design inspiration</Link><Link to="/projects" className="text-sm underline underline-offset-4">View design concepts</Link></div>
       <h2 className="mt-20 text-xl tracking-[0.1em] uppercase">Other Services</h2>
       <div className="mt-6 flex flex-wrap gap-3">

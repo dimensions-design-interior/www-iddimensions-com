@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 
 import { PageShell } from "@/components/site/PageShell";
-import { getService, lucknowAreas, services } from "@/lib/seo/catalog";
+import { getService, lucknowAreas, lucknowServiceNotes, services } from "@/lib/seo/catalog";
 import { absoluteUrl, breadcrumbSchema, buildSeo, homeAndConstructionBusinessSchema } from "@/lib/seo/site";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -95,6 +95,23 @@ function ServiceDetail() {
       <section className="mt-16 grid gap-10 md:grid-cols-3">
         {service.details?.map((section) => <div key={section.title} className="border-t border-border pt-6"><h2 className="text-xl">{section.title}</h2><p className="mt-4 text-sm leading-relaxed text-muted-foreground">{section.text}</p></div>)}
       </section>
+      {lucknowServiceNotes[service.slug] && (
+        <section className="mt-16 border-t border-border pt-10">
+          <h2 className="text-xl tracking-[0.1em] uppercase">{lucknowServiceNotes[service.slug].heading}</h2>
+          {lucknowServiceNotes[service.slug].paragraphs.map((p) => (
+            <p key={p.slice(0, 24)} className="mt-5 max-w-3xl text-sm leading-relaxed text-muted-foreground">{p}</p>
+          ))}
+          <h3 className="mt-10 text-lg">Common Questions From Lucknow Clients</h3>
+          <dl className="mt-4 space-y-5">
+            {lucknowServiceNotes[service.slug].faqs.map((f) => (
+              <div key={f.q} className="border-b border-border pb-4">
+                <dt className="text-sm text-foreground">{f.q}</dt>
+                <dd className="mt-2 text-sm text-muted-foreground">{f.a}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
       <p className="mt-12 text-sm text-muted-foreground">
         Serving {lucknowAreas.slice(0, 8).join(", ")} and neighbourhoods across Lucknow, with projects accepted in other cities across India.
       </p>

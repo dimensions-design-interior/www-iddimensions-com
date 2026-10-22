@@ -97,13 +97,13 @@ function ServiceDetail() {
       </section>
       {lucknowServiceNotes[service.slug] && (
         <section className="mt-16 border-t border-border pt-10">
-          <h2 className="text-xl tracking-[0.1em] uppercase">{lucknowServiceNotes[service.slug].heading}</h2>
-          {lucknowServiceNotes[service.slug].paragraphs.map((p) => (
+          <h2 className="text-xl tracking-[0.1em] uppercase">{lucknowServiceNotes[service.slug]!.heading}</h2>
+          {lucknowServiceNotes[service.slug]!.paragraphs.map((p) => (
             <p key={p.slice(0, 24)} className="mt-5 max-w-3xl text-sm leading-relaxed text-muted-foreground">{p}</p>
           ))}
           <h3 className="mt-10 text-lg">Common Questions From Lucknow Clients</h3>
           <dl className="mt-4 space-y-5">
-            {lucknowServiceNotes[service.slug].faqs.map((f) => (
+            {lucknowServiceNotes[service.slug]!.faqs.map((f) => (
               <div key={f.q} className="border-b border-border pb-4">
                 <dt className="text-sm text-foreground">{f.q}</dt>
                 <dd className="mt-2 text-sm text-muted-foreground">{f.a}</dd>

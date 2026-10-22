@@ -208,3 +208,57 @@ export function getService(slug: string) {
 export function getProject(slug: string) {
   return projects.find((p) => p.slug === slug);
 }
+
+/** Lucknow-specific planning notes per service. Factual, no invented prices or completed-project claims. */
+export const lucknowServiceNotes: Record<string, { heading: string; paragraphs: string[]; faqs: { q: string; a: string }[] }> = {
+  "interior-designer-lucknow": {
+    heading: "Working With Interior Designers In Lucknow",
+    paragraphs: [
+      "Choosing interior designers in Lucknow is easier when design, materials and execution sit with one team. Our Golf City studio near Lulu Mall Road plans each space, prepares a line-item estimate and supervises work on site, so you are not coordinating separate carpenters, suppliers and installers.",
+      "Lucknow homes range from compact apartments in Gomti Nagar Extension to independent houses in Aliganj and Mahanagar. We start with a site visit, measure the space and discuss how your family actually uses each room before proposing layouts, finishes and storage.",
+    ],
+    faqs: [
+      { q: "Do you visit sites across Lucknow?", a: "Yes. We meet clients at our Golf City studio and visit sites across Lucknow, including Gomti Nagar, Hazratganj, Indira Nagar, Jankipuram and Faizabad Road." },
+      { q: "How is the cost of an interior project in Lucknow decided?", a: "Cost depends on area, scope, materials and hardware. We share a detailed line-item estimate after understanding your requirements, so you can see where every rupee goes." },
+    ],
+  },
+  "modular-kitchens": {
+    heading: "Modular Kitchens In Lucknow, Planned For Indian Cooking",
+    paragraphs: [
+      "A modular kitchen in Lucknow has to handle daily tadka, heavy utensils and seasonal humidity. We plan the work triangle around your hob, sink and refrigerator, then select boards, laminates and branded hardware suited to heat and moisture.",
+      "Whether it is an L-shaped kitchen in a Gomti Nagar apartment or a parallel kitchen in a Golf City villa, the estimate lists carcass material, shutter finish, countertop, hardware and accessories separately, so you can compare options clearly.",
+    ],
+    faqs: [
+      { q: "Which kitchen layouts work best in Lucknow apartments?", a: "L-shaped and parallel layouts suit most apartment kitchens; U-shaped and island layouts fit larger homes and villas. We recommend a layout after measuring your site." },
+      { q: "What affects modular kitchen price in Lucknow?", a: "Kitchen size, board and shutter material, countertop, hardware brand and accessories. Your quotation itemises each of these." },
+    ],
+  },
+  "residential-interiors": {
+    heading: "Home And Apartment Interiors Across Lucknow",
+    paragraphs: [
+      "New apartments in Gomti Nagar Extension, Sushant Golf City and Vrindavan Yojna often need complete interiors — wardrobes, kitchen, TV units, false ceilings and lighting. We plan these together so finishes stay consistent from room to room.",
+      "For older homes in Aliganj, Mahanagar or Indira Nagar, we work with existing layouts and confirm any civil, plumbing or electrical changes in the quotation rather than assuming them.",
+    ],
+    faqs: [
+      { q: "Can you handle interiors for a ready-to-move apartment in Lucknow?", a: "Yes. We plan and execute full apartment interiors, coordinating with your society's work rules and timings." },
+    ],
+  },
+  "luxury-villas-and-homes": {
+    heading: "Villa Interiors In Lucknow",
+    paragraphs: [
+      "Villas and independent houses around Golf City, Shaheed Path and Faizabad Road give room for double-height living areas, staircases, home bars and larger kitchens. We plan lighting, materials and joinery across floors so the home feels like one design.",
+    ],
+    faqs: [
+      { q: "Do you design multi-floor villas in Lucknow?", a: "Yes. We plan and supervise interiors across all floors, with each floor's scope listed in the estimate." },
+    ],
+  },
+  "commercial-interiors": {
+    heading: "Office Interior Design In Lucknow",
+    paragraphs: [
+      "Offices in Hazratganj, Gomti Nagar and along Shaheed Path need durable finishes, good acoustics and planned cabling. We design workstations, cabins, meeting rooms and reception areas, and schedule execution to limit disruption to your business.",
+    ],
+    faqs: [
+      { q: "Can work happen while our Lucknow office is operational?", a: "We discuss phasing and work hours before starting so execution can fit around your operations where possible." },
+    ],
+  },
+};

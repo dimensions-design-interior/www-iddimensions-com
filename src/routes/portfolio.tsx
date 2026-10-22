@@ -42,7 +42,27 @@ function PortfolioPage() {
     >
       <PortfolioGallery />
 
+      <section className="mt-16 grid gap-10 border-t border-border pt-10 md:grid-cols-2">
+        <div>
+          <h2 className="text-xl tracking-[0.1em] uppercase">Design Ideas For Lucknow Homes</h2>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+            As interior designers in Lucknow, we use these concepts to start conversations about layout, materials and
+            mood. Apartments in Gomti Nagar and Sushant Golf City often suit warm oak, brass accents and built-in storage,
+            while villas around Golf City and Shaheed Path can carry double-height living rooms and statement lighting.
+          </p>
+        </div>
+        <div>
+          <h2 className="text-xl tracking-[0.1em] uppercase">Modular Kitchens And Workspaces</h2>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+            The kitchen ideas here show the finishes we plan for modular kitchens in Lucknow — moisture-resistant boards,
+            durable laminates and branded hardware. Office and retail concepts reflect the practical needs of workspaces
+            in Hazratganj and Gomti Nagar. Every project is designed from your own site measurements and estimate.
+          </p>
+        </div>
+      </section>
+
       <PortfolioTestimonials />
+
 
       <div className="mt-16 flex flex-wrap gap-3">
         <Link to="/projects" className="btn-outline border-border text-muted-foreground">

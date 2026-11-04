@@ -25,8 +25,8 @@
 - [x] Add a dedicated Contact Us page matching the Google Business address, phone, hours and coordinates
 - [x] Prepare one consistent business citation record for trusted local directories
 - [x] Claim and verify the existing Google Business Profile
-- [ ] Rename the verified Google Business Profile to “Dimensions Designs Interior” so the name matches exactly
-- [ ] Add https://www.iddimensions.com/contact as the consultation appointment link in Google Business
+- [x] Rename the verified Google Business Profile to “Dimensions Designs Interior” so the name matches exactly
+- [x] Add https://www.iddimensions.com/contact as the consultation appointment link in Google Business
 - [x] Configure Contact Us enquiry emails for info@iddimensions.com; sender notify.iddimensions.com is verified; retain honest saved-versus-email messaging
 - [x] Use standard key-free Google Maps embed iframes on the homepage and Contact page; custom map key setup is no longer needed
 - [x] Add the official Google Business badge, studio map, direct review link and matching LocalBusiness details
@@ -34,3 +34,5 @@
 
 - [x] AI consultation brief tool on Contact page
 - [x] Maps on custom domain (key-free embeds, no action needed)
+- [x] Website chat assistant with Hindi/English intent detection (cost, kitchen, home, office, turnkey, etc.), quick prompts and consultation/WhatsApp handoff
+- [ ] WhatsApp auto-replies using the same intent logic — waiting on the owner connecting a WhatsApp Business account; receiver and reply flow to be built after connection

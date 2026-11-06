@@ -1,6 +1,8 @@
 export const SITE_URL = "https://www.iddimensions.com";
 export const SITE_NAME = "Dimensions Designs Interior";
 export const BRAND_SHORT = "Dimensions";
+/** Public website brand used in page titles and structured data */
+export const BRAND_NAME = "Dimensions Designs & Interior";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 export const CONSULTATION_URL = `${SITE_URL}/contact`;
 export const GOOGLE_PLACE_ID = "ChIJfdLZH3blmzkRF9YmT7a3E14";
@@ -47,7 +49,10 @@ export function buildSeo({
   type = "website",
   jsonLd,
 }: SeoTemplateInput) {
-  const fullTitle = `${title} | ${BRAND_SHORT}`;
+  // Titles that already carry a brand suffix are used as-is; long titles fall back to the short brand.
+  const fullTitle = title.includes(" | ")
+    ? title
+    : `${title} | ${title.length + BRAND_NAME.length + 3 <= 70 ? BRAND_NAME : BRAND_SHORT}`;
   const desc = clamp(description);
   const url = absoluteUrl(path);
   const ogImage = image ? (image.startsWith("https://") ? image : absoluteUrl(image)) : undefined;
@@ -95,14 +100,32 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
   };
 }
 
+/** Short reference to the business entity for provider/creator/publisher fields */
+export const businessRef = { "@id": `${SITE_URL}/#business`, name: BRAND_NAME, url: SITE_URL };
+
+export function websiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    name: BRAND_NAME,
+    url: SITE_URL,
+    inLanguage: "en-IN",
+    publisher: { "@id": `${SITE_URL}/#business` },
+  };
+}
+
 export function homeAndConstructionBusinessSchema(
   offers?: { name: string; areaServed?: string }[],
 ) {
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
-    "@type": "HomeAndConstructionBusiness",
+    "@type": ["HomeAndConstructionBusiness", "ProfessionalService"],
     "@id": `${SITE_URL}/#business`,
-    name: "Dimensions Design Interior",
+    name: BRAND_NAME,
+    alternateName: SITE_NAME,
+    image: absoluteUrl("/logo-mark.png"),
+    logo: absoluteUrl("/logo-mark.png"),
     url: SITE_URL,
     hasMap: GOOGLE_BUSINESS_URL,
     telephone: "+919670001155",

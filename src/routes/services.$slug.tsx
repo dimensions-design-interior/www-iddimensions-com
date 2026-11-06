@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 
 import { PageShell } from "@/components/site/PageShell";
 import { getService, lucknowAreas, lucknowServiceNotes, services } from "@/lib/seo/catalog";
-import { absoluteUrl, breadcrumbSchema, buildSeo, homeAndConstructionBusinessSchema } from "@/lib/seo/site";
+import { absoluteUrl, breadcrumbSchema, buildSeo, businessRef, homeAndConstructionBusinessSchema } from "@/lib/seo/site";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
@@ -14,7 +14,7 @@ export const Route = createFileRoute("/services/$slug")({
     const service = loaderData?.service;
     if (!service) {
       return {
-        meta: [{ title: "Service Unavailable | Dimensions" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Service Unavailable | Dimensions Designs & Interior" }, { name: "robots", content: "noindex" }],
       };
     }
     return buildSeo({
@@ -37,9 +37,7 @@ export const Route = createFileRoute("/services/$slug")({
           description: service.seoIntro,
           url: absoluteUrl(`/services/${service.slug}`),
           areaServed: [{ "@type": "City", name: "Lucknow" }, { "@type": "Country", name: "India" }],
-          provider: {
-            "@id": `${absoluteUrl("/")}#business`,
-          },
+          provider: businessRef,
         },
       ],
     });

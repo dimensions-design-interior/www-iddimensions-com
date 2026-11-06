@@ -5,7 +5,7 @@ import { PageShell } from "@/components/site/PageShell";
 import { PortfolioGallery } from "@/components/site/PortfolioGallery";
 import { PortfolioTestimonials } from "@/components/site/PortfolioTestimonials";
 import { portfolioPhotos } from "@/lib/portfolio";
-import { absoluteUrl, breadcrumbSchema, buildSeo, homeAndConstructionBusinessSchema } from "@/lib/seo/site";
+import { absoluteUrl, breadcrumbSchema, buildSeo, businessRef, homeAndConstructionBusinessSchema } from "@/lib/seo/site";
 
 export const Route = createFileRoute("/portfolio")({
   head: () =>
@@ -24,8 +24,9 @@ export const Route = createFileRoute("/portfolio")({
         {
           "@context": "https://schema.org",
           "@type": "ImageGallery",
-          name: "Dimensions Designs Interior Portfolio",
+          name: "Dimensions Designs & Interior Portfolio — Illustrative Design Concepts",
           url: absoluteUrl("/portfolio"),
+          publisher: businessRef,
           image: portfolioPhotos.map((p) => absoluteUrl(p.image)),
         },
       ],

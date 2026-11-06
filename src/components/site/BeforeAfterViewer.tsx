@@ -137,13 +137,19 @@ export function BeforeAfterViewer() {
                 <img
                   src={active.after}
                   alt={active.afterAlt}
+                  width={1200}
+                  height={800}
                   loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
                 <img
                   src={active.before}
                   alt={active.beforeAlt}
+                  width={1200}
+                  height={800}
                   loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover"
                   style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
                 />

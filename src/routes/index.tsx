@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, MessageCircle, Navigation, Phone } from "lucide-react";
 
-import { GOOGLE_DIRECTIONS_URL, buildSeo, homeAndConstructionBusinessSchema } from "@/lib/seo/site";
+import { GOOGLE_DIRECTIONS_URL, buildSeo, homeAndConstructionBusinessSchema, websiteSchema } from "@/lib/seo/site";
 
 import { SiteNav } from "@/components/site/SiteNav";
 import { SiteFooter } from "@/components/site/SiteFooter";
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/")({
       title: "Turnkey Interior Solutions in Lucknow & India | ID Dimensions",
       description: "Interior design, material selection and complete turnkey execution for apartments, villas, offices and commercial spaces in Lucknow and cities across India.",
       path: "/",
-      jsonLd: homeAndConstructionBusinessSchema(),
+      jsonLd: [homeAndConstructionBusinessSchema(), websiteSchema()],
     });
     const title = "Turnkey Interior Solutions in Lucknow & India | ID Dimensions";
     return { ...seo, meta: seo.meta.map((tag) => tag.title ? { title } : tag.property === "og:title" || tag.name === "twitter:title" ? { ...tag, content: title } : tag) };
@@ -128,6 +128,8 @@ function Index() {
           alt="Illustrative luxury living room with oak paneling and brass accents"
           width={1920}
           height={1200}
+          fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="veil absolute inset-0" />

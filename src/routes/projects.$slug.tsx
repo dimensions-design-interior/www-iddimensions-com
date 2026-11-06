@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 
 import { PageShell } from "@/components/site/PageShell";
 import { getProject, projects } from "@/lib/seo/catalog";
-import { absoluteUrl, breadcrumbSchema, buildSeo, homeAndConstructionBusinessSchema } from "@/lib/seo/site";
+import { absoluteUrl, breadcrumbSchema, buildSeo, businessRef, homeAndConstructionBusinessSchema } from "@/lib/seo/site";
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
@@ -14,11 +14,11 @@ export const Route = createFileRoute("/projects/$slug")({
     const project = loaderData?.project;
     if (!project) {
       return {
-        meta: [{ title: "Project Unavailable | Dimensions" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Project Unavailable | Dimensions Designs & Interior" }, { name: "robots", content: "noindex" }],
       };
     }
     return buildSeo({
-      title: `${project.name} — Illustrative ${project.category} Design`,
+      title: project.name,
       description: project.summary,
       path: `/projects/${params.slug}`,
       image: project.image,
@@ -30,7 +30,16 @@ export const Route = createFileRoute("/projects/$slug")({
           { name: "Projects", path: "/projects" },
           { name: project.name, path: `/projects/${project.slug}` },
         ]),
-
+        {
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          name: project.name,
+          genre: `Illustrative ${project.category} interior design concept`,
+          description: `${project.summary} Illustrative design concept, not a completed client project.`,
+          url: absoluteUrl(`/projects/${project.slug}`),
+          image: absoluteUrl(project.image),
+          creator: businessRef,
+        },
       ],
     });
   },
@@ -67,6 +76,20 @@ function ProjectDetail() {
       <a href="/contact" className="btn-solid mt-10 inline-block">
         Plan A Similar Project
       </a>
+
+      <h2 className="mt-20 text-xl tracking-[0.1em] uppercase">Related Service</h2>
+      <div className="mt-6 flex flex-wrap gap-3">
+        <Link
+          to="/services/$slug"
+          params={{ slug: project.category === "Commercial" ? "commercial-interiors" : project.category === "Hospitality" ? "hospitality-interiors" : "residential-interiors" }}
+          className="btn-outline border-border text-muted-foreground"
+        >
+          {project.category === "Commercial" ? "Office & Commercial Interiors" : project.category === "Hospitality" ? "Hotel & Hospitality Interiors" : "Home & Apartment Interiors"}
+        </Link>
+        <Link to="/services/$slug" params={{ slug: "turnkey-projects" }} className="btn-outline border-border text-muted-foreground">
+          Turnkey Interior Solutions
+        </Link>
+      </div>
 
       <h2 className="mt-20 text-xl tracking-[0.1em] uppercase">More Design Concepts</h2>
       <div className="mt-6 flex flex-wrap gap-3">

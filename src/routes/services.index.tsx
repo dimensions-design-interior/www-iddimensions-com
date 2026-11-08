@@ -7,9 +7,9 @@ import { absoluteUrl, breadcrumbSchema, buildSeo, homeAndConstructionBusinessSch
 export const Route = createFileRoute("/services/")({
   head: () =>
     buildSeo({
-      title: "Interior Design Services in Lucknow",
+      title: "Interior Services Lucknow | Dimensions Designs & Interior",
       description:
-        "Interior design services in Lucknow for homes and businesses: residential and villa interiors, modular kitchens, wardrobes, commercial spaces and turnkey projects.",
+        "Explore interior design services in Lucknow: premium homes, luxury villas, modular kitchens, commercial and hospitality spaces, with turnkey execution.",
       path: "/services",
       image: "/og/hero-interior.jpg",
       imageAlt: "Illustrative luxury living room with oak paneling",

@@ -5,6 +5,9 @@ export type ServiceEntry = {
   body: string;
   /** Keyword-focused sentence used to build the meta description */
   seoIntro: string;
+  /** Page-specific search metadata, independent of visible copy. */
+  seoTitle: string;
+  seoDescription: string;
   image: string;
   highlights: string[];
   heading?: string;
@@ -27,6 +30,8 @@ const OG = "/og";
 export const services: ServiceEntry[] = [
   {
     slug: "interior-designer-lucknow",
+    seoTitle: "Interior Designer Lucknow | Dimensions Designs & Interior",
+    seoDescription: "Interior designers in Lucknow for home and commercial spaces. Discuss layouts, material selection, project budgets and coordinated execution with our studio.",
     title: "Interior Designer in Lucknow",
     body: "Interior planning and design guidance for homes and businesses in Lucknow, from layouts to material selection.",
     seoIntro: "Interior designer in Lucknow for space planning, material selection and coordinated execution of homes, apartments, villas and commercial interiors.",
@@ -40,6 +45,8 @@ export const services: ServiceEntry[] = [
   },
   {
     slug: "residential-interiors",
+    seoTitle: "Home Interiors Lucknow | Dimensions Designs & Interior",
+    seoDescription: "Premium residential interior design in Lucknow for homes and apartments. Plan living spaces, wardrobes, kitchens, lighting and finishes with turnkey execution.",
     title: "Home & Apartment Interiors",
     body: "Elegant and functional interiors designed around your lifestyle, space and personal taste.",
     seoIntro:
@@ -50,6 +57,8 @@ export const services: ServiceEntry[] = [
   },
   {
     slug: "luxury-villas-and-homes",
+    seoTitle: "Luxury Villa Interiors Lucknow | Dimensions Designs & Interior",
+    seoDescription: "Luxury villa interior design in Lucknow with bespoke joinery, premium materials and statement lighting. Coordinate every room from design to execution.",
     title: "Luxury Villa Interiors",
     body: "Bespoke interior concepts that bring sophistication, comfort and individuality to every room.",
     seoIntro:
@@ -60,6 +69,8 @@ export const services: ServiceEntry[] = [
   },
   {
     slug: "modular-kitchens",
+    seoTitle: "Modular Kitchen Design Lucknow | Dimensions Designs & Interior",
+    seoDescription: "Modular kitchen design and installation in Lucknow. Plan ergonomic layouts, cabinet storage, durable finishes and branded hardware for everyday cooking.",
     title: "Modular Kitchens",
     body: "Contemporary kitchens designed for efficient storage, seamless functionality and timeless aesthetics.",
     seoIntro:
@@ -70,6 +81,8 @@ export const services: ServiceEntry[] = [
   },
   {
     slug: "wardrobes",
+    seoTitle: "Custom Wardrobes Lucknow | Dimensions Designs & Interior",
+    seoDescription: "Custom wardrobe design in Lucknow: sliding, walk-in and built-in storage with refined shutters, practical interiors and precision installation for your home.",
     title: "Wardrobes",
     body: "Customized wardrobe solutions combining intelligent storage with refined finishes.",
     seoIntro:
@@ -80,6 +93,8 @@ export const services: ServiceEntry[] = [
   },
   {
     slug: "commercial-interiors",
+    seoTitle: "Office Interiors Lucknow | Dimensions Designs & Interior",
+    seoDescription: "Office and commercial interior design in Lucknow. Plan workstations, reception, lighting, acoustics and fit-out execution around your business requirements.",
     title: "Office & Commercial Interior Design",
     body: "Professional, productive and visually compelling spaces designed for modern businesses.",
     seoIntro:
@@ -90,6 +105,8 @@ export const services: ServiceEntry[] = [
   },
   {
     slug: "retail-and-showrooms",
+    seoTitle: "Retail Interiors Lucknow | Dimensions Designs & Interior",
+    seoDescription: "Retail and showroom interior design in Lucknow with customer-flow planning, product displays, accent lighting and brand-led finishes for your business.",
     title: "Retail & Showrooms",
     body: "Strategic interior environments designed to enhance customer experience and strengthen your brand presence.",
     seoIntro:
@@ -100,6 +117,8 @@ export const services: ServiceEntry[] = [
   },
   {
     slug: "hospitality-interiors",
+    seoTitle: "Hospitality Interiors Lucknow | Dimensions Designs & Interior",
+    seoDescription: "Hotel, restaurant and lounge interior design in Lucknow. Balance guest experience, durable materials, custom joinery and phased hospitality execution.",
     title: "Hotel & Hospitality Interiors",
     body: "Distinctive hospitality spaces designed to create memorable guest experiences.",
     seoIntro:
@@ -110,6 +129,8 @@ export const services: ServiceEntry[] = [
   },
   {
     slug: "turnkey-projects",
+    seoTitle: "Turnkey Interiors Lucknow | Dimensions Designs & Interior",
+    seoDescription: "Turnkey interior projects in Lucknow: design, material selection and supply, installation and supervised execution through handover within your agreed scope.",
     title: "Turnkey Interior Solutions",
     body: "Complete interior design, material selection and supply, and supervised execution from concept to handover, within the agreed project scope.",
     seoIntro:

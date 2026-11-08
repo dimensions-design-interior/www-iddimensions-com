@@ -21,16 +21,14 @@ import { WhatsAppLink } from "@/components/site/WhatsAppButton";
 
 
 export const Route = createFileRoute("/")({
-  head: () => {
-    const seo = buildSeo({
-      title: "Turnkey Interior Solutions in Lucknow & India | ID Dimensions",
-      description: "Interior design, material selection and complete turnkey execution for apartments, villas, offices and commercial spaces in Lucknow and cities across India.",
+  head: () =>
+    buildSeo({
+      title: "Dimensions Designs & Interior | Turnkey Interiors Lucknow",
+      description: "Turnkey interior design & execution in Lucknow. Premium modular kitchens, luxury villas, living spaces & commercial designs by Dimensions Designs & Interior.",
+      keywords: "interior designer lucknow, modular kitchen lucknow, turnkey interior lucknow",
       path: "/",
       jsonLd: [homeAndConstructionBusinessSchema(), websiteSchema()],
-    });
-    const title = "Turnkey Interior Solutions in Lucknow & India | ID Dimensions";
-    return { ...seo, meta: seo.meta.map((tag) => tag.title ? { title } : tag.property === "og:title" || tag.name === "twitter:title" ? { ...tag, content: title } : tag) };
-  },
+    }),
   component: Index,
 });
 

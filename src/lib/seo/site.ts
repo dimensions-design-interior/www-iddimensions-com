@@ -29,6 +29,7 @@ export type SeoTemplateInput = {
   /** Page title without the brand suffix */
   title: string;
   description: string;
+  keywords?: string;
   path: string;
   image?: string;
   imageAlt?: string;
@@ -43,6 +44,7 @@ export type SeoTemplateInput = {
 export function buildSeo({
   title,
   description,
+  keywords,
   path,
   image,
   imageAlt,
@@ -60,11 +62,12 @@ export function buildSeo({
   const meta: HeadMeta[] = [
     { title: fullTitle },
     { name: "description", content: desc },
+    ...(keywords ? [{ name: "keywords", content: keywords }] : []),
     { property: "og:title", content: fullTitle },
     { property: "og:description", content: desc },
     { property: "og:type", content: type },
     { property: "og:url", content: url },
-    { property: "og:site_name", content: SITE_NAME },
+    { property: "og:site_name", content: BRAND_NAME },
     { property: "og:locale", content: "en_IN" },
     ...(ogImage ? [{ property: "og:image", content: ogImage }, { property: "og:image:alt", content: imageAlt ?? title }] : []),
     { name: "twitter:card", content: "summary_large_image" },

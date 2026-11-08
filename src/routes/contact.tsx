@@ -23,9 +23,9 @@ const ADDRESS =
 export const Route = createFileRoute("/contact")({
   head: () =>
     buildSeo({
-      title: "Contact Interior Designers in Lucknow",
+      title: "Contact Lucknow Studio | Dimensions Designs & Interior",
       description:
-        "Contact Dimensions Designs Interior at Skylark Plaza, Lucknow. Book a consultation for home interiors, luxury villas, modular kitchens or commercial spaces.",
+        "Contact our Golf City studio in Lucknow for a design consultation or project quote. Discuss home, villa, kitchen, commercial or turnkey interior requirements.",
       path: "/contact",
       imageAlt: "Dimensions Designs Interior studio in Lucknow",
       jsonLd: [

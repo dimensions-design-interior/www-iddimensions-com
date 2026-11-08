@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Update all 21 public-page SEO metadata entries with the newly approved homepage title, description and keywords; verified unique SSR titles, descriptions, canonical URLs and Open Graph tags plus client navigation; not published
+
 - [x] Correct service coverage to Lucknow and cities across India without claiming other offices; changes remain unpublished
 
 - [x] Audit existing technical SEO, internal links and mobile layouts: 20 public pages return 200, unique titles/descriptions, self canonicals and no broken internal links

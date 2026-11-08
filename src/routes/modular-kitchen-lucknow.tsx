@@ -7,9 +7,9 @@ import { absoluteUrl, breadcrumbSchema, buildSeo, homeAndConstructionBusinessSch
 
 const PATH = "/modular-kitchen-lucknow";
 
-const TITLE = "Modular Kitchen in Lucknow";
+const TITLE = "Modular Kitchen Lucknow | Dimensions Designs & Interior";
 const DESCRIPTION =
-  "Modular kitchen design and installation in Lucknow — L-shaped, parallel, U-shaped and island layouts in acrylic, laminate and PU finishes, designed and executed turnkey.";
+  "Plan a modular kitchen in Lucknow with L-shaped, parallel, U-shaped or island layouts. Compare finishes, storage, hardware and itemised installation quotes.";
 
 const layouts = [
   {

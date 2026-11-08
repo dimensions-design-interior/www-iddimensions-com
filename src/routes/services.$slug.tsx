@@ -18,8 +18,8 @@ export const Route = createFileRoute("/services/$slug")({
       };
     }
     return buildSeo({
-      title: service.slug === "interior-designer-lucknow" ? service.title : `${service.title} in Lucknow`,
-      description: service.seoIntro,
+      title: service.seoTitle,
+      description: service.seoDescription,
       path: `/services/${params.slug}`,
       image: service.image,
       imageAlt: `Illustrative ${service.title.toLowerCase()} design concept`,

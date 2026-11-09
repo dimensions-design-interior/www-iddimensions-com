@@ -17,6 +17,7 @@ export type ServiceEntry = {
 
 export type ProjectEntry = {
   slug: string;
+  seoTitle?: string;
   name: string;
   location: string;
   category: "Residential" | "Commercial" | "Hospitality";
@@ -57,7 +58,7 @@ export const services: ServiceEntry[] = [
   },
   {
     slug: "luxury-villas-and-homes",
-    seoTitle: "Luxury Villa Interiors Lucknow | Dimensions Designs & Interior",
+    seoTitle: "Luxury Villa Interiors Lucknow | Dimensions",
     seoDescription: "Luxury villa interior design in Lucknow with bespoke joinery, premium materials and statement lighting. Coordinate every room from design to execution.",
     title: "Luxury Villa Interiors",
     body: "Bespoke interior concepts that bring sophistication, comfort and individuality to every room.",
@@ -69,7 +70,7 @@ export const services: ServiceEntry[] = [
   },
   {
     slug: "modular-kitchens",
-    seoTitle: "Modular Kitchen Design Lucknow | Dimensions Designs & Interior",
+    seoTitle: "Modular Kitchens Lucknow | Dimensions",
     seoDescription: "Modular kitchen design and installation in Lucknow. Plan ergonomic layouts, cabinet storage, durable finishes and branded hardware for everyday cooking.",
     title: "Modular Kitchens",
     body: "Contemporary kitchens designed for efficient storage, seamless functionality and timeless aesthetics.",
@@ -117,7 +118,7 @@ export const services: ServiceEntry[] = [
   },
   {
     slug: "hospitality-interiors",
-    seoTitle: "Hospitality Interiors Lucknow | Dimensions Designs & Interior",
+    seoTitle: "Hospitality Interiors Lucknow | Dimensions",
     seoDescription: "Hotel, restaurant and lounge interior design in Lucknow. Balance guest experience, durable materials, custom joinery and phased hospitality execution.",
     title: "Hotel & Hospitality Interiors",
     body: "Distinctive hospitality spaces designed to create memorable guest experiences.",
@@ -144,6 +145,7 @@ export const services: ServiceEntry[] = [
 export const projects: ProjectEntry[] = [
   {
     slug: "gomti-nagar-residence",
+    seoTitle: "Gomti Nagar Residence Interior | Dimensions",
     name: "Apartment Interior Concept",
     location: "Lucknow",
     category: "Residential",
@@ -154,6 +156,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     slug: "golf-city-villa",
+    seoTitle: "Golf City Villa Interior | Dimensions",
     name: "Villa Living Concept",
     location: "Lucknow",
     category: "Residential",
@@ -164,6 +167,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     slug: "hazratganj-workspace",
+    seoTitle: "Hazratganj Office Interior | Dimensions",
     name: "Office Interior Concept",
     location: "Lucknow",
     category: "Commercial",
@@ -174,6 +178,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     slug: "aurum-showroom",
+    seoTitle: "Aurum Showroom Interior | Dimensions",
     name: "Showroom Interior Concept",
     location: "Lucknow",
     category: "Commercial",
@@ -184,6 +189,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     slug: "the-verandah-lounge",
+    seoTitle: "Verandah Lounge Interior | Dimensions",
     name: "Lounge Interior Concept",
     location: "Uttar Pradesh",
     category: "Hospitality",

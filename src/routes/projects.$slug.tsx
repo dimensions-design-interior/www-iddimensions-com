@@ -18,7 +18,7 @@ export const Route = createFileRoute("/projects/$slug")({
       };
     }
     return buildSeo({
-      title: `${project.name} in Lucknow`,
+      title: project.seoTitle ?? `${project.name} in Lucknow`,
       description: `Explore this illustrative ${project.category.toLowerCase()} interior concept: ${project.scope.toLowerCase()}. Discuss layouts, materials and execution with our Lucknow studio.`,
       path: `/projects/${params.slug}`,
       image: project.image,

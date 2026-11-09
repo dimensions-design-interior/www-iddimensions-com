@@ -19,10 +19,10 @@ export const Route = createFileRoute("/projects/$slug")({
     }
     return buildSeo({
       title: project.seoTitle ?? `${project.name} in Lucknow`,
-      description: `Explore this illustrative ${project.category.toLowerCase()} interior concept: ${project.scope.toLowerCase()}. Discuss layouts, materials and execution with our Lucknow studio.`,
+      description: project.seoDescription ?? `Explore this illustrative ${project.category.toLowerCase()} interior concept: ${project.scope.toLowerCase()}. Discuss layouts, materials and execution with our Lucknow studio.`,
       path: `/projects/${params.slug}`,
       image: project.image,
-      imageAlt: `Illustrative ${project.category.toLowerCase()} concept: ${project.name}`,
+      imageAlt: project.completed ? `${project.name} office interior, Lucknow` : `Illustrative ${project.category.toLowerCase()} concept: ${project.name}`,
       type: "article",
       jsonLd: [
         breadcrumbSchema([
@@ -34,8 +34,8 @@ export const Route = createFileRoute("/projects/$slug")({
           "@context": "https://schema.org",
           "@type": "CreativeWork",
           name: project.name,
-          genre: `Illustrative ${project.category} interior design concept`,
-          description: `${project.summary} Illustrative design concept, not a completed client project.`,
+          genre: project.completed ? `${project.category} interior project` : `Illustrative ${project.category} interior design concept`,
+          description: project.completed ? project.summary : `${project.summary} Illustrative design concept, not a completed client project.`,
           url: absoluteUrl(`/projects/${project.slug}`),
           image: absoluteUrl(project.image),
           creator: businessRef,
@@ -50,16 +50,18 @@ function ProjectDetail() {
   const { project } = Route.useLoaderData();
 
   return (
-    <PageShell eyebrow={`${project.category} Design Concept`} title={project.name} intro={project.summary}>
+    <PageShell eyebrow={project.completed ? `${project.category} Project` : `${project.category} Design Concept`} title={project.name} intro={project.summary}>
       <img
         src={project.image}
-        alt={`Illustrative ${project.category.toLowerCase()} concept: ${project.name}`}
+        alt={project.completed ? `${project.name} office interior, Lucknow` : `Illustrative ${project.category.toLowerCase()} concept: ${project.name}`}
         width={1600}
         height={1000}
         className="mt-12 h-[28rem] w-full object-cover"
       />
 
-      <p className="mt-4 text-sm text-muted-foreground">Illustrative example only. The name, location and scope describe a concept, not a completed client commission.</p>
+      {!project.completed && (
+        <p className="mt-4 text-sm text-muted-foreground">Illustrative example only. The name, location and scope describe a concept, not a completed client commission.</p>
+      )}
       <dl className="mt-12 grid gap-8 border-y border-border py-8 sm:grid-cols-3">
         {[
           ["Category", project.category],
@@ -72,6 +74,13 @@ function ProjectDetail() {
           </div>
         ))}
       </dl>
+
+      {project.sections?.map((section) => (
+        <section key={section.title} className="mt-14 max-w-3xl">
+          <h2 className="text-xl tracking-[0.1em] uppercase">{section.title}</h2>
+          <p className="mt-5 leading-relaxed text-muted-foreground">{section.text}</p>
+        </section>
+      ))}
 
       <a href="/contact" className="btn-solid mt-10 inline-block">
         Plan A Similar Project

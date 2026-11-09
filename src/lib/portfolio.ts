@@ -76,12 +76,12 @@ export const portfolioPhotos: PortfolioPhoto[] = [
   },
   {
     id: "hazratganj-workspace",
-    title: "Office Interior Concept",
-    location: "Illustrative concept",
+    title: "Executive Workspace, Hazratganj",
+    location: "Hazratganj, Lucknow",
     category: "Commercial",
-    scope: "Office fit-out",
+    scope: "Turnkey office fit-out",
     image: "/og/project-commercial.jpg",
-    alt: "Illustrative office interior with workstations and meeting spaces",
+    alt: "Executive office interior in Hazratganj with workstations and meeting spaces",
   },
   {
     id: "aurum-showroom",

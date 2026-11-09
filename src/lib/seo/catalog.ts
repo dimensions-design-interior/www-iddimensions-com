@@ -24,6 +24,10 @@ export type ProjectEntry = {
   scope: string;
   summary: string;
   image: string;
+  /** True only for owner-confirmed completed client projects. */
+  completed?: boolean;
+  seoDescription?: string;
+  sections?: { title: string; text: string }[];
 };
 
 const OG = "/og";
@@ -168,13 +172,20 @@ export const projects: ProjectEntry[] = [
   {
     slug: "hazratganj-workspace",
     seoTitle: "Hazratganj Office Interior | Dimensions",
-    name: "Office Interior Concept",
-    location: "Lucknow",
+    seoDescription: "Turnkey executive office fit-out in Hazratganj, Lucknow: MD cabins, workstations, acoustic conference room, fluted glass partitions and BOQ-led execution.",
+    name: "Executive Workspace, Hazratganj",
+    location: "Hazratganj, Lucknow",
     category: "Commercial",
-    scope: "Office fit-out",
+    scope: "Turnkey office fit-out",
+    completed: true,
     summary:
-      "An illustrative professional workspace design with efficient planning, acoustic comfort and a brand-aligned material and lighting scheme.",
+      "A corporate office in Hazratganj, Lucknow, delivered as a complete turnkey interior fit-out by Dimensions Designs Interior.",
     image: `${OG}/project-commercial.jpg`,
+    sections: [
+      { title: "Project Overview: Executive Workspace, Hazratganj, Lucknow", text: "Located in the prime commercial corridor of Hazratganj, Lucknow, this corporate office space was envisioned and delivered as a complete turnkey interior fit-out by Dimensions Designs Interior. The core objective was to blend modern architectural efficiency with refined corporate aesthetics, optimizing every square foot for high-density collaboration, private leadership discussions, and seamless workflow management." },
+      { title: "Architectural Layout & Material Specifications", text: "The workspace features a balanced spatial layout comprising executive MD cabins, collaborative team workstations, an acoustic-paneled conference room, and a welcoming client reception lounge. To ensure privacy without compromising natural light, precision-engineered fluted glass partitions and acoustic wall paneling were integrated across meeting zones. High-traffic surfaces were finished with durable 1mm premium decorative laminates, complemented by clean brass-accent profile details and custom-fabricated storage credenzas. Ceiling designs incorporate seamless architectural false ceilings with glare-free linear profile lighting, creating an ergonomic, well-illuminated professional environment tailored for extended working hours." },
+      { title: "Turnkey Execution & Handover", text: "Dimensions Designs Interior executed the entire project scope end-to-end, managing structural space planning, electrical and network conduit cabling, HVAC duct alignment, custom modular millwork, and final paint finishes. Delivered with a strict itemized Bill of Quantities (BOQ) and disciplined on-site supervision, the facility was handed over on schedule, fully operational and move-in ready for the client team." },
+    ],
   },
   {
     slug: "aurum-showroom",

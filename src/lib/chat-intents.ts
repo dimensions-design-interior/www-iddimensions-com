@@ -1,6 +1,7 @@
 // Shared customer-intent detection for the website chat assistant.
 // The same intents power WhatsApp auto-replies once the WhatsApp
-// Business connection is enabled — keep this module dependency-free.
+// Business connection is enabled — keep this module browser-safe.
+import { STUDIO_ADDRESS, BUSINESS_PHONE, BUSINESS_EMAIL } from "./seo/site";
 
 export interface ChatIntent {
   intent: string;
@@ -120,7 +121,7 @@ export const customerIntents: ChatIntent[] = [
       /(लखनऊ|कहां काम करते|कौन से शहर)/i,
     ],
     reply:
-      "हमारा studio Golf City, Lucknow में है और हम पूरे Lucknow — Gomti Nagar, Hazratganj, Aliganj, Indira Nagar, Sushant Golf City आदि — में काम करते हैं। अन्य शहरों के projects भी accept करते हैं। कृपया अपना project location बताएं।",
+      `हमारा एकमात्र studio: ${STUDIO_ADDRESS}। हम Lucknow और अन्य भारतीय शहरों के projects accept करते हैं। कृपया अपना project location बताएं।`,
   },
   {
     intent: "contact",
@@ -129,7 +130,7 @@ export const customerIntents: ChatIntent[] = [
       /(कॉन्टैक्ट|फोन|मोबाइल|व्हाट्सएप|नंबर)/i,
     ],
     reply:
-      "आप हमें +91 96700 01155 पर call या WhatsApp कर सकते हैं, या info@iddimensions.com पर email करें। हमारा studio: Skylark Plaza, Ground Floor Shop No. 09, near Lulu Mall Road, Golf City, Lucknow।",
+      `आप हमें ${BUSINESS_PHONE} पर call या WhatsApp कर सकते हैं, या ${BUSINESS_EMAIL} पर email करें। हमारा studio: ${STUDIO_ADDRESS}।`,
   },
   {
     intent: "thanks",

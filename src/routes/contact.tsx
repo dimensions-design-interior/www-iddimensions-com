@@ -12,20 +12,19 @@ import { PageShell } from "@/components/site/PageShell";
 import {
   GOOGLE_BUSINESS_URL,
   GOOGLE_DIRECTIONS_URL,
+  STUDIO_ADDRESS,
+  BUSINESS_PHONE,
   breadcrumbSchema,
   buildSeo,
   homeAndConstructionBusinessSchema,
 } from "@/lib/seo/site";
-
-const ADDRESS =
-  "Ground Floor Shop No. 09, Skylark Plaza, near Lulu Mall Road, Golf City, Lucknow, Hariharpur, Uttar Pradesh 226030, India";
 
 export const Route = createFileRoute("/contact")({
   head: () =>
     buildSeo({
       title: "Contact Lucknow Studio | Dimensions Designs & Interior",
       description:
-        "Contact our Golf City studio in Lucknow for a design consultation or project quote. Discuss home, villa, kitchen, commercial or turnkey interior requirements.",
+        "Contact our Sushant Golf City studio in Lucknow for a design consultation or quote. Discuss home, villa, kitchen, commercial or turnkey interior requirements.",
       path: "/contact",
       imageAlt: "Dimensions Designs Interior studio in Lucknow",
       jsonLd: [
@@ -54,11 +53,11 @@ function ContactPage() {
           <div className="mt-7 space-y-6 border-t border-border pt-7 text-sm text-muted-foreground">
             <div className="flex items-start gap-4">
               <MapPin aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-brass" />
-              <address className="not-italic leading-relaxed">{ADDRESS}</address>
+              <address className="not-italic leading-relaxed">{STUDIO_ADDRESS}</address>
             </div>
             <a href="tel:+919670001155" className="flex items-center gap-4 hover:text-foreground">
               <Phone aria-hidden="true" className="size-5 shrink-0 text-brass" />
-              +91 96700 01155
+              {BUSINESS_PHONE}
             </a>
             <a
               href="mailto:info@iddimensions.com"
@@ -112,7 +111,7 @@ function ContactPage() {
             <p className="text-[0.68rem] tracking-[0.24em] text-brass uppercase">Service Area</p>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               Lucknow and surrounding areas, including Golf City, Gomti Nagar, Shaheed Path,
-              Sushant Golf City, with project availability in other cities across India. Our physical studio is in Lucknow.
+              Sushant Golf City, with project availability in other cities across India. Our only physical studio is in Sushant Golf City, Lucknow.
             </p>
           </div>
         </section>
@@ -141,7 +140,7 @@ function ContactPage() {
       <section className="mt-16" aria-labelledby="studio-map-title">
         <p className="eyebrow">Find Our Studio</p>
         <h2 id="studio-map-title" className="font-display mt-4 text-2xl tracking-[0.06em] uppercase sm:text-3xl">
-          Skylark Plaza, Lucknow
+          Skylark Plaza, Sushant Golf City, Lucknow
         </h2>
         <div className="mt-7">
           <StudioMap />

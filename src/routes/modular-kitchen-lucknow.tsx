@@ -3,7 +3,7 @@ import { CalendarCheck, Phone } from "lucide-react";
 
 import { ConsultationForm } from "@/components/site/ConsultationForm";
 import { PageShell } from "@/components/site/PageShell";
-import { absoluteUrl, breadcrumbSchema, buildSeo, homeAndConstructionBusinessSchema } from "@/lib/seo/site";
+import { absoluteUrl, breadcrumbSchema, buildSeo, homeAndConstructionBusinessSchema, businessRef } from "@/lib/seo/site";
 
 const PATH = "/modular-kitchen-lucknow";
 
@@ -151,21 +151,7 @@ export const Route = createFileRoute("/modular-kitchen-lucknow")({
           description: DESCRIPTION,
           url: absoluteUrl(PATH),
           areaServed: { "@type": "City", name: "Lucknow, Uttar Pradesh, India" },
-          provider: {
-            "@type": "InteriorDesigner",
-            name: "Dimensions Designs Interior",
-            url: absoluteUrl("/"),
-            email: "info@iddimensions.com",
-            telephone: "+91-9670001155",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "Ground Floor Shop No. 09, Skylark Plaza, near Lulu Mall Road, Golf City, Hariharpur",
-              addressLocality: "Lucknow",
-              addressRegion: "Uttar Pradesh",
-              postalCode: "226030",
-              addressCountry: "IN",
-            },
-          },
+          provider: businessRef,
         },
         {
           "@context": "https://schema.org",

@@ -11,6 +11,7 @@
 
 - Use the canonical Google Business CID and Place ID constants for profile links, reviews, maps, and structured data so listing signals stay consistent.
 - Keep studio coordinates and directions URL in the shared site constants; homepage and Contact maps and directions must use the same pin.
+- Keep public studio addresses, phone/email and PostalAddress schema in shared site constants; UI, chat and MCP content reuse them to prevent conflicting location signals.
 - Render studio maps with the shared standard Google Maps embed iframe; keep the separate server-side Google reviews integration intact.
 - Use the shared lead schema for browser and server validation; keep enquiry writes and fixed-recipient emails server-side so customer data stays private.
 - Extend existing service slugs through the shared catalog rather than duplicating landing pages; the catalog drives internal links and the sitemap.

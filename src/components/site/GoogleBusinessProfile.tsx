@@ -1,6 +1,6 @@
 import { BadgeCheck, MapPin, Star } from "lucide-react";
 
-import { GOOGLE_BUSINESS_URL, GOOGLE_REVIEW_URL, STUDIO_COORDINATES } from "@/lib/seo/site";
+import { GOOGLE_BUSINESS_URL, GOOGLE_REVIEW_URL, STUDIO_COORDINATES, STUDIO_ADDRESS, SITE_NAME } from "@/lib/seo/site";
 
 export function GoogleVerifiedBusinessBadge({ dark = false }: { dark?: boolean }) {
   return (
@@ -13,7 +13,7 @@ export function GoogleVerifiedBusinessBadge({ dark = false }: { dark?: boolean }
           ? "border-brass/35 text-ink-foreground hover:border-brass hover:text-brass-soft"
           : "border-border text-foreground hover:border-brass hover:text-brass"
       }`}
-      aria-label="View Dimensions Design Interior on Google Maps"
+      aria-label={`View ${SITE_NAME} on Google Maps`}
     >
       <BadgeCheck aria-hidden="true" className="size-5 shrink-0 text-brass" />
       <span>
@@ -21,7 +21,7 @@ export function GoogleVerifiedBusinessBadge({ dark = false }: { dark?: boolean }
           Google Verified Business
         </span>
         <span className={`mt-1 block text-xs ${dark ? "text-ink-foreground/55" : "text-muted-foreground"}`}>
-          Dimensions Design Interior · Lucknow
+          {SITE_NAME} · Lucknow
         </span>
       </span>
     </a>
@@ -46,7 +46,7 @@ export function StudioMap() {
   return (
     <div className="overflow-hidden border border-border bg-muted" aria-label="Studio location map">
       <iframe
-        title="Dimensions Designs Interior studio at Skylark Plaza, Lucknow"
+        title="Dimensions Designs Interior studio at Skylark Plaza, Sushant Golf City, Lucknow"
         src={`https://www.google.com/maps?q=${encodeURIComponent(STUDIO_COORDINATES)}&z=17&output=embed`}
         className="h-[320px] w-full border-0 sm:h-[420px]"
         loading="lazy"
@@ -60,10 +60,7 @@ export function StudioMap() {
         className="flex items-start gap-3 border-t border-border bg-background px-5 py-4 text-sm text-muted-foreground transition-colors hover:text-foreground"
       >
         <MapPin aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-brass" />
-        <span>
-          Ground Floor Shop No. 09, Skylark Plaza, near Lulu Mall Road, Golf City, Lucknow,
-          Uttar Pradesh 226030
-        </span>
+        <span>{STUDIO_ADDRESS}</span>
       </a>
     </div>
   );

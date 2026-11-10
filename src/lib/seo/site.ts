@@ -1,5 +1,17 @@
 export const SITE_URL = "https://www.iddimensions.com";
 export const SITE_NAME = "Dimensions Designs Interior";
+export const STUDIO_ADDRESS = "Ground Floor, Shop No. 09, Skylark Plaza, Near Lulu Mall Road, Sushant Golf City, Lucknow - 226030";
+export const BUSINESS_PHONE = "+91 9670001155";
+export const BUSINESS_TELEPHONE = "+919670001155";
+export const BUSINESS_EMAIL = "info@iddimensions.com";
+export const STUDIO_POSTAL_ADDRESS = {
+  "@type": "PostalAddress",
+  streetAddress: "Ground Floor, Shop No. 09, Skylark Plaza, Near Lulu Mall Road, Sushant Golf City",
+  addressLocality: "Lucknow",
+  addressRegion: "Uttar Pradesh",
+  postalCode: "226030",
+  addressCountry: "IN",
+};
 export const BRAND_SHORT = "Dimensions";
 /** Public website brand used in page titles and structured data */
 export const BRAND_NAME = "Dimensions Designs & Interior";
@@ -104,7 +116,7 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
 }
 
 /** Short reference to the business entity for provider/creator/publisher fields */
-export const businessRef = { "@id": `${SITE_URL}/#business`, name: BRAND_NAME, url: SITE_URL };
+export const businessRef = { "@id": `${SITE_URL}/#business`, name: SITE_NAME, url: SITE_URL };
 
 export function websiteSchema() {
   return {
@@ -125,23 +137,16 @@ export function homeAndConstructionBusinessSchema(
     "@context": "https://schema.org",
     "@type": ["HomeAndConstructionBusiness", "ProfessionalService"],
     "@id": `${SITE_URL}/#business`,
-    name: BRAND_NAME,
-    alternateName: SITE_NAME,
+    name: SITE_NAME,
+    alternateName: BRAND_NAME,
     image: absoluteUrl("/logo-mark.png"),
     logo: absoluteUrl("/logo-mark.png"),
     url: SITE_URL,
     hasMap: GOOGLE_BUSINESS_URL,
-    telephone: "+919670001155",
-    email: "info@iddimensions.com",
+    telephone: BUSINESS_TELEPHONE,
+    email: BUSINESS_EMAIL,
     sameAs: [GOOGLE_BUSINESS_URL, "https://instagram.com/iddimensions"],
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Ground Floor Shop No. 09, Skylark Plaza, near Lulu Mall Road, Golf City, Hariharpur",
-      addressLocality: "Lucknow",
-      addressRegion: "Uttar Pradesh",
-      postalCode: "226030",
-      addressCountry: "IN",
-    },
+    address: STUDIO_POSTAL_ADDRESS,
     geo: {
       "@type": "GeoCoordinates",
       latitude: "26.784701",

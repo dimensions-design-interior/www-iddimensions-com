@@ -1,6 +1,7 @@
 import { Instagram, Mail, MapPin, MessageCircle, Phone, Globe } from "lucide-react";
 
 import { GoogleReviewLink, GoogleVerifiedBusinessBadge } from "@/components/site/GoogleBusinessProfile";
+import { STUDIO_ADDRESS, BUSINESS_PHONE, BUSINESS_TELEPHONE } from "@/lib/seo/site";
 
 export function SiteFooter() {
   return (
@@ -51,16 +52,16 @@ export function SiteFooter() {
                   className="flex items-center gap-3 transition-colors hover:text-brass"
                 >
                   <MessageCircle aria-hidden="true" className="size-4 shrink-0 text-brass" />
-                  WhatsApp: 9670001155
+                  WhatsApp: {BUSINESS_PHONE}
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:9670001155"
+                  href={`tel:${BUSINESS_TELEPHONE}`}
                   className="flex items-center gap-3 transition-colors hover:text-brass"
                 >
                   <Phone aria-hidden="true" className="size-4 shrink-0 text-brass" />
-                  9670001155
+                  {BUSINESS_PHONE}
                 </a>
               </li>
               <li>
@@ -96,8 +97,7 @@ export function SiteFooter() {
               </li>
               <li className="flex items-start gap-3 pt-2 leading-relaxed text-ink-foreground/50">
                 <MapPin aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-brass/70" />
-                Ground Floor Shop No. 09, Skylark Plaza, near Lulu Mall Road, Golf City, Lucknow,
-                Hariharpur, Uttar Pradesh 226030, India
+                <span>{STUDIO_ADDRESS}</span>
               </li>
             </ul>
           </div>

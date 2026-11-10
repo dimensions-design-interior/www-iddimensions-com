@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Replace every public address and business schema with the single owner-confirmed Sushant Golf City studio; all 21 public pages and 5 PostalAddress objects verified, desktop/mobile checked; publish with Hazratganj content
+- [x] Inspect Contact and Portfolio in Search Console — both submitted and indexed as of November 10; manual re-indexing requires the owner's direct Google session
+
 - [x] Update all 21 public-page SEO metadata entries with the newly approved homepage title, description and keywords; verified unique SSR titles, descriptions, canonical URLs and Open Graph tags plus client navigation; not published
 
 - [x] Correct service coverage to Lucknow and cities across India without claiming other offices; changes remain unpublished
@@ -10,8 +13,8 @@
 - [x] Verify metadata, sitemap, robots and indexing readiness: SEO foundations pass; Google indexing remains unknown
 - [x] Correct public contact and fixed enquiry recipient to owner-confirmed info@iddimensions.com; test notification accepted after changes loaded
 - [ ] Confirm test email receipt in info@iddimensions.com — delivery/open events are not available; owner inbox confirmation needed
-- [ ] Verify Google Search Console ownership: connected account checked; META tag added for https://www.iddimensions.com/; awaiting approved publication, live-tag verification and sitemap submission
-- [ ] Final publication — waiting on the user's explicit approval after remaining issues are reviewed
+- [x] Verify Google Search Console ownership: https://www.iddimensions.com/ is verified as siteOwner; sitemap submitted
+- [x] Final publication explicitly authorized by the user; studio-address and Hazratganj revision ready for publication
 
 - [x] SEO finding `http:robots` — robots.txt references the sitemap
 - [x] Show approved DB reviews + Google reviews in the Reviews section; remove invented static fallback testimonials

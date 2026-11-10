@@ -252,11 +252,11 @@ export const lucknowServiceNotes: Record<string, { heading: string; paragraphs: 
   "interior-designer-lucknow": {
     heading: "Working With Interior Designers In Lucknow",
     paragraphs: [
-      "Choosing interior designers in Lucknow is easier when design, materials and execution sit with one team. Our Golf City studio near Lulu Mall Road plans each space, prepares a line-item estimate and supervises work on site, so you are not coordinating separate carpenters, suppliers and installers.",
+      "Choosing interior designers in Lucknow is easier when design, materials and execution sit with one team. Our Sushant Golf City studio near Lulu Mall Road plans each space, prepares a line-item estimate and supervises work on site, so you are not coordinating separate carpenters, suppliers and installers.",
       "Lucknow homes range from compact apartments in Gomti Nagar Extension to independent houses in Aliganj and Mahanagar. We start with a site visit, measure the space and discuss how your family actually uses each room before proposing layouts, finishes and storage.",
     ],
     faqs: [
-      { q: "Do you visit sites across Lucknow?", a: "Yes. We meet clients at our Golf City studio and visit sites across Lucknow, including Gomti Nagar, Hazratganj, Indira Nagar, Jankipuram and Faizabad Road." },
+      { q: "Do you visit sites across Lucknow?", a: "Yes. We meet clients at our Sushant Golf City studio and visit sites across Lucknow, including Gomti Nagar, Hazratganj, Indira Nagar, Jankipuram and Faizabad Road." },
       { q: "How is the cost of an interior project in Lucknow decided?", a: "Cost depends on area, scope, materials and hardware. We share a detailed line-item estimate after understanding your requirements, so you can see where every rupee goes." },
     ],
   },

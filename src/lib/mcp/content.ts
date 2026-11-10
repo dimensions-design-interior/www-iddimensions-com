@@ -1,13 +1,15 @@
+import { STUDIO_ADDRESS, BUSINESS_EMAIL, BUSINESS_PHONE, SITE_NAME } from "../seo/site";
+
 export const company = {
-  name: "Dimensions Designs Interior",
+  name: SITE_NAME,
   tagline: "Designing Spaces. Defining Experiences.",
   summary:
     "Premium interior design and turnkey interior solutions for residential, commercial and hospitality spaces, delivered from concept to completion.",
   philosophy: "Design. Detail. Execution.",
   serviceArea: "Lucknow and cities across India; physical studio in Lucknow",
-  email: "info@iddimensions.com",
-  address:
-    "Ground Floor Shop No. 09, Skylark Plaza, near Lulu Mall Road, Golf City, Lucknow, Hariharpur, Uttar Pradesh 226030, India",
+  email: BUSINESS_EMAIL,
+  phone: BUSINESS_PHONE,
+  address: STUDIO_ADDRESS,
   website: "https://www.iddimensions.com",
 };
 

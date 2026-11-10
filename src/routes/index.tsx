@@ -293,7 +293,7 @@ function Index() {
             Interior Designers In Lucknow, Working Across The City
           </h2>
           <p className="mt-8 max-w-2xl text-sm leading-relaxed text-ink-foreground/65">
-            From our studio in Golf City, we design and execute turnkey home interiors, modular
+            From our only studio in Sushant Golf City, we design and execute turnkey home interiors, modular
             kitchens, wardrobes, office fit-outs and commercial spaces across Lucknow — and accept
             projects in other cities across India.
           </p>
@@ -308,7 +308,7 @@ function Index() {
             ))}
           </ul>
           <p className="mt-10 text-sm text-ink-foreground/65">
-            Based near Lulu Mall Road, Golf City?{" "}
+            Based near Lulu Mall Road, Sushant Golf City?{" "}
             <a href="#contact" className="text-brass-soft underline underline-offset-4">
               Find our studio on the map
             </a>{" "}
@@ -397,7 +397,7 @@ function Index() {
 
           <div className="mt-12 text-left">
             <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
-              <h3 className="font-display text-xl uppercase">Find Our Golf City Studio</h3>
+              <h3 className="font-display text-xl uppercase">Find Our Sushant Golf City Studio</h3>
               <a
                 href={GOOGLE_DIRECTIONS_URL}
                 target="_blank"

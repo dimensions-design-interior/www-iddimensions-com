@@ -100,7 +100,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Karla:wght@300;400;500;600;700&display=swap",
       },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
+    ],    scripts: [
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-MZXXD5XTP8",
+        async: true,
+      },
+      {
+        children: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-MZXXD5XTP8');
+        `,
+      },
     ],
+    
   }),
 
   shellComponent: RootShell,

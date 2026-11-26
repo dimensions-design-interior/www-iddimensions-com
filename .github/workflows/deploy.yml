@@ -28,12 +28,25 @@ jobs:
         run: bun install
       - name: Build
         run: bun run build
+      - name: Detect output directory
+        id: detect
+        run: |
+          if [ -d ".output/public" ]; then
+            echo "dir=.output/public" >> $GITHUB_OUTPUT
+          elif [ -d "dist/client" ]; then
+            echo "dir=dist/client" >> $GITHUB_OUTPUT
+          elif [ -d "dist" ]; then
+            echo "dir=dist" >> $GITHUB_OUTPUT
+          else
+            find . -maxdepth 3 -name "index.html"
+            exit 1
+          fi
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: ${{ steps.detect.outputs.dir }}
 
   deploy:
     environment:
@@ -45,3 +58,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        

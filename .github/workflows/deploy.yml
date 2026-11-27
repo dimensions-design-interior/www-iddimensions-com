@@ -20,14 +20,57 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
+
       - name: Install dependencies
         run: bun install
+
       - name: Build
         run: bun run build
+
+      - name: Generate static sitemap
+        run: |
+          mkdir -p .output/public
+          cat > .output/public/sitemap.xml <<'EOF'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            <url>
+              <loc>https://www.iddimensions.com/</loc>
+              <changefreq>weekly</changefreq>
+              <priority>1.0</priority>
+            </url>
+            <url>
+              <loc>https://www.iddimensions.com/services</loc>
+              <changefreq>monthly</changefreq>
+              <priority>0.9</priority>
+            </url>
+            <url>
+              <loc>https://www.iddimensions.com/projects</loc>
+              <changefreq>monthly</changefreq>
+              <priority>0.9</priority>
+            </url>
+            <url>
+              <loc>https://www.iddimensions.com/portfolio</loc>
+              <changefreq>monthly</changefreq>
+              <priority>0.9</priority>
+            </url>
+            <url>
+              <loc>https://www.iddimensions.com/contact</loc>
+              <changefreq>monthly</changefreq>
+              <priority>0.9</priority>
+            </url>
+            <url>
+              <loc>https://www.iddimensions.com/modular-kitchen-lucknow</loc>
+              <changefreq>monthly</changefreq>
+              <priority>0.9</priority>
+            </url>
+          </urlset>
+          EOF
+
       - name: Detect output directory
         id: detect
         run: |
@@ -41,8 +84,10 @@ jobs:
             find . -maxdepth 3 -name "index.html"
             exit 1
           fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -58,4 +103,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        
